@@ -1,0 +1,24 @@
+@use '@/styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-6);
+  background-color: var(--color-bg-primary);
+  color: var(--color-fg-primary);
+}
+
+.title {
+  margin-bottom: var(--space-4);
+
+  @include breakpoint(m) {
+    margin-bottom: var(--space-6);
+  }
+}
+
+.description {
+  color: var(--color-fg-secondary);
+}

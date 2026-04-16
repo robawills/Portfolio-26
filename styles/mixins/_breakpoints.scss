@@ -1,0 +1,32 @@
+@use 'sass:map';
+
+$bp-xxsmall: 375px;
+$bp-xsmall: 640px;
+$bp-small: 768px;
+$bp-medium: 1024px;
+$bp-large: 1280px;
+$bp-xlarge: 1366px;
+$bp-xxlarge: 1660px;
+$bp-xxxlarge: 1800px;
+$bp-oversize: 1920px;
+$breakpoints: (
+  xxs: $bp-xxsmall,
+  xs: $bp-xsmall,
+  s: $bp-small,
+  m: $bp-medium,
+  l: $bp-large,
+  xl: $bp-xlarge,
+  xxl: $bp-xxlarge,
+  xxxl: $bp-xxxlarge,
+  oversize: $bp-oversize,
+);
+
+@mixin breakpoint($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media only screen and (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map.keys($breakpoints)}.";
+  }
+}

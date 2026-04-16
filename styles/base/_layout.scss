@@ -1,0 +1,15 @@
+:root {
+  --layout-content-min: 375px;
+  --layout-content-max: 1920px;
+  --viewport-height: 100dvh;
+  --layout-container-gutter: clamp(
+    var(--space-4),
+    -0.578rem + 6.731vw,
+    var(--space-12)
+  );
+  --layout-grid-gutter: clamp(
+    var(--space-6),
+    1.257rem + 1.036vw,
+    var(--space-9)
+  );
+}

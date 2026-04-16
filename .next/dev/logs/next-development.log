@@ -1,0 +1,622 @@
+{"timestamp":"00:00:01.253","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:16:06.415","source":"Server","level":"ERROR","message":"⨯ ./components/HeatMapShader/index.tsx\nError: \n\nCaused by:\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\n    1: No such file or directory (os error 2)\n\nImport trace for requested module:\n./components/HeatMapShader/index.tsx"}
+{"timestamp":"00:16:06.435","source":"Server","level":"ERROR","message":"⨯ ./components/HeatMapShader/index.tsx\nError: \n\nCaused by:\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\n    1: No such file or directory (os error 2)\n\nImport trace for requested module:\n./components/HeatMapShader/index.tsx\n./pages/index.tsx"}
+{"timestamp":"00:16:06.888","source":"Browser","level":"ERROR","message":"./components/HeatMapShader/index.tsx\nError: \n\nCaused by:\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\n    1: No such file or directory (os error 2)\n\nImport trace for requested module:\n./components/HeatMapShader/index.tsx"}
+{"timestamp":"00:16:06.888","source":"Browser","level":"ERROR","message":"./components/HeatMapShader/index.tsx\nError: \n\nCaused by:\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\n    1: No such file or directory (os error 2)\n\nImport trace for requested module:\n./components/HeatMapShader/index.tsx\n./pages/index.tsx"}
+{"timestamp":"00:16:09.888","source":"Browser","level":"ERROR","message":"./components/HeatMapShader/index.tsx\nError: \n\nCaused by:\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\n    1: No such file or directory (os error 2)\n\nImport trace for requested module:\n./components/HeatMapShader/index.tsx"}
+{"timestamp":"00:16:13.578","source":"Server","level":"ERROR","message":"[browser] \"./components/HeatMapShader/index.tsx\\nError: \\n\\nCaused by:\\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\\n    1: No such file or directory (os error 2)\\n\\nImport trace for requested module:\\n./components/HeatMapShader/index.tsx\" \"\""}
+{"timestamp":"00:16:13.578","source":"Browser","level":"ERROR","message":"./components/HeatMapShader/index.tsx\nError: \n\nCaused by:\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\n    1: No such file or directory (os error 2)\n\nImport trace for requested module:\n./components/HeatMapShader/index.tsx \"\""}
+{"timestamp":"00:16:13.579","source":"Server","level":"ERROR","message":"[browser] \"./components/HeatMapShader/index.tsx\\nError: \\n\\nCaused by:\\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\\n    1: No such file or directory (os error 2)\\n\\nImport trace for requested module:\\n./components/HeatMapShader/index.tsx\\n./pages/index.tsx\" \"\""}
+{"timestamp":"00:16:13.579","source":"Browser","level":"ERROR","message":"./components/HeatMapShader/index.tsx\nError: \n\nCaused by:\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\n    1: No such file or directory (os error 2)\n\nImport trace for requested module:\n./components/HeatMapShader/index.tsx\n./pages/index.tsx \"\""}
+{"timestamp":"00:16:13.580","source":"Server","level":"ERROR","message":"[browser] \"./components/HeatMapShader/index.tsx\\nError: \\n\\nCaused by:\\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\\n    1: No such file or directory (os error 2)\\n\\nImport trace for requested module:\\n./components/HeatMapShader/index.tsx\" \"\""}
+{"timestamp":"00:16:13.580","source":"Browser","level":"ERROR","message":"./components/HeatMapShader/index.tsx\nError: \n\nCaused by:\n    0: Failed to read source code from /Users/rob/Sites/Portfolio-26/components/HeatMapShader/index.tsx\n    1: No such file or directory (os error 2)\n\nImport trace for requested module:\n./components/HeatMapShader/index.tsx \"\""}
+{"timestamp":"01:09:11.462","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:09:11.586","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:09:11.586","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:09:53.191","source":"Browser","level":"LOG","message":"Refreshing page data due to server-side change"}
+{"timestamp":"01:09:53.193","source":"Browser","level":"LOG","message":"Refreshing page data due to server-side change"}
+{"timestamp":"01:10:21.443","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:10:21.445","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:10:21.445","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:10:39.058","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:10:39.058","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:10:39.058","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:11:16.383","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:11:16.384","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:11:16.384","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:12:48.594","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:12:48.595","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:12:48.595","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:14:03.784","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:14:03.784","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:14:03.784","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:15:10.379","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:15:10.379","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:15:10.380","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:16:06.029","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:16:06.030","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:16:06.030","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:17:16.229","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:17:16.229","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:17:16.229","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:17:47.955","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:17:47.956","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:17:47.956","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:18:47.986","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:18:47.987","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:18:47.987","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"01:21:26.792","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"01:21:26.792","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"01:21:26.792","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:10:50.784","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:10:50.787","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:10:50.787","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:12:07.857","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:12:07.857","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:12:07.857","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:13:22.169","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:13:22.170","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:13:22.170","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:14:11.926","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:14:11.926","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:14:11.927","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:15:12.192","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"02:15:21.249","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:15:21.249","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:15:21.352","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:15:21.353","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:15:21.353","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:15:21.353","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:19:38.195","source":"Browser","level":"ERROR","message":"The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s useEffect [[object Object], [object Object]] [[object Object], [object Object], 0]"}
+{"timestamp":"02:19:38.195","source":"Browser","level":"ERROR","message":"The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s useEffect [[object Object], [object Object]] [[object Object], [object Object], 0]"}
+{"timestamp":"02:19:46.474","source":"Server","level":"ERROR","message":"[browser] \"The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.\\n\\nPrevious: [[object Object], [object Object]]\\nIncoming: [[object Object], [object Object], 0]\" \"\\n\\u001b[31m    at Bust (components/BustViewer/index.tsx:141:3)\\u001b[39m\\n  \\u001b[90m139 |\\u001b[0m   \\u001b[36mconst\\u001b[0m clonedScene = useMemo(() => scene.clone(\\u001b[36mtrue\\u001b[0m...\\n  \\u001b[90m140 |\\u001b[0m\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m141 |\\u001b[0m   \\u001b[33mReact\\u001b[0m.useEffect(() => {\\n  \\u001b[90m    |\\u001b[0m   \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m142 |\\u001b[0m     clonedScene.traverse((child) => {\\n  \\u001b[90m143 |\\u001b[0m       \\u001b[36mif\\u001b[0m (child \\u001b[36minstanceof\\u001b[0m \\u001b[33mTHREE\\u001b[0m.\\u001b[33mMesh\\u001b[0m) {\\n  \\u001b[90m144 |\\u001b[0m         child.material = material;\" \"\\u001b[2m(components/BustViewer/index.tsx:141:3)\\u001b[22m\""}
+{"timestamp":"02:19:46.474","source":"Browser","level":"ERROR","message":"The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.\n\nPrevious: [[object Object], [object Object]]\nIncoming: [[object Object], [object Object], 0] \"\\n\\u001b[31m    at Bust (components/BustViewer/index.tsx:141:3)\\u001b[39m\\n  \\u001b[90m139 |\\u001b[0m   \\u001b[36mconst\\u001b[0m clonedScene = useMemo(() => scene.clone(\\u001b[36mtrue\\u001b[0m...\\n  \\u001b[90m140 |\\u001b[0m\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m141 |\\u001b[0m   \\u001b[33mReact\\u001b[0m.useEffect(() => {\\n  \\u001b[90m    |\\u001b[0m   \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m142 |\\u001b[0m     clonedScene.traverse((child) => {\\n  \\u001b[90m143 |\\u001b[0m       \\u001b[36mif\\u001b[0m (child \\u001b[36minstanceof\\u001b[0m \\u001b[33mTHREE\\u001b[0m.\\u001b[33mMesh\\u001b[0m) {\\n  \\u001b[90m144 |\\u001b[0m         child.material = material;\" \"\\u001b[2m(components/BustViewer/index.tsx:141:3)\\u001b[22m\""}
+{"timestamp":"02:19:46.474","source":"Server","level":"ERROR","message":"[browser] \"The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.\\n\\nPrevious: [[object Object], [object Object]]\\nIncoming: [[object Object], [object Object], 0]\" \"\\n\\u001b[31m    at Bust (components/BustViewer/index.tsx:141:3)\\u001b[39m\\n  \\u001b[90m139 |\\u001b[0m   \\u001b[36mconst\\u001b[0m clonedScene = useMemo(() => scene.clone(\\u001b[36mtrue\\u001b[0m...\\n  \\u001b[90m140 |\\u001b[0m\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m141 |\\u001b[0m   \\u001b[33mReact\\u001b[0m.useEffect(() => {\\n  \\u001b[90m    |\\u001b[0m   \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m142 |\\u001b[0m     clonedScene.traverse((child) => {\\n  \\u001b[90m143 |\\u001b[0m       \\u001b[36mif\\u001b[0m (child \\u001b[36minstanceof\\u001b[0m \\u001b[33mTHREE\\u001b[0m.\\u001b[33mMesh\\u001b[0m) {\\n  \\u001b[90m144 |\\u001b[0m         child.material = material;\" \"\\u001b[2m(components/BustViewer/index.tsx:141:3)\\u001b[22m\""}
+{"timestamp":"02:19:46.474","source":"Browser","level":"ERROR","message":"The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.\n\nPrevious: [[object Object], [object Object]]\nIncoming: [[object Object], [object Object], 0] \"\\n\\u001b[31m    at Bust (components/BustViewer/index.tsx:141:3)\\u001b[39m\\n  \\u001b[90m139 |\\u001b[0m   \\u001b[36mconst\\u001b[0m clonedScene = useMemo(() => scene.clone(\\u001b[36mtrue\\u001b[0m...\\n  \\u001b[90m140 |\\u001b[0m\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m141 |\\u001b[0m   \\u001b[33mReact\\u001b[0m.useEffect(() => {\\n  \\u001b[90m    |\\u001b[0m   \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m142 |\\u001b[0m     clonedScene.traverse((child) => {\\n  \\u001b[90m143 |\\u001b[0m       \\u001b[36mif\\u001b[0m (child \\u001b[36minstanceof\\u001b[0m \\u001b[33mTHREE\\u001b[0m.\\u001b[33mMesh\\u001b[0m) {\\n  \\u001b[90m144 |\\u001b[0m         child.material = material;\" \"\\u001b[2m(components/BustViewer/index.tsx:141:3)\\u001b[22m\""}
+{"timestamp":"02:20:27.559","source":"Browser","level":"ERROR","message":"%o\n\n%s\n\n%s\n {} The above error occurred in the <BustViewer> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary."}
+{"timestamp":"02:20:27.627","source":"Server","level":"ERROR","message":"[browser] \"'\\\\x1B[31mReferenceError: createBalloonMaterial is not defined\\\\x1B[39m\\\\n' +\\n  '\\\\x1B[31m    at BustViewer.useMemo[secondMaterial] (components/BustViewer/index.tsx:195:40)\\\\n' +\\n  '    at BustViewer (components/BustViewer/index.tsx:195:33)\\\\x1B[39m\\\\n' +\\n  '  \\\\x1B[90m193 |\\\\x1B[0m ...aterial = useMemo(() => createMarbleMaterial(), []);\\\\n' +\\n  '  \\\\x1B[90m194 |\\\\x1B[0m ...\\\\n' +\\n  '\\\\x1B[31m\\\\x1B[1m>\\\\x1B[0m \\\\x1B[90m195 |\\\\x1B[0m ...aterial = useMemo(() => createBalloonMaterial(), ...\\\\n' +\\n  '  \\\\x1B[90m    |\\\\x1B[0m                            \\\\x1B[31m\\\\x1B[1m^\\\\x1B[0m\\\\n' +\\n  '  \\\\x1B[90m196 |\\\\x1B[0m ...\\\\n' +\\n  '  \\\\x1B[90m197 |\\\\x1B[0m ...\\\\n' +\\n  \\\"  \\\\x1B[90m198 |\\\\x1B[0m ...ame={cx(\\\\x1B[32m'wrapper'\\\\x1B[0m, className)}>\\\"\\n\\nThe above error occurred in the <BustViewer> component.\\n\\nReact will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.\\n\""}
+{"timestamp":"02:20:27.627","source":"Browser","level":"ERROR","message":"'\\x1B[31mReferenceError: createBalloonMaterial is not defined\\x1B[39m\\n' +\n  '\\x1B[31m    at BustViewer.useMemo[secondMaterial] (components/BustViewer/index.tsx:195:40)\\n' +\n  '    at BustViewer (components/BustViewer/index.tsx:195:33)\\x1B[39m\\n' +\n  '  \\x1B[90m193 |\\x1B[0m ...aterial = useMemo(() => createMarbleMaterial(), []);\\n' +\n  '  \\x1B[90m194 |\\x1B[0m ...\\n' +\n  '\\x1B[31m\\x1B[1m>\\x1B[0m \\x1B[90m195 |\\x1B[0m ...aterial = useMemo(() => createBalloonMaterial(), ...\\n' +\n  '  \\x1B[90m    |\\x1B[0m                            \\x1B[31m\\x1B[1m^\\x1B[0m\\n' +\n  '  \\x1B[90m196 |\\x1B[0m ...\\n' +\n  '  \\x1B[90m197 |\\x1B[0m ...\\n' +\n  \"  \\x1B[90m198 |\\x1B[0m ...ame={cx(\\x1B[32m'wrapper'\\x1B[0m, className)}>\"\n\nThe above error occurred in the <BustViewer> component.\n\nReact will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.\n"}
+{"timestamp":"02:20:28.015","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"02:20:28.015","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"02:20:28.192","source":"Browser","level":"ERROR","message":"%o\n\n%s\n\n%s\n {} The above error occurred in the <BustViewer> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary."}
+{"timestamp":"02:20:50.994","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:20:50.995","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:20:50.995","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:20:50.995","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:20:50.995","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:20:50.995","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:39:32.193","source":"Browser","level":"ERROR","message":"The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s useEffect [[object Object], [object Object], 0] [[object Object], [object Object], 0, 0]"}
+{"timestamp":"02:39:32.193","source":"Browser","level":"ERROR","message":"The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s useEffect [[object Object], [object Object], 0.015] [[object Object], [object Object], 0.015, 0]"}
+{"timestamp":"02:39:38.319","source":"Server","level":"ERROR","message":"[browser] \"The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.\\n\\nPrevious: [[object Object], [object Object], 0]\\nIncoming: [[object Object], [object Object], 0, 0]\" \"\\n\\u001b[31m    at Bust (components/BustViewer/index.tsx:282:3)\\u001b[39m\\n  \\u001b[90m280 |\\u001b[0m   \\u001b[36mconst\\u001b[0m clonedScene = useMemo(() => scene.clone(\\u001b[36mtrue\\u001b[0m...\\n  \\u001b[90m281 |\\u001b[0m\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m282 |\\u001b[0m   \\u001b[33mReact\\u001b[0m.useEffect(() => {\\n  \\u001b[90m    |\\u001b[0m   \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m283 |\\u001b[0m     clonedScene.traverse((child) => {\\n  \\u001b[90m284 |\\u001b[0m       \\u001b[36mif\\u001b[0m (child \\u001b[36minstanceof\\u001b[0m \\u001b[33mTHREE\\u001b[0m.\\u001b[33mMesh\\u001b[0m) {\\n  \\u001b[90m285 |\\u001b[0m         child.geometry = child.geometry.clone();\" \"\\u001b[2m(components/BustViewer/index.tsx:282:3)\\u001b[22m\""}
+{"timestamp":"02:39:38.319","source":"Browser","level":"ERROR","message":"The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.\n\nPrevious: [[object Object], [object Object], 0]\nIncoming: [[object Object], [object Object], 0, 0] \"\\n\\u001b[31m    at Bust (components/BustViewer/index.tsx:282:3)\\u001b[39m\\n  \\u001b[90m280 |\\u001b[0m   \\u001b[36mconst\\u001b[0m clonedScene = useMemo(() => scene.clone(\\u001b[36mtrue\\u001b[0m...\\n  \\u001b[90m281 |\\u001b[0m\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m282 |\\u001b[0m   \\u001b[33mReact\\u001b[0m.useEffect(() => {\\n  \\u001b[90m    |\\u001b[0m   \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m283 |\\u001b[0m     clonedScene.traverse((child) => {\\n  \\u001b[90m284 |\\u001b[0m       \\u001b[36mif\\u001b[0m (child \\u001b[36minstanceof\\u001b[0m \\u001b[33mTHREE\\u001b[0m.\\u001b[33mMesh\\u001b[0m) {\\n  \\u001b[90m285 |\\u001b[0m         child.geometry = child.geometry.clone();\" \"\\u001b[2m(components/BustViewer/index.tsx:282:3)\\u001b[22m\""}
+{"timestamp":"02:39:38.320","source":"Server","level":"ERROR","message":"[browser] \"The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.\\n\\nPrevious: [[object Object], [object Object], 0.015]\\nIncoming: [[object Object], [object Object], 0.015, 0]\" \"\\n\\u001b[31m    at Bust (components/BustViewer/index.tsx:282:3)\\u001b[39m\\n  \\u001b[90m280 |\\u001b[0m   \\u001b[36mconst\\u001b[0m clonedScene = useMemo(() => scene.clone(\\u001b[36mtrue\\u001b[0m...\\n  \\u001b[90m281 |\\u001b[0m\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m282 |\\u001b[0m   \\u001b[33mReact\\u001b[0m.useEffect(() => {\\n  \\u001b[90m    |\\u001b[0m   \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m283 |\\u001b[0m     clonedScene.traverse((child) => {\\n  \\u001b[90m284 |\\u001b[0m       \\u001b[36mif\\u001b[0m (child \\u001b[36minstanceof\\u001b[0m \\u001b[33mTHREE\\u001b[0m.\\u001b[33mMesh\\u001b[0m) {\\n  \\u001b[90m285 |\\u001b[0m         child.geometry = child.geometry.clone();\" \"\\u001b[2m(components/BustViewer/index.tsx:282:3)\\u001b[22m\""}
+{"timestamp":"02:39:38.320","source":"Browser","level":"ERROR","message":"The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.\n\nPrevious: [[object Object], [object Object], 0.015]\nIncoming: [[object Object], [object Object], 0.015, 0] \"\\n\\u001b[31m    at Bust (components/BustViewer/index.tsx:282:3)\\u001b[39m\\n  \\u001b[90m280 |\\u001b[0m   \\u001b[36mconst\\u001b[0m clonedScene = useMemo(() => scene.clone(\\u001b[36mtrue\\u001b[0m...\\n  \\u001b[90m281 |\\u001b[0m\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m282 |\\u001b[0m   \\u001b[33mReact\\u001b[0m.useEffect(() => {\\n  \\u001b[90m    |\\u001b[0m   \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m283 |\\u001b[0m     clonedScene.traverse((child) => {\\n  \\u001b[90m284 |\\u001b[0m       \\u001b[36mif\\u001b[0m (child \\u001b[36minstanceof\\u001b[0m \\u001b[33mTHREE\\u001b[0m.\\u001b[33mMesh\\u001b[0m) {\\n  \\u001b[90m285 |\\u001b[0m         child.geometry = child.geometry.clone();\" \"\\u001b[2m(components/BustViewer/index.tsx:282:3)\\u001b[22m\""}
+{"timestamp":"02:39:50.225","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:39:50.225","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:39:50.225","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:39:50.225","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:39:50.225","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:39:50.225","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:41:19.841","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:41:19.841","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:41:19.842","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:41:19.843","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:41:19.843","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:41:19.843","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:41:40.237","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:41:40.237","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:41:40.237","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:41:40.237","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:41:40.237","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:41:40.237","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:58:16.339","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"02:58:16.375","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"02:59:52.110","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:59:52.110","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:59:52.110","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"02:59:52.110","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"02:59:52.111","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"02:59:52.111","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:01:35.230","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:01:35.230","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:01:35.231","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:01:35.231","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:01:35.231","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:01:35.231","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:02:52.076","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:02:52.076","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:02:52.078","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:02:52.078","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:02:52.079","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:02:52.079","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:05:36.139","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:05:36.139","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:05:36.139","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:05:36.139","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:05:36.140","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:05:36.141","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:13:14.161","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:13:14.161","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:13:14.162","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:13:14.162","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:13:14.162","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:13:14.162","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:13:55.523","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:13:55.523","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:13:55.523","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:13:55.523","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:13:55.523","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:13:55.523","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:14:26.535","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:14:26.535","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:14:26.536","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:14:26.536","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:14:26.536","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:14:26.536","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:15:37.436","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:15:37.436","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:15:37.436","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:15:37.436","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:15:37.436","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:15:37.436","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:17:58.036","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:17:58.036","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:17:58.038","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:17:58.038","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:17:58.038","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:17:58.038","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:29:21.457","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:29:21.460","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:29:21.460","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"03:29:21.933","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"03:29:21.934","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"03:30:54.666","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"03:30:54.666","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"03:30:54.666","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"04:11:11.279","source":"Browser","level":"ERROR","message":"uncaughtError: TypeError: Cannot read properties of undefined (reading 'lastIndexOf')"}
+{"timestamp":"04:11:11.279","source":"Browser","level":"ERROR","message":"%o\n\n%s\n\n%s\n {} The above error occurred in the <CanvasImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary."}
+{"timestamp":"04:11:12.276","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"04:11:19.711","source":"Server","level":"ERROR","message":"[browser] \"\\u001b[31mUncaught TypeError: Cannot read properties of undefined (reading 'lastIndexOf')\\u001b[39m\\n\\u001b[31m    at new Promise (<anonymous>)\\n    at Hand (components/BustViewer/index.tsx:206:28)\\u001b[39m\\n  \\u001b[90m204 |\\u001b[0m   initialRotation = [\\u001b[35m0\\u001b[0m, \\u001b[35m0\\u001b[0m, \\u001b[35m0\\u001b[0m],\\n  \\u001b[90m205 |\\u001b[0m }: \\u001b[33mHandProps\\u001b[0m): \\u001b[33mReact\\u001b[0m.\\u001b[33mReactElement\\u001b[0m => {\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m206 |\\u001b[0m   \\u001b[36mconst\\u001b[0m { scene } = useGLTF(modelPath);\\n  \\u001b[90m    |\\u001b[0m                            \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m207 |\\u001b[0m   \\u001b[36mconst\\u001b[0m groupRef = useRef<\\u001b[33mTHREE\\u001b[0m.\\u001b[33mGroup\\u001b[0m>(\\u001b[36mnull\\u001b[0m);\\n  \\u001b[90m208 |\\u001b[0m   \\u001b[36mconst\\u001b[0m mouseTarget = useRef({ x: \\u001b[35m0\\u001b[0m, y: \\u001b[35m0\\u001b[0m });\\n  \\u001b[90m209 |\\u001b[0m   \\u001b[36mconst\\u001b[0m dragOffset = useRef({ x: \\u001b[35m0\\u001b[0m, y: \\u001b[35m0\\u001b[0m });\""}
+{"timestamp":"04:11:19.711","source":"Browser","level":"ERROR","message":"\u001b[31mUncaught TypeError: Cannot read properties of undefined (reading 'lastIndexOf')\u001b[39m\n\u001b[31m    at new Promise (<anonymous>)\n    at Hand (components/BustViewer/index.tsx:206:28)\u001b[39m\n  \u001b[90m204 |\u001b[0m   initialRotation = [\u001b[35m0\u001b[0m, \u001b[35m0\u001b[0m, \u001b[35m0\u001b[0m],\n  \u001b[90m205 |\u001b[0m }: \u001b[33mHandProps\u001b[0m): \u001b[33mReact\u001b[0m.\u001b[33mReactElement\u001b[0m => {\n\u001b[31m\u001b[1m>\u001b[0m \u001b[90m206 |\u001b[0m   \u001b[36mconst\u001b[0m { scene } = useGLTF(modelPath);\n  \u001b[90m    |\u001b[0m                            \u001b[31m\u001b[1m^\u001b[0m\n  \u001b[90m207 |\u001b[0m   \u001b[36mconst\u001b[0m groupRef = useRef<\u001b[33mTHREE\u001b[0m.\u001b[33mGroup\u001b[0m>(\u001b[36mnull\u001b[0m);\n  \u001b[90m208 |\u001b[0m   \u001b[36mconst\u001b[0m mouseTarget = useRef({ x: \u001b[35m0\u001b[0m, y: \u001b[35m0\u001b[0m });\n  \u001b[90m209 |\u001b[0m   \u001b[36mconst\u001b[0m dragOffset = useRef({ x: \u001b[35m0\u001b[0m, y: \u001b[35m0\u001b[0m });"}
+{"timestamp":"04:11:19.763","source":"Server","level":"ERROR","message":"[browser] \"\\\"\\\\x1B[31mTypeError: Cannot read properties of undefined (reading 'lastIndexOf')\\\\x1B[39m\\\\n\\\" +\\n  '\\\\x1B[31m    at new Promise (<anonymous>)\\\\n' +\\n  '    at Hand (components/BustViewer/index.tsx:206:28)\\\\x1B[39m\\\\n' +\\n  '  \\\\x1B[90m204 |\\\\x1B[0m   initialRotation = [\\\\x1B[35m0\\\\x1B[0m, \\\\x1B[35m0\\\\x1B[0m, \\\\x1B[35m0\\\\x1B[0m],\\\\n' +\\n  '  \\\\x1B[90m205 |\\\\x1B[0m }: \\\\x1B[33mHandProps\\\\x1B[0m): \\\\x1B[33mReact\\\\x1B[0m.\\\\x1B[33mReactElement\\\\x1B[0m => {\\\\n' +\\n  '\\\\x1B[31m\\\\x1B[1m>\\\\x1B[0m \\\\x1B[90m206 |\\\\x1B[0m   \\\\x1B[36mconst\\\\x1B[0m { scene } = useGLTF(modelPath);\\\\n' +\\n  '  \\\\x1B[90m    |\\\\x1B[0m                            \\\\x1B[31m\\\\x1B[1m^\\\\x1B[0m\\\\n' +\\n  '  \\\\x1B[90m207 |\\\\x1B[0m   \\\\x1B[36mconst\\\\x1B[0m groupRef = useRef<\\\\x1B[33mTHREE\\\\x1B[0m.\\\\x1B[33mGroup\\\\x1B[0m>(\\\\x1B[36mnull\\\\x1B[0m);\\\\n' +\\n  '  \\\\x1B[90m208 |\\\\x1B[0m   \\\\x1B[36mconst\\\\x1B[0m mouseTarget = useRef({ x: \\\\x1B[35m0\\\\x1B[0m, y: \\\\x1B[35m0\\\\x1B[0m });\\\\n' +\\n  '  \\\\x1B[90m209 |\\\\x1B[0m   \\\\x1B[36mconst\\\\x1B[0m dragOffset = useRef({ x: \\\\x1B[35m0\\\\x1B[0m, y: \\\\x1B[35m0\\\\x1B[0m });'\\n\\nThe above error occurred in the <CanvasImpl> component.\\n\\nReact will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.\\n\""}
+{"timestamp":"04:11:19.763","source":"Browser","level":"ERROR","message":"\"\\x1B[31mTypeError: Cannot read properties of undefined (reading 'lastIndexOf')\\x1B[39m\\n\" +\n  '\\x1B[31m    at new Promise (<anonymous>)\\n' +\n  '    at Hand (components/BustViewer/index.tsx:206:28)\\x1B[39m\\n' +\n  '  \\x1B[90m204 |\\x1B[0m   initialRotation = [\\x1B[35m0\\x1B[0m, \\x1B[35m0\\x1B[0m, \\x1B[35m0\\x1B[0m],\\n' +\n  '  \\x1B[90m205 |\\x1B[0m }: \\x1B[33mHandProps\\x1B[0m): \\x1B[33mReact\\x1B[0m.\\x1B[33mReactElement\\x1B[0m => {\\n' +\n  '\\x1B[31m\\x1B[1m>\\x1B[0m \\x1B[90m206 |\\x1B[0m   \\x1B[36mconst\\x1B[0m { scene } = useGLTF(modelPath);\\n' +\n  '  \\x1B[90m    |\\x1B[0m                            \\x1B[31m\\x1B[1m^\\x1B[0m\\n' +\n  '  \\x1B[90m207 |\\x1B[0m   \\x1B[36mconst\\x1B[0m groupRef = useRef<\\x1B[33mTHREE\\x1B[0m.\\x1B[33mGroup\\x1B[0m>(\\x1B[36mnull\\x1B[0m);\\n' +\n  '  \\x1B[90m208 |\\x1B[0m   \\x1B[36mconst\\x1B[0m mouseTarget = useRef({ x: \\x1B[35m0\\x1B[0m, y: \\x1B[35m0\\x1B[0m });\\n' +\n  '  \\x1B[90m209 |\\x1B[0m   \\x1B[36mconst\\x1B[0m dragOffset = useRef({ x: \\x1B[35m0\\x1B[0m, y: \\x1B[35m0\\x1B[0m });'\n\nThe above error occurred in the <CanvasImpl> component.\n\nReact will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.\n"}
+{"timestamp":"04:11:22.432","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"04:11:22.432","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"04:11:22.432","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"04:11:22.432","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"04:11:22.432","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"04:11:22.432","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"04:58:50.378","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"04:59:53.363","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"04:59:53.363","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"04:59:53.363","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"04:59:53.363","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"04:59:53.363","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"04:59:53.366","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"04:59:53.367","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"04:59:53.421","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"04:59:53.421","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"04:59:53.421","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"04:59:53.421","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"04:59:53.421","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"04:59:53.421","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"04:59:53.421","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"04:59:53.421","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:02:04.276","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"05:02:04.277","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"05:02:04.277","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"05:02:04.277","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"05:02:24.316","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:02:24.393","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:02:24.394","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:03:44.148","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:03:44.149","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:03:44.149","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:03:44.149","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:03:44.149","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:03:44.149","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:39:05.277","source":"Browser","level":"ERROR","message":"%o\n\n%s\n\n%s\n {} The above error occurred in the <BustViewer> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary."}
+{"timestamp":"05:39:07.277","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"05:39:07.277","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"05:40:00.736","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:40:00.736","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:40:00.759","source":"Server","level":"ERROR","message":"[browser] \"'\\\\x1B[31mReferenceError: GloveCarousel is not defined\\\\x1B[39m\\\\n' +\\n  '\\\\x1B[31m    at BustViewer (components/BustViewer/index.tsx:487:41)\\\\x1B[39m\\\\n' +\\n  '  \\\\x1B[90m485 |\\\\x1B[0m ...\\\\n' +\\n  \\\"  \\\\x1B[90m486 |\\\\x1B[0m ...Name={cx(\\\\x1B[32m'canvasContainer'\\\\x1B[0m)}>\\\\n\\\" +\\n  '\\\\x1B[31m\\\\x1B[1m>\\\\x1B[0m \\\\x1B[90m487 |\\\\x1B[0m ...camera={{ position: [\\\\x1B[35m0\\\\x1B[0m, \\\\x1B[35m0\\\\x1B[0m, \\\\x1B[35m2\\\\x1B[0m], fov: \\\\x1B[35m45\\\\x1B[0m }}>\\\\n' +\\n  '  \\\\x1B[90m    |\\\\x1B[0m                            \\\\x1B[31m\\\\x1B[1m^\\\\x1B[0m\\\\n' +\\n  '  \\\\x1B[90m488 |\\\\x1B[0m ...\\\\x1B[33mrBackground\\\\x1B[0m />\\\\n' +\\n  '  \\\\x1B[90m489 |\\\\x1B[0m ...ntLight intensity={\\\\x1B[35m0.5\\\\x1B[0m} />\\\\n' +\\n  '  \\\\x1B[90m490 |\\\\x1B[0m ...tionalLight position={[\\\\x1B[35m5\\\\x1B[0m, \\\\x1B[35m5\\\\x1B[0m, \\\\x1B[35m5\\\\x1B[0m]} intensity={\\\\x1B[35m1\\\\x1B[0m} />'\\n\\nThe above error occurred in the <BustViewer> component.\\n\\nReact will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.\\n\""}
+{"timestamp":"05:40:00.759","source":"Browser","level":"ERROR","message":"'\\x1B[31mReferenceError: GloveCarousel is not defined\\x1B[39m\\n' +\n  '\\x1B[31m    at BustViewer (components/BustViewer/index.tsx:487:41)\\x1B[39m\\n' +\n  '  \\x1B[90m485 |\\x1B[0m ...\\n' +\n  \"  \\x1B[90m486 |\\x1B[0m ...Name={cx(\\x1B[32m'canvasContainer'\\x1B[0m)}>\\n\" +\n  '\\x1B[31m\\x1B[1m>\\x1B[0m \\x1B[90m487 |\\x1B[0m ...camera={{ position: [\\x1B[35m0\\x1B[0m, \\x1B[35m0\\x1B[0m, \\x1B[35m2\\x1B[0m], fov: \\x1B[35m45\\x1B[0m }}>\\n' +\n  '  \\x1B[90m    |\\x1B[0m                            \\x1B[31m\\x1B[1m^\\x1B[0m\\n' +\n  '  \\x1B[90m488 |\\x1B[0m ...\\x1B[33mrBackground\\x1B[0m />\\n' +\n  '  \\x1B[90m489 |\\x1B[0m ...ntLight intensity={\\x1B[35m0.5\\x1B[0m} />\\n' +\n  '  \\x1B[90m490 |\\x1B[0m ...tionalLight position={[\\x1B[35m5\\x1B[0m, \\x1B[35m5\\x1B[0m, \\x1B[35m5\\x1B[0m]} intensity={\\x1B[35m1\\x1B[0m} />'\n\nThe above error occurred in the <BustViewer> component.\n\nReact will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.\n"}
+{"timestamp":"05:40:00.760","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:40:00.760","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:40:00.760","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:40:00.760","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:46:42.965","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"05:49:28.748","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:49:28.748","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:49:28.752","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:49:28.752","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:49:28.752","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:49:28.752","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:50:59.358","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:50:59.358","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:50:59.359","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:50:59.359","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:50:59.359","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:50:59.359","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:51:41.697","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:51:41.697","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:51:41.697","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:51:41.697","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:51:41.697","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:51:41.697","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:54:50.377","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:54:50.377","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"05:54:50.379","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:54:50.380","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"05:54:50.380","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"05:54:50.380","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:00:21.276","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"06:00:21.276","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"06:01:54.333","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:01:54.333","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:01:54.337","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:01:54.337","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:01:54.337","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:01:54.337","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:13:58.704","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:13:58.704","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:13:58.705","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:13:58.705","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:13:58.705","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:13:58.705","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:15:10.014","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:15:10.014","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:15:10.015","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:15:10.015","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:15:10.015","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:15:10.015","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:20:48.958","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:20:48.958","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:20:48.958","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:20:48.958","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:20:48.959","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:20:48.959","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:20:53.193","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:20:53.744","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:20:54.636","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:20:54.992","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:20:55.352","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:20:55.820","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:20:56.211","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:20:56.611","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:20:56.928","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:20:57.328","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:22:17.514","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:22:17.514","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:22:17.514","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:22:17.514","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:22:17.519","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:22:17.519","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:22:21.103","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:22:24.986","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:22:30.903","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:22:31.677","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:22:37.395","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:22:39.486","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:22:40.019","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:22:40.461","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:22:40.845","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:22:41.712","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:22:42.220","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:22:42.661","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:22:43.053","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:22:43.452","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:22:43.828","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:22:44.194","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:22:44.612","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:22:45.062","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:25:13.638","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:25:14.962","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:25:17.061","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:25:19.512","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:25:19.512","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:25:19.514","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:25:19.514","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:25:19.514","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:25:19.514","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:25:21.521","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:25:22.778","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:25:25.387","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:25:27.421","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:25:38.120","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:25:45.395","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:25:46.078","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:25:47.053","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:25:47.887","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:25:48.827","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:25:49.961","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:25:51.103","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:25:52.295","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:25:53.920","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:26:42.307","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:26:43.449","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:26:48.949","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:27:14.254","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:27:14.254","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:27:14.254","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:27:14.254","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:27:14.254","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:27:14.254","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:27:18.016","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:27:19.158","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:27:20.299","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:27:21.441","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:27:22.525","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:28:33.659","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:28:33.659","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:28:33.659","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:28:33.659","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:28:33.660","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:28:33.660","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:28:38.891","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:28:39.733","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:28:40.549","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:28:41.708","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:28:43.008","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:28:44.191","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:29:47.509","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:29:51.007","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:29:52.258","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:29:53.366","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:29:54.224","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:34:42.476","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:34:42.477","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:34:42.478","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:34:42.478","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:34:42.478","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:34:42.478","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:34:54.000","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:34:55.641","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:34:56.833","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:34:57.650","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:34:58.517","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:34:59.933","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:35:00.458","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:35:01.367","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:35:02.350","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:35:03.116","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:35:03.950","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:35:04.858","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"06:35:05.483","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:35:06.342","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:35:07.217","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:35:07.991","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:35:08.883","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:43:54.066","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:43:54.066","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:43:54.066","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:43:54.066","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:43:54.066","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:43:54.066","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:44:03.346","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:44:05.096","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:49:05.130","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:49:05.130","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:49:05.133","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:49:05.133","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:49:05.134","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:49:05.134","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:51:53.863","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:51:53.863","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:51:53.863","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:51:53.863","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:51:53.863","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:51:53.863","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:51:59.956","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:52:02.656","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:52:03.464","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:53:39.278","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"06:53:39.278","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"06:53:45.416","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:53:45.416","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:53:45.418","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:53:45.418","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:53:45.418","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:53:45.418","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:53:58.364","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"06:53:59.367","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"06:54:00.172","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"06:54:01.081","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"06:54:01.964","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"06:55:37.276","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"06:55:37.277","source":"Browser","level":"LOG","message":"THREE.WebGLRenderer: Context Lost."}
+{"timestamp":"06:55:53.924","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:55:53.924","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:55:53.925","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:55:53.925","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:55:53.925","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:55:53.925","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:55:57.137","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:55:57.137","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"06:55:57.137","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:55:57.137","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"06:55:57.137","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"06:55:57.137","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:00:39.192","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"07:00:40.082","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"07:00:40.933","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"07:00:41.881","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"07:00:42.840","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"07:00:44.341","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"07:00:44.823","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"07:00:50.375","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"07:00:51.314","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"07:00:53.022","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"07:00:57.647","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"07:08:13.322","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:08:13.322","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:08:13.324","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:08:13.324","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:08:13.324","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:08:13.324","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:10:06.648","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:10:06.648","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:10:06.648","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:10:06.648","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:10:06.648","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:10:06.648","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:11:09.155","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:11:09.155","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:11:09.158","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:11:09.158","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:11:09.158","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:11:09.158","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:11:16.155","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"07:11:17.202","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"07:11:18.719","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"07:11:19.828","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"07:11:20.853","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"07:11:46.592","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"07:11:47.216","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"07:11:49.074","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"07:11:50.649","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"07:13:46.704","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:13:46.704","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:13:46.704","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:13:46.704","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:13:46.705","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:13:46.705","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:16:34.671","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:16:34.671","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"07:16:34.673","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:16:34.673","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"07:16:34.673","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"07:16:34.673","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:22:58.683","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:22:58.683","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:22:58.684","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:22:58.684","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:22:58.684","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:22:58.684","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:23:04.364","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"08:23:05.197","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"08:23:05.905","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"08:23:06.851","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"08:23:09.044","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"08:27:10.653","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"08:27:11.526","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"08:27:12.902","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"08:27:13.794","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"08:27:14.527","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"08:27:15.685","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"08:27:46.044","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"08:27:46.778","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"08:27:48.651","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"08:27:49.518","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"08:27:50.551","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"08:27:53.877","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"08:28:20.253","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"08:28:27.910","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"08:28:28.801","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"08:28:29.569","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"08:28:30.485","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"08:28:31.401","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"08:29:56.483","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:29:56.483","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:29:56.485","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:29:56.485","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:29:56.485","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:29:56.485","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:30:34.223","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"08:30:34.981","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"08:30:35.881","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"08:30:36.748","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"08:30:37.648","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"08:32:07.567","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:32:07.567","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:32:07.567","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:32:07.567","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:32:07.568","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:32:07.568","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:34:25.267","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"08:34:26.223","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"08:34:27.148","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"08:34:28.056","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"08:34:28.956","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"08:35:02.326","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:35:02.326","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:35:02.326","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:35:02.326","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:35:02.326","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:35:02.326","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:35:51.091","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:35:51.091","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"08:35:51.092","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:35:51.092","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"08:35:51.092","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"08:35:51.092","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:07:00.125","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"09:07:00.125","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:07:00.125","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"09:07:00.125","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:07:00.125","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"09:07:00.125","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"09:09:38.886","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"09:09:39.716","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"09:09:40.574","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"09:09:41.450","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"09:09:42.333","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"09:09:43.241","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"09:09:44.074","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"09:09:44.850","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"09:09:45.400","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"09:09:46.516","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"09:09:47.749","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"09:09:48.950","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"09:09:49.458","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"09:09:57.525","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"09:10:00.024","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"09:14:04.749","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"09:14:05.738","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"09:14:06.988","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"09:14:07.646","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"09:14:08.563","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"09:14:09.621","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"09:14:10.596","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"09:14:11.721","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"09:15:34.771","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"09:15:34.771","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"09:15:34.772","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"09:15:34.772","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:15:34.772","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"09:15:34.772","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:15:43.789","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"09:15:50.563","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"09:15:51.864","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"09:15:55.463","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"09:15:56.588","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"09:15:57.679","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"09:18:53.455","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"09:18:54.580","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"09:18:55.688","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"09:19:33.317","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"09:19:34.443","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"09:19:35.443","source":"Browser","level":"LOG","message":"Pose: Standby"}
+{"timestamp":"09:19:36.125","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"09:19:36.884","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"09:19:56.576","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"09:19:57.909","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"09:19:58.684","source":"Browser","level":"LOG","message":"Pose: Peace"}
+{"timestamp":"09:20:33.399","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"09:20:33.399","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"09:20:33.399","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"09:20:33.400","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:20:33.400","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"09:20:33.400","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:21:01.117","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"09:21:01.117","source":"Browser","level":"WARN","message":"THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"09:21:01.118","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"09:21:01.118","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:21:01.118","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"09:21:01.118","source":"Browser","level":"WARN","message":"\u001b[33mTHREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\u001b[39m"}
+{"timestamp":"09:21:56.660","source":"Browser","level":"LOG","message":"Pose: Fist"}
+{"timestamp":"09:21:57.568","source":"Browser","level":"LOG","message":"Pose: Pointing"}
+{"timestamp":"09:21:58.485","source":"Browser","level":"LOG","message":"Pose: Spread"}
+{"timestamp":"09:21:59.585","source":"Browser","level":"LOG","message":"Pose: Thumbs Up"}
+{"timestamp":"09:22:00.518","source":"Browser","level":"LOG","message":"Pose: Peace"}

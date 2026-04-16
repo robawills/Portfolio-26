@@ -1,0 +1,39 @@
+:root {
+  // Background
+  --color-bg-primary: var(--color-neutral-200);
+  --color-bg-secondary: var(--color-neutral-100);
+  --color-bg-tertiary: var(--color-neutral-300);
+  --color-bg-brand: var(--color-brand);
+  --color-bg-primary-inverse: var(--color-neutral-900);
+  --color-bg-secondary-inverse: var(--color-neutral-800);
+  --color-bg-tertiary-inverse: var(--color-neutral-700);
+  --color-bg-interactive: var(--alpha-dark-1);
+  --color-bg-interactive-inverse: var(--color-neutral-700);
+  --color-bg-interactive-hover: var(--color-neutral-700);
+  --color-bg-interactive-inverse-hover: var(--color-neutral-100);
+
+  // Foreground
+  --color-fg-primary: var(--color-neutral-900);
+  --color-fg-secondary: var(--alpha-dark-4);
+  --color-fg-primary-inverse: var(--color-neutral-100);
+  --color-fg-secondary-inverse: var(--alpha-light-4);
+  --color-fg-onInteractive: var(--color-neutral-900);
+  --color-fg-onInteractive-inverse: var(--color-neutral-100);
+  --color-fg-onInteractive-hover: var(--color-neutral-100);
+  --color-fg-onInteractive-inverse-hover: var(--color-neutral-900);
+  --color-fg-interactive: var(--color-neutral-900);
+  --color-fg-interactive-hover: var(--alpha-dark-4);
+  --color-fg-interactive-inverse: var(--color-neutral-100);
+  --color-fg-interactive-inverse-hover: var(--alpha-light-4);
+  --color-fg-onBrand: var(--color-neutral-900);
+  --color-fg-negative: var(--color-negative-700);
+  --color-fg-positive: var(--color-positive-700);
+
+  // Border
+  --color-border-primary: var(--alpha-dark-2);
+  --color-border-primary-inverse: var(--alpha-light-1);
+  --color-border-interactive: var(--alpha-dark-2);
+  --color-border-interactive-inverse: var(--alpha-light-1);
+  --color-border-interactive-hover: var(--color-neutral-700);
+  --color-border-interactive-inverse-hover: var(--color-neutral-100);
+}

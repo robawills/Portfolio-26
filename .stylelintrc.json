@@ -1,0 +1,21 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "plugins": ["stylelint-order"],
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-alphabetical-order": null,
+    "import-notation": "string",
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "scss/operator-no-newline-after": null,
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": null
+  }
+}

@@ -1,0 +1,23 @@
+@mixin a11y-focus-box-shadow($inverse: false, $inset: false) {
+  @if $inset {
+    @if $inverse {
+      box-shadow:
+        var(--color-bg-primary-inverse) 0 0 0 2px inset,
+        var(--color-fg-primary-inverse) 0 0 0 4px inset;
+    } @else {
+      box-shadow:
+        var(--color-fg-primary-inverse) 0 0 0 2px inset,
+        var(--color-bg-primary-inverse) 0 0 0 4px inset;
+    }
+  } @else {
+    @if $inverse {
+      box-shadow:
+        var(--color-fg-primary) 0 0 0 2px,
+        var(--color-bg-primary) 0 0 0 4px;
+    } @else {
+      box-shadow:
+        var(--color-bg-primary) 0 0 0 2px,
+        var(--color-fg-primary) 0 0 0 4px;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+:root {
+  /* Brand Colors — replace these with your project's palette */
+  --color-brand: #3b82f6;
+
+  /* Neutral Colors */
+  --color-neutral-100: #fff;
+  --color-neutral-200: #f5f5f3;
+  --color-neutral-300: #e7e8e6;
+  --color-neutral-400: #bec1bc;
+  --color-neutral-500: #8e908d;
+  --color-neutral-600: #585857;
+  --color-neutral-700: #282828;
+  --color-neutral-800: #1e1e1e;
+  --color-neutral-900: #141414;
+  --color-neutral-1000: #0e0e0e;
+
+  /* Alpha Neutral Colors */
+  --alpha-dark-1: rgb(20 20 20 / var(--alpha-1));
+  --alpha-dark-2: rgb(20 20 20 / var(--alpha-3));
+  --alpha-dark-3: rgb(20 20 20 / var(--alpha-5));
+  --alpha-dark-4: rgb(20 20 20 / var(--alpha-8));
+  --alpha-light-1: rgb(255 255 255 / var(--alpha-2));
+  --alpha-light-2: rgb(255 255 255 / var(--alpha-4));
+  --alpha-light-3: rgb(255 255 255 / var(--alpha-6));
+  --alpha-light-4: rgb(255 255 255 / var(--alpha-7));
+
+  /* Global Opacity */
+  --alpha-0: 0;
+  --alpha-1: 0.05;
+  --alpha-2: 0.08;
+  --alpha-3: 0.1;
+  --alpha-4: 0.14;
+  --alpha-5: 0.2;
+  --alpha-6: 0.3;
+  --alpha-7: 0.6;
+  --alpha-8: 0.7;
+
+  /* Functional Colors */
+  --color-positive-100: #a6ffd6;
+  --color-positive-400: #67ffb6;
+  --color-positive-700: #04763d;
+  --color-positive-1000: #002f1c;
+  --color-warning-100: #fdeb80;
+  --color-warning-400: #ffea6c;
+  --color-warning-700: #a75000;
+  --color-warning-1000: #392500;
+  --color-negative-100: #ffcdcd;
+  --color-negative-400: #ff7171;
+  --color-negative-700: #c00b0b;
+  --color-negative-1000: #450404;
+
+  /* Global Spacing */
+  --space-0: 0rem;
+  --space-0-5: 0.125rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.5rem;
+  --space-10: 4rem;
+  --space-11: 5.5rem;
+  --space-12: 7.5rem;
+  --space-13: 9.25rem;
+  --space-14: 12.5rem;
+  --space-15: 17rem;
+  --space-16: 26.125rem;
+
+  /* Global Radius */
+  --radius-0: 0rem;
+  --radius-1: 0.5rem;
+  --radius-2: 0.75rem;
+  --radius-3: 1.5rem;
+  --radius-4: 62.5rem;
+  --radius-full: 9999rem;
+
+  /* Global Animation */
+  --animation-speed-slow: 0.6s;
+  --animation-speed-medium: 0.4s;
+  --animation-speed-fast: 0.2s;
+  --animation-easing-1: cubic-bezier(0.22, 1, 0.36, 1);
+  --animation-easing-2: cubic-bezier(0.11, 0, 0.5, 0);
+  --animation-easing-3: cubic-bezier(0.62, 0, 0.37, 1);
+  --animation-easing-4: cubic-bezier(0.45, 1.45, 0.8, 1);
+  --animation-easing-5: cubic-bezier(0.16, 1, 0.3, 1);
+  --animation-easing-6: cubic-bezier(0.19, 1, 0.22, 1);
+
+  /* Z-indexes */
+  --zindex-layer-0: 0;
+  --zindex-layer-1: 10;
+  --zindex-layer-2: 20;
+  --zindex-layer-3: 30;
+  --zindex-layer-4: 40;
+  --zindex-layer-5: 50;
+  --zindex-layer-6: 60;
+  --zindex-layer-7: 70;
+  --zindex-layer-8: 80;
+  --zindex-top: 9999;
+}
