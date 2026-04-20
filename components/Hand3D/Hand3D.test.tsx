@@ -1,26 +1,36 @@
 import { render, screen } from '@testing-library/react';
 
-import BustViewer from './index';
+import Hand3D from './index';
 
 jest.mock('@react-three/fiber', () => ({
   Canvas: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="canvas">{children}</div>
   ),
+  useFrame: jest.fn(),
 }));
 
 jest.mock('@react-three/drei', () => ({
   OrbitControls: () => null,
-  useGLTF: Object.assign(() => ({ scene: {} }), { preload: jest.fn() }),
+  Center: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+  ContactShadows: () => null,
+  Environment: () => null,
+  useGLTF: Object.assign(
+    () => ({
+      scene: { traverse: jest.fn(), clone: jest.fn().mockReturnThis() },
+      animations: [],
+    }),
+    { preload: jest.fn() }
+  ),
 }));
 
-describe('BustViewer', () => {
-  it('renders the canvas', () => {
-    render(<BustViewer />);
-    expect(screen.getByTestId('canvas')).toBeInTheDocument();
+describe('Hand3D', () => {
+  it('renders canvases', () => {
+    render(<Hand3D />);
+    expect(screen.getAllByTestId('canvas').length).toBeGreaterThan(0);
   });
 
   it('accepts an optional className', () => {
-    const { container } = render(<BustViewer className="custom" />);
+    const { container } = render(<Hand3D className="custom" />);
     expect(container.firstChild).toBeInTheDocument();
   });
 });

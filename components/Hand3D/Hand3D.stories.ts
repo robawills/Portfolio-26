@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 
-import BustViewer from './index';
+import Hand3D from './index';
 
 const meta = {
-  title: 'Components/BustViewer',
-  component: BustViewer,
+  title: 'Components/Hand3D',
+  component: Hand3D,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof BustViewer>;
+} satisfies Meta<typeof Hand3D>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

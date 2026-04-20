@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic';
 
-const BustViewer = dynamic(() => import('@/components/BustViewer'), {
+const Hand3D = dynamic(() => import('@/components/Hand3D'), {
   ssr: false,
 });
 
 const HomePage = (): React.ReactElement => {
-  return <BustViewer />;
+  return <Hand3D />;
 };
 
 export default HomePage;
