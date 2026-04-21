@@ -177,7 +177,7 @@ const AnimatedHand = ({
   });
 
   return (
-    <group ref={groupRef} scale={1.5}>
+    <group ref={groupRef} scale={1.95}>
       <Center>
         <primitive object={scene} />
       </Center>
@@ -187,15 +187,16 @@ const AnimatedHand = ({
 
 const createSmoothBalloonMaterial = (): THREE.MeshPhysicalMaterial => {
   const material = new THREE.MeshPhysicalMaterial({
-    color: '#d0d0d0',
-    roughness: 0.15,
-    metalness: 0.95,
-    clearcoat: 1,
-    clearcoatRoughness: 0.08,
-    reflectivity: 1,
-    envMapIntensity: 2.5,
-    sheen: 0.2,
-    sheenColor: new THREE.Color('#aaaaaa'),
+    color: '#003DFF',
+    roughness: 0.35,
+    metalness: 0.05,
+    clearcoat: 0.55,
+    clearcoatRoughness: 0.3,
+    reflectivity: 0.6,
+    envMapIntensity: 1.3,
+    sheen: 0.6,
+    sheenRoughness: 0.4,
+    sheenColor: new THREE.Color('#003DFF'),
     flatShading: false,
   });
 
@@ -203,23 +204,64 @@ const createSmoothBalloonMaterial = (): THREE.MeshPhysicalMaterial => {
     shader.vertexShader = shader.vertexShader.replace(
       '#include <common>',
       `#include <common>
-      varying vec3 vLocalNormal;`
+      varying vec3 vLocalNormal;
+      varying vec3 vLocalPos;`
     );
     shader.vertexShader = shader.vertexShader.replace(
       '#include <worldpos_vertex>',
       `#include <worldpos_vertex>
-      vLocalNormal = normal;`
+      vLocalNormal = normal;
+      vLocalPos = position;`
     );
 
     shader.fragmentShader = shader.fragmentShader.replace(
       '#include <common>',
       `#include <common>
       varying vec3 vLocalNormal;
+      varying vec3 vLocalPos;
 
       float seamLine(float angle, float width) {
         float a = atan(vLocalNormal.z, vLocalNormal.x);
         float d = abs(sin(a - angle));
         return 1.0 - smoothstep(0.0, width, d);
+      }
+
+      float hash13(vec3 p) {
+        p = fract(p * 0.3183099 + 0.1);
+        p *= 17.0;
+        return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
+      }
+
+      float valueNoise(vec3 p) {
+        vec3 i = floor(p);
+        vec3 f = fract(p);
+        f = f * f * (3.0 - 2.0 * f);
+        float n000 = hash13(i);
+        float n100 = hash13(i + vec3(1.0, 0.0, 0.0));
+        float n010 = hash13(i + vec3(0.0, 1.0, 0.0));
+        float n110 = hash13(i + vec3(1.0, 1.0, 0.0));
+        float n001 = hash13(i + vec3(0.0, 0.0, 1.0));
+        float n101 = hash13(i + vec3(1.0, 0.0, 1.0));
+        float n011 = hash13(i + vec3(0.0, 1.0, 1.0));
+        float n111 = hash13(i + vec3(1.0, 1.0, 1.0));
+        float x00 = mix(n000, n100, f.x);
+        float x10 = mix(n010, n110, f.x);
+        float x01 = mix(n001, n101, f.x);
+        float x11 = mix(n011, n111, f.x);
+        float y0 = mix(x00, x10, f.y);
+        float y1 = mix(x01, x11, f.y);
+        return mix(y0, y1, f.z);
+      }
+
+      float fbm(vec3 p) {
+        float v = 0.0;
+        float a = 0.5;
+        for (int i = 0; i < 4; i++) {
+          v += a * valueNoise(p);
+          p *= 2.1;
+          a *= 0.5;
+        }
+        return v;
       }`
     );
 
@@ -238,15 +280,32 @@ const createSmoothBalloonMaterial = (): THREE.MeshPhysicalMaterial => {
       float hSeam = 1.0 - smoothstep(0.0, 0.04, abs(vLocalNormal.y));
       seam = max(seam, hSeam);
 
+      // Procedural wrinkle / crease field
+      float wrinkleLarge = fbm(vLocalPos * 14.0);
+      float wrinkleSmall = fbm(vLocalPos * 42.0 + 13.7);
+      float wrinkle = mix(wrinkleLarge, wrinkleSmall, 0.35);
+
+      // Creases = sharp dark lines where the noise is at its midband
+      float crease = smoothstep(0.38, 0.46, wrinkle) - smoothstep(0.46, 0.54, wrinkle);
+
       vec3 seamColor = baseColor * 0.5;
+      vec3 creaseColor = baseColor * 0.75;
       vec3 finalColor = mix(baseColor, seamColor, seam * 0.6);
+      finalColor = mix(finalColor, creaseColor, crease * 0.7);
+
+      // Subtle overall surface variation
+      finalColor *= (0.9 + wrinkleLarge * 0.2);
 
       vec4 diffuseColor = vec4(finalColor, opacity);`
     );
 
     shader.fragmentShader = shader.fragmentShader.replace(
       'float roughnessFactor = roughness;',
-      `float roughnessFactor = roughness + seam * 0.5;`
+      `float wrinkleLargeR = fbm(vLocalPos * 14.0);
+      float wrinkleSmallR = fbm(vLocalPos * 42.0 + 13.7);
+      float wrinkleR = mix(wrinkleLargeR, wrinkleSmallR, 0.35);
+      float creaseR = smoothstep(0.38, 0.46, wrinkleR) - smoothstep(0.46, 0.54, wrinkleR);
+      float roughnessFactor = roughness + seam * 0.5 + creaseR * 0.2;`
     );
   };
 
@@ -269,9 +328,17 @@ const Hand3D = ({ className }: Hand3DProps): React.ReactElement => {
       <div className={cx('canvasContainer')}>
         <Canvas camera={{ position: [0, 0, 12], fov: 45 }}>
           <color attach="background" args={[BACKGROUND_COLOR]} />
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 5, 5]} intensity={1} />
-          <directionalLight position={[-5, 3, -2]} intensity={0.4} />
+          <ambientLight intensity={0.5} color="#fff4e6" />
+          <directionalLight
+            position={[5, 5, 5]}
+            intensity={1}
+            color="#fff1d6"
+          />
+          <directionalLight
+            position={[-5, 3, -2]}
+            intensity={0.4}
+            color="#d8e6f0"
+          />
           <Suspense fallback={null}>
             <AnimatedHand
               material={smoothBalloonMaterial}
