@@ -1,4 +1,5 @@
 import {defineArrayMember, defineField, defineType, type ReferenceFilterResolver} from 'sanity'
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 
 const excludeSelectedRefs: ReferenceFilterResolver = ({parent}) => {
   const refs = Array.isArray(parent)
@@ -14,7 +15,9 @@ export const projectType = defineType({
   name: 'project',
   title: 'Project',
   type: 'document',
+  orderings: [orderRankOrdering],
   fields: [
+    orderRankField({type: 'project'}),
     defineField({
       name: 'title',
       title: 'Title',
