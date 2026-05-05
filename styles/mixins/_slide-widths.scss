@@ -1,0 +1,49 @@
+@use 'sass:math';
+
+@mixin responsive-slide-width(
+  $num-elements,
+  $has-left-margin: false,
+  $has-right-margin: false
+) {
+  $min-screen-width: 375;
+  $max-screen-width: 1920;
+
+  $margin-min: 20;
+  $margin-max: 80;
+  $gap-min: 8;
+  $gap-max: 40;
+
+  $num-gaps: math.ceil($num-elements - 1);
+  $num-margins: 0;
+  @if $has-left-margin { $num-margins: $num-margins + 1; }
+  @if $has-right-margin { $num-margins: $num-margins + 1; }
+
+  $total-margins-min: $margin-min * $num-margins;
+  $total-margins-max: $margin-max * $num-margins;
+  $total-gaps-min: $gap-min * $num-gaps;
+  $total-gaps-max: $gap-max * $num-gaps;
+
+  $min-element-width: math.div(
+    $min-screen-width - $total-margins-min - $total-gaps-min,
+    $num-elements
+  );
+  $max-element-width: math.div(
+    $max-screen-width - $total-margins-max - $total-gaps-max,
+    $num-elements
+  );
+
+  $min-element-width-rem: math.div($min-element-width, 4) * 1rem;
+  $max-element-width-rem: math.div($max-element-width, 4) * 1rem;
+
+  $change: math.div(
+    $max-element-width - $min-element-width,
+    $max-screen-width - $min-screen-width
+  );
+  $a: math.div($max-element-width - $max-screen-width * $change, 4) * 1rem;
+
+  width: clamp(
+    #{$min-element-width-rem},
+    #{$a} + (100vw * #{$change}),
+    #{$max-element-width-rem}
+  );
+}

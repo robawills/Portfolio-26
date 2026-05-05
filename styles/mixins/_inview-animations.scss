@@ -1,0 +1,24 @@
+@mixin inview-animate(
+  $variant: fade-slide-up,
+  $index: 0,
+  $delay: var(--animation-inview-delay, 0s),
+  $duration: var(--animation-inview-duration, 0.8s),
+  $easing: var(--animation-inview-easing, cubic-bezier(0.16, 1, 0.3, 1))
+) {
+  @media (prefers-reduced-motion: no-preference) {
+    --animation-variant: #{$variant};
+
+    opacity: 0.01;
+
+    [data-inview='true'] & {
+      animation-name: var(--animation-variant);
+      animation-duration: #{$duration};
+      animation-timing-function: #{$easing};
+      animation-fill-mode: both;
+      animation-delay: calc(
+        #{$delay} + (#{$index} * var(--animation-inview-stagger-delay, 0.1s))
+      );
+      will-change: opacity, transform;
+    }
+  }
+}

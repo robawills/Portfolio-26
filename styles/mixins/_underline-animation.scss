@@ -1,0 +1,28 @@
+@mixin underline-animation(
+  $thickness: 1px,
+  $base-color: var(--color-neutral-400),
+  $active-color: var(--color-fg-interactive)
+) {
+  text-decoration: none;
+  background-image: linear-gradient(to right, $active-color 0 0),
+    linear-gradient(to right, $base-color 0 0);
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    0 100%,
+    0 100%;
+  background-size:
+    0% $thickness,
+    100% $thickness;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition:
+    color var(--animation-speed-fast) ease-in-out,
+    background-size 0.25s cubic-bezier(0.74, 0.12, 0.4, 0.9);
+
+  &:hover,
+  &:focus {
+    background-size:
+      100% $thickness,
+      100% $thickness;
+  }
+}

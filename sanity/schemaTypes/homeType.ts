@@ -1,0 +1,40 @@
+import {defineField, defineType} from 'sanity'
+
+export const homeType = defineType({
+  name: 'home',
+  title: 'Home',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'heroTitle',
+      title: 'Hero title',
+      type: 'string',
+      validation: (rule) => rule.required().max(120),
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 3,
+      validation: (rule) => rule.required().max(280),
+    }),
+    defineField({
+      name: 'heroImage',
+      title: 'Hero image',
+      type: 'image',
+      options: {hotspot: true},
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt text',
+          type: 'string',
+          validation: (rule) => rule.required(),
+        }),
+      ],
+    }),
+  ],
+  preview: {
+    select: {title: 'heroTitle', media: 'heroImage'},
+    prepare: ({title, media}) => ({title: title || 'Home', subtitle: 'Home page', media}),
+  },
+})

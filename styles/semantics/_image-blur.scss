@@ -1,0 +1,13 @@
+@use '../mixins' as *;
+
+.u-image-blur {
+  filter: blur(20px);
+  transform: scale(1.5);
+  opacity: 0.4;
+
+  @include breakpoint(m) {
+    filter: blur(40px);
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+}

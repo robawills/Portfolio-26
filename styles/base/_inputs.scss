@@ -1,0 +1,131 @@
+@use '../mixins' as *;
+
+.u-inputWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.u-inputLabel {
+  color: var(--color-fg-primary);
+  text-transform: uppercase;
+
+  &.isDisabled,
+  [disabled] {
+    color: var(--color-fg-secondary);
+  }
+}
+
+.u-input {
+  --space-vertical: #{clampy(var(--space-5), var(--space-8))};
+
+  background-color: transparent;
+  color: var(--color-fg-primary);
+  border: none;
+  border-radius: 0;
+  padding-top: var(--space-vertical);
+  padding-bottom: var(--space-vertical);
+  width: 100%;
+
+  font-family: var(--font-stack);
+  font-weight: 400;
+  font-size: clampy(1rem, 1.25rem);
+  line-height: 1.6;
+
+  &::placeholder {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: clampy(0.875rem, 1rem);
+    line-height: 1.2;
+
+    @include breakpoint(m) {
+      line-height: 1.3;
+    }
+  }
+
+  @include underline-animation(
+    1px,
+    var(--color-border-interactive),
+    var(--color-border-interactive-hover)
+  );
+
+  &.isDisabled,
+  [disabled] {
+    background-image: linear-gradient(
+      to right,
+      var(--color-border-primary) 0 0
+    );
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    transition: none;
+
+    &::placeholder {
+      color: var(--color-fg-secondary);
+    }
+  }
+
+  &:not(.isDisabled),
+  &:not([disabled]) {
+    &:focus {
+      outline: none;
+
+      &::placeholder {
+        color: var(--color-fg-secondary);
+      }
+    }
+
+    &:has(+ .success) {
+      padding-right: var(--space-6);
+      background-image: linear-gradient(to right, var(--color-fg-positive) 0 0);
+      background-size: 100% 1px;
+    }
+
+    &:has(+ .hasError) {
+      padding-right: var(--space-6);
+      background-image: linear-gradient(to right, var(--color-fg-negative) 0 0);
+      background-size: 100% 1px;
+    }
+  }
+
+  &--textArea {
+    --min-height: #{clampy(var(--space-12), var(--space-14))};
+
+    min-height: var(--min-height);
+    height: var(--min-height);
+    max-width: 100%;
+    min-width: 100%;
+    resize: none;
+
+    &:not(.isDisabled),
+    &:not([disabled]) {
+      &.success {
+        background-image: linear-gradient(
+          to right,
+          var(--color-fg-positive) 0 0
+        );
+        background-size: 100% 1px;
+      }
+
+      &.hasError {
+        background-image: linear-gradient(
+          to right,
+          var(--color-fg-negative) 0 0
+        );
+        background-size: 100% 1px;
+      }
+    }
+  }
+}
+
+.u-inputGroup .u-inputAssistiveText {
+  color: var(--color-fg-negative);
+  margin-top: var(--space-3);
+  animation: assistive-text-fade-in var(--animation-speed-medium) ease-out
+    forwards;
+}
+
+@keyframes assistive-text-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

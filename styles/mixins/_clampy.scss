@@ -1,0 +1,67 @@
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:string';
+@use '../tokens/scale' as *;
+
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+/// Resolve a value to a numeric rem for fluid-clamp math.
+/// Accepts:
+///   - a Sass number with a unit (e.g. 2rem, 16px) — returned as-is
+///   - the string form of `var(--space-N)` where N is a key in `$space-scale`
+@function _resolve-rem($value) {
+  @if meta.type-of($value) == 'number' {
+    @return $value;
+  }
+
+  $str: '#{$value}';
+  $prefix: 'var(--space-';
+
+  @if string.length($str) > string.length($prefix)
+      and string.index($str, $prefix) == 1
+      and string.slice($str, -1) == ')' {
+    $key: string.slice($str, string.length($prefix) + 1, -2);
+
+    @if map.has-key($space-scale, $key) {
+      @return map.get($space-scale, $key);
+    }
+
+    @error 'clampy: var(--space-#{$key}) is not in $space-scale.';
+  }
+
+  @error 'clampy: cannot resolve `#{$value}` to a numeric value. Pass a unit value (e.g. 2rem) or var(--space-N).';
+}
+
+/// Fluid clamp helper.
+///
+/// Produces `clamp($min, <intercept>rem + <slope>vw, $max)` so a value
+/// scales linearly between two viewport widths and locks at the bounds.
+///
+/// Both `$min` and `$max` accept either a numeric rem value or `var(--space-N)`.
+/// When a CSS variable is passed, it's preserved in the output and looked up in
+/// `$space-scale` for the math.
+///
+/// @param {Number | String} $min - Minimum size (e.g. 2.75rem or var(--space-10)).
+/// @param {Number | String} $max - Maximum size (e.g. 10rem or var(--space-14)).
+/// @param {Number} $min-vw [23.4375rem] - Viewport at which $min applies (default 375px).
+/// @param {Number} $max-vw [120rem] - Viewport at which $max applies (default 1920px).
+///
+/// @example
+///   font-size: clampy(2.75rem, 10rem);
+///   gap: clampy(var(--space-10), var(--space-14));
+@function clampy($min, $max, $min-vw: 23.4375rem, $max-vw: 120rem) {
+  $min-num: _resolve-rem($min);
+  $max-num: _resolve-rem($max);
+
+  $slope: math.div(
+    strip-unit($max-num) - strip-unit($min-num),
+    strip-unit($max-vw) - strip-unit($min-vw)
+  );
+  $intercept: strip-unit($min-num) - $slope * strip-unit($min-vw);
+  $slope-vw: $slope * 100;
+
+  @return string.unquote('clamp(#{$min}, #{$intercept}rem + #{$slope-vw}vw, #{$max})');
+}

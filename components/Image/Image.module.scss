@@ -1,0 +1,56 @@
+@use '../../styles/mixins' as *;
+
+.imageWrap {
+  display: contents;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+  opacity: 1;
+  transition:
+    opacity var(--animation-speed-medium) ease-in-out var(--animation-speed-medium),
+    transform var(--animation-speed-medium) var(--animation-easing-4);
+
+  &.default {
+    background-color: var(--color-bg-secondary);
+  }
+
+  &.dark {
+    background-color: var(--color-bg-secondary-inverse);
+  }
+
+  &.none {
+    background-color: transparent;
+  }
+
+  &.isLoaded {
+    opacity: 0;
+  }
+}
+
+.image {
+  will-change: transform;
+  opacity: 0;
+  transition:
+    opacity var(--animation-speed-medium) ease-in-out,
+    transform var(--animation-speed-medium) var(--animation-easing-4);
+
+  object-position: var(--focal-point-mobile, 50% 50%);
+
+  @include breakpoint(s) {
+    object-position: var(--focal-point-tablet, var(--focal-point-mobile, 50% 50%));
+  }
+
+  @include breakpoint(m) {
+    object-position: var(
+      --focal-point-desktop,
+      var(--focal-point-tablet, var(--focal-point-mobile, 50% 50%))
+    );
+  }
+
+  &.isLoaded {
+    opacity: 1;
+  }
+}

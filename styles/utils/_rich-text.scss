@@ -1,0 +1,139 @@
+@use '../mixins' as *;
+
+.u-richText {
+  %rich-text-base {
+    font-family: var(--font-stack);
+  }
+
+  @extend %rich-text-base;
+
+  font-size: clampy(1rem, 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  text-wrap: pretty;
+
+  @include breakpoint(m) {
+    letter-spacing: -0.01em;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2 {
+    @extend %rich-text-base;
+
+    letter-spacing: -0.02em;
+    font-size: clampy(2rem, 3rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+
+    @include breakpoint(m) {
+      margin-bottom: var(--space-8);
+    }
+  }
+
+  h3,
+  h4 {
+    @extend %rich-text-base;
+
+    letter-spacing: -0.02em;
+    font-size: clampy(1.5rem, 2rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: var(--space-5);
+
+    @include breakpoint(m) {
+      margin-bottom: var(--space-6);
+    }
+  }
+
+  h5,
+  h6 {
+    @extend %rich-text-base;
+
+    letter-spacing: -0.01em;
+    font-size: clampy(1.125rem, 1.25rem);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--space-4);
+  }
+
+  p {
+    margin-bottom: var(--space-5);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    margin-bottom: var(--space-5);
+    padding-left: var(--space-5);
+
+    li {
+      margin-bottom: var(--space-3);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ul li {
+    list-style: disc;
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+
+  a {
+    @include underline-animation(
+      1px,
+      var(--color-border-interactive),
+      var(--color-fg-interactive)
+    );
+  }
+
+  blockquote {
+    @extend %rich-text-base;
+
+    font-size: clampy(1.25rem, 2rem);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    border-left: 3px solid var(--color-fg-primary);
+    padding-left: var(--space-5);
+    margin: var(--space-7) 0;
+    color: var(--color-fg-primary);
+  }
+
+  code {
+    font-family: var(--font-stack-mono, monospace);
+    font-size: 0.9em;
+    background: var(--color-bg-secondary);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-1);
+  }
+
+  pre {
+    background: var(--color-bg-secondary);
+    padding: var(--space-5);
+    border-radius: var(--radius-1);
+    overflow-x: auto;
+    margin-bottom: var(--space-5);
+
+    code {
+      background: transparent;
+      padding: 0;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-border-primary);
+    margin: var(--space-7) 0;
+  }
+}

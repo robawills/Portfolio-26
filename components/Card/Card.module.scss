@@ -1,0 +1,47 @@
+@use '../../styles/mixins' as *;
+
+.image {
+  transform: scale(1.01);
+}
+
+.title {
+  transition: color var(--animation-speed-slow) var(--animation-easing-1);
+}
+
+.detailsWrap {
+  display: grid;
+  gap: clampy(var(--space-4), var(--space-6));
+}
+
+.card {
+  .link {
+    display: flex;
+    flex-direction: column;
+    gap: clampy(var(--space-6), var(--space-9));
+
+    &:hover {
+      .title {
+        color: var(--color-fg-secondary);
+      }
+
+      .image {
+        transform: scale(var(--animation-zoom-image));
+      }
+    }
+  }
+
+  .imageWrap {
+    aspect-ratio: 49 / 67;
+    border-radius: var(--radius-1);
+    overflow: hidden;
+  }
+
+  .categories {
+    list-style: none;
+    padding: 0;
+  }
+
+  .category {
+    color: var(--color-fg-secondary);
+  }
+}

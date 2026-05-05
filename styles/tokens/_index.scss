@@ -1,0 +1,148 @@
+@use '../mixins' as *;
+@use 'scale' as *;
+
+:root {
+  /* Neutrals */
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f5f5f3;
+  --color-neutral-300: #e7e8e6;
+  --color-neutral-400: #bec1bc;
+  --color-neutral-500: #8e908d;
+  --color-neutral-600: #585857;
+  --color-neutral-700: #282828;
+  --color-neutral-800: #1e1e1e;
+  --color-neutral-900: #141414;
+  --color-neutral-1000: #0e0e0e;
+
+  /* Brand / accents */
+  --color-yellow-700: #fed572;
+  --color-pink-400: #fde9eb;
+  --color-pink-1000: #b14651;
+
+  /* Status */
+  --color-positive-100: #a6ffd6;
+  --color-positive-400: #67ffb6;
+  --color-positive-700: #04763d;
+  --color-positive-1000: #002f1c;
+  --color-warning-100: #fdeb80;
+  --color-warning-400: #ffea6c;
+  --color-warning-700: #a75000;
+  --color-warning-1000: #392500;
+  --color-negative-100: #ffcdcd;
+  --color-negative-400: #ff7171;
+  --color-negative-700: #c00b0b;
+  --color-negative-1000: #450404;
+
+  /* Alpha overlays */
+  --alpha-0: 0;
+  --alpha-1: 0.05;
+  --alpha-2: 0.08;
+  --alpha-3: 0.1;
+  --alpha-4: 0.14;
+  --alpha-5: 0.2;
+  --alpha-6: 0.3;
+  --alpha-7: 0.6;
+  --alpha-8: 0.7;
+  --alpha-dark-1: rgba(20, 20, 20, 0.05);
+  --alpha-dark-2: rgba(20, 20, 20, 0.1);
+  --alpha-dark-3: rgba(20, 20, 20, 0.2);
+  --alpha-dark-4: rgba(20, 20, 20, 0.7);
+  --alpha-light-1: rgba(255, 255, 255, 0.08);
+  --alpha-light-2: rgba(255, 255, 255, 0.14);
+  --alpha-light-3: rgba(255, 255, 255, 0.3);
+  --alpha-light-4: rgba(255, 255, 255, 0.6);
+
+  /* Spacing scale (sourced from $space-scale in tokens/_scale.scss) */
+  @each $key, $value in $space-scale {
+    --space-#{$key}: #{$value};
+  }
+
+  /* Radii */
+  --radius-0: 0rem;
+  --radius-1: 0.5rem;
+  --radius-2: 0.75rem;
+  --radius-3: 1.5rem;
+  --radius-4: 62.5rem;
+  --radius-full: 9999rem;
+
+  /* Motion */
+  --animation-speed-fast: 0.2s;
+  --animation-speed-medium: 0.4s;
+  --animation-speed-slow: 0.6s;
+  --animation-zoom-image: 1.03;
+  --animation-easing-1: cubic-bezier(0.22, 1, 0.36, 1);
+  --animation-easing-2: cubic-bezier(0.11, 0, 0.5, 0);
+  --animation-easing-3: cubic-bezier(0.62, 0, 0.37, 1);
+  --animation-easing-4: cubic-bezier(0.45, 1.45, 0.8, 1);
+  --animation-easing-5: cubic-bezier(0.16, 1, 0.3, 1);
+  --animation-easing-6: cubic-bezier(0.19, 1, 0.22, 1);
+  --animation-inview-duration: 0.6s;
+  --animation-inview-delay: 0s;
+  --animation-inview-stagger-delay: 0.05s;
+  --animation-inview-distance: 2rem;
+  --animation-inview-easing: var(--animation-easing-3);
+
+  /* Z-index scale */
+  --zindex-layer-0: 0;
+  --zindex-layer-1: 10;
+  --zindex-layer-2: 20;
+  --zindex-layer-3: 30;
+  --zindex-layer-4: 40;
+  --zindex-layer-5: 50;
+  --zindex-layer-6: 60;
+  --zindex-layer-7: 70;
+  --zindex-layer-8: 80;
+  --zindex-top: 9999;
+
+  /* Sizing */
+  --size-icon: 100%;
+
+  /* Type */
+  --font-stack: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-stack-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Layout */
+  --layout-content-min: 375px;
+  --layout-content-max: 1920px;
+  --layout-viewport-height: 100dvh;
+  --layout-container-gutter: #{clampy(1rem, 7.5rem)};
+  --layout-grid-gutter: #{clampy(1.5rem, 2.5rem)};
+
+  /* Semantic backgrounds — dark theme defaults */
+  --color-bg-primary: var(--color-neutral-900);
+  --color-bg-secondary: var(--color-neutral-800);
+  --color-bg-tertiary: var(--color-neutral-700);
+  --color-bg-brand: var(--color-yellow-700);
+  --color-bg-primary-inverse: var(--color-neutral-200);
+  --color-bg-secondary-inverse: var(--color-neutral-100);
+  --color-bg-tertiary-inverse: var(--color-neutral-300);
+  --color-bg-interactive: var(--color-neutral-700);
+  --color-bg-interactive-inverse: var(--color-neutral-100);
+  --color-bg-interactive-hover: var(--color-neutral-100);
+  --color-bg-interactive-inverse-hover: var(--color-neutral-700);
+
+  /* Semantic foregrounds — dark theme defaults */
+  --color-fg-primary: var(--color-neutral-100);
+  --color-fg-secondary: var(--alpha-light-4);
+  --color-fg-primary-inverse: var(--color-neutral-900);
+  --color-fg-secondary-inverse: var(--alpha-dark-4);
+  --color-fg-onInteractive: var(--color-neutral-100);
+  --color-fg-onInteractive-inverse: var(--color-neutral-900);
+  --color-fg-onInteractive-hover: var(--color-neutral-900);
+  --color-fg-onInteractive-inverse-hover: var(--color-neutral-100);
+  --color-fg-interactive: var(--color-neutral-100);
+  --color-fg-interactive-hover: var(--alpha-light-4);
+  --color-fg-interactive-inverse: var(--color-neutral-900);
+  --color-fg-interactive-inverse-hover: var(--alpha-dark-4);
+  --color-fg-onBrand: var(--color-neutral-900);
+  --color-fg-negative: var(--color-negative-400);
+  --color-fg-positive: var(--color-positive-400);
+
+  /* Semantic borders — dark theme defaults */
+  --color-border-primary: var(--alpha-light-1);
+  --color-border-primary-inverse: var(--alpha-dark-2);
+  --color-border-interactive: var(--alpha-light-1);
+  --color-border-interactive-inverse: var(--alpha-dark-2);
+  --color-border-interactive-hover: var(--color-neutral-100);
+  --color-border-interactive-inverse-hover: var(--color-neutral-700);
+}

@@ -1,0 +1,21 @@
+@use '../../styles/mixins' as *;
+
+.projectGridWrap {
+  margin: clampy(var(--space-10), var(--space-14)) auto;
+  max-width: var(--layout-content-max);
+  padding: 0 var(--layout-container-gutter);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clampy(var(--space-10), var(--space-13));
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clampy(var(--space-6), var(--space-10));
+}
+
+.gridItem {
+  @include inview-animate(fade-slide-up, var(--animation-index, 4));
+}

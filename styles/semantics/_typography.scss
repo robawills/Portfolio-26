@@ -1,0 +1,233 @@
+@use '../mixins' as *;
+
+%display-base {
+  font-family: var(--font-stack);
+  font-style: normal;
+  line-height: 1;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+%heading-base {
+  font-family: var(--font-stack);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+%body-base {
+  font-family: var(--font-stack);
+  font-weight: 400;
+
+  &.u-strong,
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  &.u-medium {
+    font-weight: 500;
+  }
+}
+
+%signpost-base {
+  font-family: var(--font-stack);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+%label-base {
+  font-family: var(--font-stack);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+
+  &.u-strong,
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  &.u-medium {
+    font-weight: 500;
+  }
+}
+
+%component-specific-base {
+  font-family: var(--font-stack);
+}
+
+/* Display */
+
+.u-d1 {
+  @extend %display-base;
+  font-size: clampy(3.5rem, 13.75rem);
+  letter-spacing: -0.04em;
+}
+
+.u-d2 {
+  @extend %display-base;
+  font-size: clampy(2.75rem, 10rem);
+  letter-spacing: -0.03em;
+}
+
+/* Heading */
+
+h1,
+.u-h1 {
+  @extend %heading-base;
+  letter-spacing: -0.04em;
+  font-size: clampy(2rem, 5.25rem);
+  line-height: 1.2;
+
+  @include breakpoint(m) {
+    line-height: 1.1;
+  }
+}
+
+h2,
+.u-h2 {
+  @extend %heading-base;
+  letter-spacing: -0.03em;
+  font-size: clampy(1.75rem, 4rem);
+  line-height: 1.2;
+
+  @include breakpoint(m) {
+    line-height: 1.1;
+  }
+}
+
+h3,
+.u-h3 {
+  @extend %heading-base;
+  letter-spacing: -0.02em;
+  font-size: clampy(1.5rem, 3rem);
+  line-height: 1.2;
+}
+
+h4,
+.u-h4 {
+  @extend %heading-base;
+  letter-spacing: -0.02em;
+  font-size: clampy(1.25rem, 2.5rem);
+  line-height: 1.2;
+}
+
+h5,
+.u-h5 {
+  @extend %heading-base;
+  letter-spacing: -0.02em;
+  font-size: clampy(1.125rem, 1.75rem);
+  line-height: 1.2;
+}
+
+h6,
+.u-h6 {
+  @extend %heading-base;
+  letter-spacing: -0.01em;
+  font-size: clampy(0.875rem, 1.5rem);
+  line-height: 1.3;
+
+  @include breakpoint(m) {
+    line-height: 1.2;
+  }
+}
+
+/* Body */
+
+.u-bodyLarge {
+  @extend %body-base;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+p,
+.u-body {
+  @extend %body-base;
+  font-size: clampy(1rem, 1.25rem);
+  line-height: 1.6;
+}
+
+.u-bodySmall {
+  @extend %body-base;
+  font-size: clampy(0.875rem, 1rem);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* Signpost */
+
+.u-signpostLarge {
+  @extend %signpost-base;
+  font-size: clampy(1rem, 1.25rem);
+  line-height: 1.2;
+
+  @include breakpoint(m) {
+    line-height: 1.3;
+  }
+}
+
+.u-signpost {
+  @extend %signpost-base;
+  font-size: clampy(0.875rem, 1rem);
+  line-height: 1.2;
+
+  @include breakpoint(m) {
+    line-height: 1.3;
+  }
+}
+
+.u-signpostSmall {
+  @extend %signpost-base;
+  font-size: clampy(0.75rem, 0.875rem);
+  line-height: 1.2;
+
+  @include breakpoint(m) {
+    line-height: 1.3;
+  }
+}
+
+/* Label */
+
+.u-label {
+  @extend %label-base;
+  font-size: 1rem;
+  line-height: 1;
+
+  @include breakpoint(m) {
+    line-height: 1.3;
+  }
+}
+
+.u-labelSmall {
+  @extend %label-base;
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+/* Component specific */
+
+.u-button {
+  @extend %component-specific-base;
+  font-weight: 500;
+  font-size: clampy(0.875rem, 1rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.u-button--textLink {
+  @extend %component-specific-base;
+  font-weight: 600;
+  font-size: clampy(1rem, 1.5rem);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.u-chip {
+  @extend %component-specific-base;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}

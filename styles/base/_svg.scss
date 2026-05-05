@@ -1,0 +1,13 @@
+svg {
+  height: var(--size-icon);
+  width: var(--size-icon);
+
+  &:not([fill]) {
+    fill: currentcolor;
+  }
+
+  &[role='img'] {
+    height: auto;
+    width: auto;
+  }
+}

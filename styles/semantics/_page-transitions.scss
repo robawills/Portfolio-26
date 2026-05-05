@@ -1,0 +1,26 @@
+main {
+  --animation-name: fade-in-animation;
+  --animation-duration: 500ms;
+  --animation-timing-function: var(--animation-easing-3);
+
+  animation: var(--animation-name) var(--animation-duration)
+    var(--animation-timing-function) forwards;
+
+  &:not(.page-transition) {
+    --animation-name: fade-in-animation;
+  }
+
+  &.page-transition {
+    --animation-name: fade-out-animation;
+  }
+}
+
+@keyframes fade-in-animation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-out-animation {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}

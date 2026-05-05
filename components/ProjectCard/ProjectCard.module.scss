@@ -1,0 +1,253 @@
+@use '../../styles/mixins' as *;
+
+.image {
+  transform: scale(1.01);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  background-color: var(--color-bg-tertiary);
+
+  &:hover {
+    .image {
+      transform: scale(var(--animation-zoom-image));
+    }
+  }
+
+  .imageLink {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+
+    &:focus-visible {
+      @include a11y-focus-box-shadow($inset: true);
+
+      outline: none;
+    }
+  }
+
+  .imageWrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  /* --- Trigger pill --- */
+
+  .trigger {
+    position: absolute;
+    bottom: var(--space-6);
+    left: 50%;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-3) var(--space-3) var(--space-5);
+    color: var(--color-fg-primary);
+    background-color: var(--color-bg-secondary);
+    border: 0;
+    border-radius: var(--radius-4);
+    cursor: pointer;
+    transform: translateX(-50%);
+    transition:
+      background-color var(--animation-speed-fast) var(--animation-easing-1),
+      opacity var(--animation-speed-medium) var(--animation-easing-1);
+
+    &:hover {
+      background-color: var(--color-bg-tertiary);
+    }
+
+    &:focus-visible {
+      @include a11y-focus-box-shadow;
+
+      outline: none;
+    }
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .triggerIndicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--color-bg-tertiary);
+    border-radius: 50%;
+    color: var(--color-fg-primary);
+    line-height: 1;
+  }
+
+  .closeIcon,
+  .triggerIcon {
+    position: relative;
+    display: block;
+    width: 0.875rem;
+    height: 0.875rem;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: currentColor;
+      transform-origin: center;
+    }
+
+    &::before {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  /* Rotate the × shape 45° → it now reads as a + */
+  .triggerIcon {
+    transform: rotate(45deg);
+  }
+
+  /* --- Modal panel --- */
+
+  .panel {
+    position: absolute;
+    bottom: var(--space-6);
+    left: 50%;
+    z-index: 2;
+    width: clamp(20rem, 60%, 40rem);
+    padding: var(--space-8);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-3);
+    transform: translateX(-50%) scale(0);
+    transform-origin: bottom center;
+    opacity: 0;
+    transition:
+      transform var(--animation-speed-medium) var(--animation-easing-1),
+      opacity var(--animation-speed-medium) var(--animation-easing-1);
+
+    &[data-state='open'] {
+      transform: translateX(-50%) scale(1);
+      opacity: 1;
+    }
+
+    &[aria-hidden='true'] {
+      pointer-events: none;
+    }
+  }
+
+  .closeButton {
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-5);
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-bg-tertiary);
+    border: 0;
+    border-radius: 50%;
+    color: var(--color-fg-primary);
+    cursor: pointer;
+    line-height: 1;
+    transition:
+      background-color var(--animation-speed-fast) var(--animation-easing-1),
+      color var(--animation-speed-fast) var(--animation-easing-1);
+
+    &:hover {
+      background-color: var(--color-bg-interactive-hover);
+      color: var(--color-fg-onInteractive-hover);
+    }
+
+    &:focus-visible {
+      @include a11y-focus-box-shadow;
+
+      outline: none;
+    }
+  }
+
+
+  .panelTitle {
+    margin-bottom: var(--space-4);
+    padding-right: var(--space-9);
+    color: var(--color-fg-primary);
+    opacity: 0;
+    transform: translateY(1rem);
+    transition:
+      opacity var(--animation-speed-medium) var(--animation-easing-1) 0.15s,
+      transform var(--animation-speed-medium) var(--animation-easing-1) 0.15s;
+  }
+
+  .panelDescription {
+    margin-bottom: var(--space-8);
+    max-width: 36ch;
+    color: var(--color-fg-primary);
+    opacity: 0;
+    transform: translateY(1rem);
+    transition:
+      opacity var(--animation-speed-medium) var(--animation-easing-1) 0.21s,
+      transform var(--animation-speed-medium) var(--animation-easing-1) 0.21s;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    opacity: 0;
+    transform: translateY(1rem);
+    transition:
+      opacity var(--animation-speed-medium) var(--animation-easing-1) 0.27s,
+      transform var(--animation-speed-medium) var(--animation-easing-1) 0.27s;
+  }
+
+  .panel[data-state='open'] {
+    .panelTitle,
+    .panelDescription,
+    .meta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .metaHeading {
+    margin-bottom: var(--space-3);
+    color: var(--color-fg-secondary);
+  }
+
+  .metaList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    list-style: none;
+    padding: 0;
+  }
+
+  .metaItem {
+    color: var(--color-fg-primary);
+  }
+
+  .metaLink {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-fg-secondary);
+    }
+  }
+}
