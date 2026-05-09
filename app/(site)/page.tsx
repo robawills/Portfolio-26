@@ -1,4 +1,4 @@
-import { ExpertiseDetailHero } from "@/components/ExpertiseDetailHero";
+import { Hand3D } from "@/components/Hand3D";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -85,19 +85,7 @@ export default async function HomePage() {
 
   return (
     <main>
-      {home?.heroTitle && home.description && heroSrc ? (
-        <ExpertiseDetailHero
-          signpost="Portfolio"
-          title={home.heroTitle}
-          intro={home.description}
-          image={{ src: heroSrc, alt: home.heroImage?.alt ?? "" }}
-        />
-      ) : (
-        <>
-          <h1>{home?.heroTitle ?? "Add a hero title in the Studio"}</h1>
-          <p>{home?.description ?? "Add a description in the Studio"}</p>
-        </>
-      )}
+      <Hand3D />
 
       {projectCards.length > 0 ? (
         <ProjectGrid projects={projectCards} />

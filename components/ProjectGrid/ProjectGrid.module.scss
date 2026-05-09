@@ -1,21 +1,24 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 .projectGridWrap {
-  margin: clampy(var(--space-10), var(--space-14)) auto;
+  margin: 0 auto clampy(var(--space-10), var(--space-14));
   max-width: var(--layout-content-max);
   padding: 0 var(--layout-container-gutter);
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: clampy(var(--space-10), var(--space-13));
+  gap: var(--layout-grid-gutter);
 }
 
 .projectGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clampy(var(--space-6), var(--space-10));
+  gap: 20rem;
 }
 
 .gridItem {
+  position: sticky;
+  top: var(--layout-header-height);
+
   @include inview-animate(fade-slide-up, var(--animation-index, 4));
 }

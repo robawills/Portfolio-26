@@ -106,8 +106,9 @@
   --layout-content-min: 375px;
   --layout-content-max: 1920px;
   --layout-viewport-height: 100dvh;
+  --layout-header-height: 4.5rem;
   --layout-container-gutter: #{clampy(var(--space-4), var(--space-8))};
-  --layout-grid-gutter: #{clampy(var(--space-6), var(--space-9))};
+  --layout-grid-gutter: #{clampy(var(--space-4), var(--space-8))};
 
   /* Semantic backgrounds — dark theme defaults */
   --color-bg-primary: var(--color-neutral-900);

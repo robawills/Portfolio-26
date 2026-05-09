@@ -1,0 +1,48 @@
+@use "../../styles/mixins" as *;
+
+.wrapper {
+  // position: sticky;
+  // top: 0;
+  z-index: var(--zindex-layer-0);
+  width: 100%;
+  height: var(--layout-viewport-height);
+}
+
+.canvasContainer {
+  position: relative;
+  width: 100%;
+  height: var(--layout-viewport-height);
+}
+
+.poseControls {
+  display: none;
+}
+
+.poseButton {
+  padding: 8px 16px;
+  font: inherit;
+  color: var(--color-fg-interactive-inverse);
+  background: var(--color-bg-interactive-inverse);
+  border: 1px solid var(--color-border-interactive-inverse);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+
+  &:hover {
+    color: var(--color-fg-interactive-inverse-hover);
+    background: var(--color-bg-interactive-inverse-hover);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    @include a11y-focus-box-shadow($inverse: true);
+  }
+}
+
+.poseButtonActive {
+  color: var(--color-fg-onInteractive-inverse-hover);
+  background: var(--color-bg-interactive-inverse-hover);
+}

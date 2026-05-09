@@ -1,0 +1,10 @@
+@use '../../styles/mixins' as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--layout-grid-gutter);
+  width: 100%;
+  padding-right: var(--layout-container-gutter);
+  padding-left: var(--layout-container-gutter);
+}

@@ -1,4 +1,6 @@
+import { Header } from "@/components/Header";
 import { CursorProvider } from "@/context/Cursor";
+import { HandPoseProvider } from "@/context/HandPose";
 import { InViewAnimationProvider } from "@/context/InViewAnimation";
 import "../globals.scss";
 
@@ -9,7 +11,12 @@ export default function SiteLayout({
 }>) {
   return (
     <InViewAnimationProvider>
-      <CursorProvider>{children}</CursorProvider>
+      <CursorProvider>
+        <HandPoseProvider>
+          <Header />
+          {children}
+        </HandPoseProvider>
+      </CursorProvider>
     </InViewAnimationProvider>
   );
 }
