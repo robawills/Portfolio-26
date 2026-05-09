@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import Link from "next/link";
 import classNames from "classnames/bind";
 
+import { Button, ButtonType } from "@/components/Button";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Icon, IconName } from "@/components/Icon";
 import { Image } from "@/components/Image";
@@ -19,12 +20,15 @@ export interface ProjectCardLink {
   href?: string;
 }
 
+export interface ProjectCardImage {
+  src: string;
+  alt: string;
+  focalPoint?: ResponsiveFocalPoint;
+}
+
 export interface ProjectCardProps {
-  image: {
-    src: string;
-    alt: string;
-    focalPoint?: ResponsiveFocalPoint;
-  };
+  image: ProjectCardImage;
+  mobileImage?: ProjectCardImage;
   href: string;
   title: string;
   description: string;
@@ -34,6 +38,7 @@ export interface ProjectCardProps {
 
 export const ProjectCard = ({
   image,
+  mobileImage,
   href,
   title,
   description,
@@ -66,9 +71,21 @@ export const ProjectCard = ({
   };
 
   const scheduleClose = () => {
+    if (!open) return;
+    if (
+      typeof window !== "undefined" &&
+      !window.matchMedia(`(min-width: ${breakpoints.s}px)`).matches
+    ) {
+      return;
+    }
     cancelClose();
     closeTimerRef.current = setTimeout(() => setOpen(false), 300);
   };
+
+  // Clear any pending timer when the panel becomes closed (manual close, etc.).
+  useEffect(() => {
+    if (!open) cancelClose();
+  }, [open]);
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen} modal={false}>
@@ -80,12 +97,22 @@ export const ProjectCard = ({
             aria-label={`View ${title}`}
           >
             <div className={cx("imageWrap")}>
+              {mobileImage && (
+                <Image
+                  className={cx("image", "imageMobile")}
+                  src={mobileImage.src}
+                  alt={mobileImage.alt}
+                  fill
+                  sizes={`(max-width: ${breakpoints.s}px) 100vw, 1px`}
+                  focalPoint={mobileImage.focalPoint}
+                />
+              )}
               <Image
-                className={cx("image")}
+                className={cx("image", { imageDesktop: !!mobileImage })}
                 src={image.src}
                 alt={image.alt}
                 fill
-                sizes={`(max-width: ${breakpoints.m}px) 90vw, (max-width: ${breakpoints.oversize}px) 80vw, 1540px`}
+                sizes={`(max-width: ${breakpoints.s}px) 1px, (max-width: ${breakpoints.m}px) 90vw, (max-width: ${breakpoints.oversize}px) 80vw, 1540px`}
                 focalPoint={image.focalPoint}
               />
             </div>
@@ -109,6 +136,8 @@ export const ProjectCard = ({
             <Dialog.Content
               forceMount
               asChild
+              onOpenAutoFocus={(e) => e.preventDefault()}
+              onCloseAutoFocus={(e) => e.preventDefault()}
               onPointerDownOutside={(e) => e.preventDefault()}
               onInteractOutside={(e) => e.preventDefault()}
             >
@@ -131,7 +160,9 @@ export const ProjectCard = ({
                   <h2 className={cx("panelTitle", "u-h5")}>{title}</h2>
                 </Dialog.Title>
                 <Dialog.Description asChild>
-                  <p className={cx("panelDescription")}>{description}</p>
+                  <p className={cx("panelDescription", "u-bodySmall")}>
+                    {description}
+                  </p>
                 </Dialog.Description>
                 {(safeTags.length > 0 || safeLinks.length > 0) && (
                   <div className={cx("meta")}>
@@ -176,6 +207,15 @@ export const ProjectCard = ({
                     )}
                   </div>
                 )}
+                <div className={cx("viewProject")}>
+                  <Button
+                    href={href}
+                    type={ButtonType.PRIMARY}
+                    label="View project"
+                    fullWidth
+                    small
+                  />
+                </div>
               </div>
             </Dialog.Content>
           </Dialog.Portal>

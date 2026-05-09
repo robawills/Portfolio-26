@@ -1,0 +1,182 @@
+@use "../../styles/mixins" as *;
+
+.button {
+  --icon-and-label-size: clamp(1.25rem, 1.129rem + 0.518vw, 1.75rem);
+  --icon-padding: calc(
+    clamp(var(--space-6), 1.379rem + 0.518vw, var(--space-8)) - var(--space-2)
+  );
+
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--space-2), 0.439rem + 0.259vw, var(--space-3));
+  padding: 0.8125rem clamp(var(--space-6), 1.379rem + 0.518vw, var(--space-8))
+    clamp(0.813rem, 0.843rem + -0.129vw, 0.688rem);
+  max-width: 100%;
+  border-radius: var(--radius-full);
+  transition:
+    color var(--animation-speed-fast),
+    border-color var(--animation-speed-fast),
+    background-color var(--animation-speed-fast) ease-in-out;
+  cursor: pointer;
+
+  &.large {
+    padding-top: clamp(0.813rem, 0.737rem + 0.324vw, 1.125rem);
+    padding-bottom: clamp(0.813rem, 0.737rem + 0.324vw, 1.125rem);
+  }
+
+  &.small {
+    --icon-and-label-size: clampy(0.75rem, 1rem);
+    --icon-padding: calc(
+      clampy(var(--space-3), var(--space-4)) - var(--space-1)
+    );
+
+    padding: var(--space-4) clampy(var(--space-4), var(--space-5));
+
+    .label {
+      font-size: clampy(0.75rem, 0.875rem);
+    }
+  }
+
+  &.isDisabled {
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    @include a11y-focus-box-shadow;
+  }
+}
+
+.label {
+  min-height: var(--icon-and-label-size);
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  text-wrap: balance;
+  color: inherit;
+}
+
+.leadingIcon,
+.trailingIcon {
+  --size-icon: var(--icon-and-label-size);
+}
+
+.hasTrailingIcon {
+  padding-right: var(--icon-padding);
+}
+
+.hasLeadingIcon {
+  padding-left: var(--icon-padding);
+}
+
+.primary,
+.secondary,
+.tertiary,
+.outline {
+  &.isDisabled {
+    opacity: 0.2;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+}
+
+.primary {
+  background-color: var(--color-bg-interactive);
+  color: var(--color-fg-onInteractive);
+  border: 0.5px solid var(--color-border-interactive);
+  width: 100%;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: var(--color-bg-interactive-hover);
+    color: var(--color-fg-onInteractive-strong-hover);
+    border-color: var(--color-border-interactive-hover);
+  }
+
+  @include breakpoint(s) {
+    width: auto;
+  }
+}
+
+.secondary {
+  background-color: var(--color-bg-interactive-inverse);
+  color: var(--color-fg-onInteractive-inverse);
+  border: 0.5px solid var(--color-border-interactive-inverse);
+  width: 100%;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: var(--color-bg-interactive-inverse-hover);
+    color: var(--color-fg-onInteractive-inverse-hover);
+    border-color: var(--color-border-interactive-inverse-hover);
+  }
+
+  @include breakpoint(s) {
+    width: auto;
+  }
+}
+
+.tertiary {
+  background-color: var(--color-bg-brand);
+  color: var(--color-fg-onBrand);
+  border: 0.5px solid var(--color-border-interactive-inverse);
+  width: 100%;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: var(--color-bg-interactive-inverse-hover);
+    color: var(--color-fg-onInteractive-inverse-hover);
+    border-color: var(--color-border-interactive-inverse-hover);
+  }
+
+  @include breakpoint(s) {
+    width: auto;
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-fg-onInteractive);
+  border: 0.0625rem solid var(--color-border-interactive);
+  width: 100%;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-fg-onInteractive-inverse-hover);
+    border-color: var(--color-border-interactive-hover);
+  }
+
+  @include breakpoint(s) {
+    width: auto;
+  }
+}
+
+.text {
+  --u-thickness: 1px;
+  --u-base-color: var(--color-neutral-400);
+  --u-active-color: var(--color-fg-interactive);
+
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-fg-interactive);
+  border-radius: unset;
+
+  @include underline-animation(
+    var(--u-thickness),
+    var(--u-base-color),
+    var(--u-active-color)
+  );
+
+  &:hover,
+  &:focus {
+    color: var(--color-fg-interactive-hover);
+  }
+}

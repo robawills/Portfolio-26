@@ -7,10 +7,15 @@
 .card {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 75dvh;
   border-radius: var(--radius-3);
   overflow: hidden;
   background-color: var(--color-bg-tertiary);
+
+  @include breakpoint(s) {
+    height: unset;
+    aspect-ratio: 16 / 9;
+  }
 
   &:hover {
     .image {
@@ -37,15 +42,33 @@
     overflow: hidden;
   }
 
+  .imageMobile {
+    @include breakpoint(s) {
+      display: none;
+    }
+  }
+
+  .imageDesktop {
+    display: none;
+
+    @include breakpoint(s) {
+      display: block;
+    }
+  }
+
   /* --- Trigger pill --- */
 
   .trigger {
+    --spacing: var(--space-4);
+
     position: absolute;
-    bottom: var(--space-6);
-    left: 50%;
+    bottom: var(--spacing);
+    left: var(--spacing);
+    right: var(--spacing);
     z-index: 1;
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-6);
     padding: var(--space-3) var(--space-3) var(--space-3) var(--space-6);
     color: var(--color-fg-primary);
@@ -53,10 +76,17 @@
     border: 0;
     border-radius: var(--radius-4);
     cursor: pointer;
-    transform: translateX(-50%);
     transition:
       background-color var(--animation-speed-medium) var(--animation-easing-1),
       opacity var(--animation-speed-medium) var(--animation-easing-1);
+
+    @include breakpoint(s) {
+      --spacing: var(--space-6);
+
+      right: unset;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
     &:hover {
       background-color: var(--color-bg-tertiary);
@@ -118,12 +148,16 @@
   /* --- Modal panel --- */
 
   .panel {
+    --spacing: var(--space-4);
+
     position: absolute;
-    bottom: var(--space-6);
+    bottom: var(--spacing);
     left: 50%;
     z-index: 2;
-    width: clamp(20rem, 60%, 40rem);
-    padding: var(--space-8);
+    width: 100%;
+    max-width: 70rem;
+    width: calc(100% - var(--spacing) - var(--spacing));
+    padding: clampy(var(--space-6), var(--space-8));
     background-color: var(--color-bg-secondary);
     border-radius: var(--radius-3);
     transform: translateX(-50%) scale(0);
@@ -141,14 +175,19 @@
     &[aria-hidden="true"] {
       pointer-events: none;
     }
+
+    @include breakpoint(s) {
+      --spacing: var(--space-6);
+    }
   }
 
   .closeButton {
     --size: 2.25rem;
+    --spacing: var(--space-3);
 
     position: absolute;
-    top: var(--space-5);
-    right: var(--space-5);
+    top: var(--spacing);
+    right: var(--spacing);
     z-index: 1;
     display: inline-flex;
     align-items: center;
@@ -181,11 +220,15 @@
 
       outline: none;
     }
+
+    @include breakpoint(s) {
+      --spacing: var(--space-5);
+    }
   }
 
   .panelTitle {
-    margin-bottom: var(--space-4);
-    padding-right: var(--space-9);
+    margin-bottom: clampy(var(--space-3), var(--space-4));
+    padding-right: clampy(var(--space-7), var(--space-9));
     color: var(--color-fg-primary);
     opacity: 0;
     transform: translateY(1rem);
@@ -195,8 +238,8 @@
   }
 
   .panelDescription {
-    margin-bottom: var(--space-8);
-    max-width: 36ch;
+    margin-bottom: clampy(var(--space-4), var(--space-8));
+    max-width: 80ch;
     color: var(--color-fg-primary);
     opacity: 0;
     transform: translateY(1rem);
@@ -208,7 +251,7 @@
   .meta {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
+    gap: clampy(var(--space-5), var(--space-6));
     opacity: 0;
     transform: translateY(1rem);
     transition:
@@ -225,6 +268,14 @@
     }
   }
 
+  .metaSection {
+    display: none;
+
+    @include breakpoint(s) {
+      display: block;
+    }
+  }
+
   .metaHeading {
     margin-bottom: var(--space-3);
     color: var(--color-fg-secondary);
@@ -233,12 +284,21 @@
   .metaList {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2) var(--space-4);
+    gap: clampy(var(--space-1), var(--space-2))
+      clampy(var(--space-3), var(--space-4));
     list-style: none;
     padding: 0;
   }
 
   .metaItem {
     color: var(--color-fg-primary);
+  }
+
+  .viewProject {
+    margin-top: clampy(var(--space-6), var(--space-8));
+
+    @include breakpoint(s) {
+      display: none;
+    }
   }
 }
