@@ -143,7 +143,7 @@ export const ProjectCard = ({
             >
               <div
                 className={cx("panel")}
-                aria-hidden={!open}
+                inert={!open}
                 onMouseEnter={cancelClose}
                 onMouseLeave={scheduleClose}
               >

@@ -172,7 +172,7 @@
       opacity: 1;
     }
 
-    &[aria-hidden="true"] {
+    &[inert] {
       pointer-events: none;
     }
 

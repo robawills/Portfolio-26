@@ -115,6 +115,7 @@ export const Header = () => {
       <Grid as="div" className={cx('desktop')}>
         <Link
           href={links[0].href}
+          prefetch={false}
           className={cx('link', 'work')}
           onMouseEnter={handlePoseEnter('horns')}
           onMouseLeave={handlePoseLeave}
@@ -123,6 +124,7 @@ export const Header = () => {
         </Link>
         <Link
           href={links[1].href}
+          prefetch={false}
           className={cx('link', 'about')}
           onMouseEnter={handlePoseEnter('peace')}
           onMouseLeave={handlePoseLeave}
@@ -137,6 +139,7 @@ export const Header = () => {
         </div>
         <Link
           href={links[2].href}
+          prefetch={false}
           className={cx('link', 'contact')}
           onMouseEnter={handlePoseEnter('phone')}
           onMouseLeave={handlePoseLeave}
@@ -173,6 +176,7 @@ export const Header = () => {
                   <li key={link.href}>
                     <Link
                       href={link.href}
+                      prefetch={false}
                       className={cx('drawerLink')}
                       onClick={() => setOpen(false)}
                     >
