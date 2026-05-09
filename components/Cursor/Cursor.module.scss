@@ -1,0 +1,62 @@
+.cursor {
+  --size: clamp(5rem, 4rem + 4vw, 7.5rem);
+  --initial-scale: 0.05;
+
+  color: var(--color-fg-primary);
+  position: fixed;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+
+  @media (pointer: coarse) {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: var(--color-bg-brand);
+    border-radius: 50%;
+    height: var(--size);
+    width: var(--size);
+    top: 0;
+    left: 0;
+    transition:
+      scale var(--animation-speed-medium) var(--animation-easing-4),
+      opacity var(--animation-speed-medium) var(--animation-easing-4);
+    opacity: 0;
+    transform-origin: top left;
+    scale: var(--initial-scale);
+  }
+
+  .contentWrapper {
+    position: absolute;
+    height: var(--size);
+    width: var(--size);
+    top: 0;
+    left: 0;
+    transition:
+      scale var(--animation-speed-medium) var(--animation-easing-4),
+      opacity var(--animation-speed-medium) var(--animation-easing-4);
+    opacity: 0;
+    transform-origin: top left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: var(--initial-scale);
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  &.is-entered {
+    &::before,
+    .contentWrapper {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+}

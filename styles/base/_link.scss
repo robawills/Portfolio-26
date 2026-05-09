@@ -1,4 +1,4 @@
-@use '../mixins' as *;
+@use "../mixins" as *;
 
 button {
   all: initial;
@@ -25,11 +25,12 @@ button {
 .u-textLink {
   --u-thickness: 1px;
   --u-base-color: var(--color-neutral-400);
-  --u-active-color: var(--color-fg-interactive);
+  --u-active-color: var(--color-fg-onInteractive-hover);
 
-  color: var(--color-fg-interactive);
+  color: var(--color-fg-onInteractive);
   text-decoration: none;
-  background-image: linear-gradient(to right, var(--u-active-color) 0 0),
+  background-image:
+    linear-gradient(to right, var(--u-active-color) 0 0),
     linear-gradient(to right, var(--u-base-color) 0 0);
   background-repeat: no-repeat, no-repeat;
   background-position:
@@ -46,7 +47,7 @@ button {
 
   &:hover,
   &:focus {
-    color: var(--color-fg-interactive-hover);
+    color: var(--color-fg-onInteractive-hover);
     background-size:
       100% var(--u-thickness),
       100% var(--u-thickness);

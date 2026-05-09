@@ -1,4 +1,4 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 .image {
   transform: scale(1.01);
@@ -46,8 +46,8 @@
     z-index: 1;
     display: inline-flex;
     align-items: center;
-    gap: var(--space-3);
-    padding: var(--space-3) var(--space-3) var(--space-3) var(--space-5);
+    gap: var(--space-6);
+    padding: var(--space-3) var(--space-3) var(--space-3) var(--space-6);
     color: var(--color-fg-primary);
     background-color: var(--color-bg-secondary);
     border: 0;
@@ -55,11 +55,20 @@
     cursor: pointer;
     transform: translateX(-50%);
     transition:
-      background-color var(--animation-speed-fast) var(--animation-easing-1),
+      background-color var(--animation-speed-medium) var(--animation-easing-1),
       opacity var(--animation-speed-medium) var(--animation-easing-1);
 
     &:hover {
       background-color: var(--color-bg-tertiary);
+
+      .triggerIndicator {
+        background-color: var(--color-bg-primary-inverse);
+        color: var(--color-fg-primary-inverse);
+      }
+
+      .triggerIcon {
+        transform: rotate(90deg);
+      }
     }
 
     &:focus-visible {
@@ -75,49 +84,35 @@
   }
 
   .triggerIndicator {
+    --size: 2.25rem;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: var(--size);
+    height: var(--size);
     background-color: var(--color-bg-tertiary);
     border-radius: 50%;
     color: var(--color-fg-primary);
-    line-height: 1;
+    transition: background-color var(--animation-speed-fast)
+      var(--animation-easing-1);
   }
 
   .closeIcon,
   .triggerIcon {
-    position: relative;
-    display: block;
-    width: 0.875rem;
-    height: 0.875rem;
+    font-size: 1.2rem;
     pointer-events: none;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 1.5px;
-      background-color: currentColor;
-      transform-origin: center;
-    }
-
-    &::before {
-      transform: translateY(-50%) rotate(45deg);
-    }
-
-    &::after {
-      transform: translateY(-50%) rotate(-45deg);
-    }
   }
 
-  /* Rotate the × shape 45° → it now reads as a + */
   .triggerIcon {
+    transition: transform var(--animation-speed-medium)
+      var(--animation-easing-1);
+  }
+
+  .closeIcon {
     transform: rotate(45deg);
+    transition: transform var(--animation-speed-medium)
+      var(--animation-easing-1);
   }
 
   /* --- Modal panel --- */
@@ -138,17 +133,19 @@
       transform var(--animation-speed-medium) var(--animation-easing-1),
       opacity var(--animation-speed-medium) var(--animation-easing-1);
 
-    &[data-state='open'] {
+    &[data-state="open"] {
       transform: translateX(-50%) scale(1);
       opacity: 1;
     }
 
-    &[aria-hidden='true'] {
+    &[aria-hidden="true"] {
       pointer-events: none;
     }
   }
 
   .closeButton {
+    --size: 2.25rem;
+
     position: absolute;
     top: var(--space-5);
     right: var(--space-5);
@@ -156,8 +153,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: var(--size);
+    height: var(--size);
     padding: 0;
     margin: 0;
     background-color: var(--color-bg-tertiary);
@@ -172,7 +169,11 @@
 
     &:hover {
       background-color: var(--color-bg-interactive-hover);
-      color: var(--color-fg-onInteractive-hover);
+      color: var(--color-neutral-900);
+
+      .closeIcon {
+        transform: rotate(135deg);
+      }
     }
 
     &:focus-visible {
@@ -181,7 +182,6 @@
       outline: none;
     }
   }
-
 
   .panelTitle {
     margin-bottom: var(--space-4);
@@ -216,7 +216,7 @@
       transform var(--animation-speed-medium) var(--animation-easing-1) 0.27s;
   }
 
-  .panel[data-state='open'] {
+  .panel[data-state="open"] {
     .panelTitle,
     .panelDescription,
     .meta {
@@ -240,14 +240,5 @@
 
   .metaItem {
     color: var(--color-fg-primary);
-  }
-
-  .metaLink {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      color: var(--color-fg-secondary);
-    }
   }
 }

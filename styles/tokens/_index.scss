@@ -1,21 +1,22 @@
-@use '../mixins' as *;
-@use 'scale' as *;
+@use "../mixins" as *;
+@use "scale" as *;
 
 :root {
-  /* Neutrals */
+  /* Neutrals — warm scale anchored on #E5E1D6 (hue 44°, sat tapers on darks) */
   --color-neutral-100: #ffffff;
-  --color-neutral-200: #f5f5f3;
-  --color-neutral-300: #e7e8e6;
-  --color-neutral-400: #bec1bc;
-  --color-neutral-500: #8e908d;
-  --color-neutral-600: #585857;
-  --color-neutral-700: #282828;
-  --color-neutral-800: #1e1e1e;
-  --color-neutral-900: #141414;
-  --color-neutral-1000: #0e0e0e;
+  --color-neutral-200: #e5e1d6;
+  --color-neutral-300: #d7d3c6;
+  --color-neutral-400: #b5b0a1;
+  --color-neutral-500: #8a8475;
+  --color-neutral-600: #514f48;
+  --color-neutral-700: #282725;
+  --color-neutral-800: #211e1d;
+  --color-neutral-900: #151514;
+  --color-neutral-1000: #0d0d0c;
 
   /* Brand / accents */
-  --color-yellow-700: #fed572;
+  --color-blue-100: #9eafe7;
+  --color-blue-700: #113abd;
   --color-pink-400: #fde9eb;
   --color-pink-1000: #b14651;
 
@@ -112,7 +113,7 @@
   --color-bg-primary: var(--color-neutral-900);
   --color-bg-secondary: var(--color-neutral-800);
   --color-bg-tertiary: var(--color-neutral-700);
-  --color-bg-brand: var(--color-yellow-700);
+  --color-bg-brand: var(--color-blue-700);
   --color-bg-primary-inverse: var(--color-neutral-200);
   --color-bg-secondary-inverse: var(--color-neutral-100);
   --color-bg-tertiary-inverse: var(--color-neutral-300);
@@ -122,13 +123,13 @@
   --color-bg-interactive-inverse-hover: var(--color-neutral-700);
 
   /* Semantic foregrounds — dark theme defaults */
-  --color-fg-primary: var(--color-neutral-100);
-  --color-fg-secondary: var(--alpha-light-4);
+  --color-fg-primary: var(--color-neutral-200);
+  --color-fg-secondary: var(--color-neutral-300);
   --color-fg-primary-inverse: var(--color-neutral-900);
-  --color-fg-secondary-inverse: var(--alpha-dark-4);
-  --color-fg-onInteractive: var(--color-neutral-100);
+  --color-fg-secondary-inverse: var(--color-neutral-800);
+  --color-fg-onInteractive: var(--color-neutral-200);
   --color-fg-onInteractive-inverse: var(--color-neutral-900);
-  --color-fg-onInteractive-hover: var(--color-neutral-900);
+  --color-fg-onInteractive-hover: var(--color-blue-100);
   --color-fg-onInteractive-inverse-hover: var(--color-neutral-100);
   --color-fg-interactive: var(--color-neutral-100);
   --color-fg-interactive-hover: var(--alpha-light-4);

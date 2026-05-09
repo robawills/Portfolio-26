@@ -14,7 +14,7 @@ const HOME_QUERY = `{
     title,
     "slug": slug.current,
     description,
-    "cover": images[0]{..., asset->{_id, metadata{dimensions}}},
+    "cover": cardImage{..., asset->{_id, metadata{dimensions}}},
     "skillNames": skills[]->name,
     links[]{_key, title, url}
   }

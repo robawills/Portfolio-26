@@ -39,6 +39,22 @@ export const projectType = defineType({
       validation: (rule) => rule.required().max(500),
     }),
     defineField({
+      name: 'cardImage',
+      title: 'Card image',
+      description: 'Shown only on the home page project cards.',
+      type: 'image',
+      options: {hotspot: true},
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt text',
+          type: 'string',
+          validation: (rule) => rule.required(),
+        }),
+      ],
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'images',
       title: 'Images',
       type: 'array',

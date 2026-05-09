@@ -1,32 +1,38 @@
-import Link from 'next/link'
-import classNames from 'classnames/bind'
+import Link from "next/link";
+import classNames from "classnames/bind";
 
-import {Image} from '@/components/Image'
-import breakpoints from '@/constants/breakpoints'
-import type {ResponsiveFocalPoint} from '@/utils/focal-point'
-import styles from './Card.module.scss'
+import { Image } from "@/components/Image";
+import breakpoints from "@/constants/breakpoints";
+import type { ResponsiveFocalPoint } from "@/utils/focal-point";
+import styles from "./Card.module.scss";
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 export interface CardProps {
   image: {
-    src: string
-    alt: string
-    focalPoint?: ResponsiveFocalPoint
-  }
-  href: string
-  signpost?: string
-  title: string
-  projectCategories?: string[]
+    src: string;
+    alt: string;
+    focalPoint?: ResponsiveFocalPoint;
+  };
+  href: string;
+  signpost?: string;
+  title: string;
+  projectCategories?: string[];
 }
 
-export const Card = ({image, href, signpost, title, projectCategories}: CardProps) => {
+export const Card = ({
+  image,
+  href,
+  signpost,
+  title,
+  projectCategories,
+}: CardProps) => {
   return (
-    <article className={cx('card')}>
-      <Link className={cx('link')} href={href}>
-        <div className={cx('imageWrap')}>
+    <article className={cx("card")}>
+      <Link className={cx("link")} href={href}>
+        <div className={cx("imageWrap")}>
           <Image
-            className={cx('image')}
+            className={cx("image")}
             src={image.src}
             alt={image.alt}
             fill
@@ -34,13 +40,15 @@ export const Card = ({image, href, signpost, title, projectCategories}: CardProp
             focalPoint={image.focalPoint}
           />
         </div>
-        <div className={cx('detailsWrap')}>
-          {signpost && <p className={cx('signpost', 'u-signpost')}>{signpost}</p>}
-          <h3 className={`${cx('title')} u-h5`}>{title}</h3>
+        <div className={cx("detailsWrap")}>
+          {signpost && (
+            <p className={cx("signpost", "u-signpost")}>{signpost}</p>
+          )}
+          <h3 className={`${cx("title")} u-h5`}>{title}</h3>
           {projectCategories && projectCategories.length > 0 && (
-            <ul className={cx('categories')} aria-label="Project categories">
+            <ul className={cx("categories")} aria-label="Project categories">
               {projectCategories.map((category, index) => (
-                <li className={`${cx('category')} u-signpost`} key={index}>
+                <li className={`${cx("category")} u-signpost`} key={index}>
                   {category}
                 </li>
               ))}
@@ -49,7 +57,7 @@ export const Card = ({image, href, signpost, title, projectCategories}: CardProp
         </div>
       </Link>
     </article>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

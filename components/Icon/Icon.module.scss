@@ -1,0 +1,14 @@
+.icon {
+  color: currentcolor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.default {
+    color: var(--color-fg-primary);
+  }
+
+  &.inverse {
+    color: var(--color-fg-primary-inverse);
+  }
+}

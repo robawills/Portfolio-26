@@ -1,7 +1,7 @@
 /* Default — matches the :root values in tokens (dark). Use to opt out of an ancestor theme. */
-[data-theme='default'] {
-  --color-bg-primary: var(--color-neutral-900);
-  --color-bg-secondary: var(--color-neutral-800);
+[data-theme="default"] {
+  --color-bg-primary: var(--color-neutral-800);
+  --color-bg-secondary: var(--color-neutral-900);
   --color-bg-tertiary: var(--color-neutral-700);
   --color-bg-brand: var(--color-yellow-700);
   --color-bg-primary-inverse: var(--color-neutral-200);
@@ -12,13 +12,13 @@
   --color-bg-interactive-hover: var(--color-neutral-100);
   --color-bg-interactive-inverse-hover: var(--color-neutral-700);
 
-  --color-fg-primary: var(--color-neutral-100);
-  --color-fg-secondary: var(--alpha-light-4);
+  --color-fg-primary: var(--color-neutral-200);
+  --color-fg-secondary: var(--color-neutral-300);
   --color-fg-primary-inverse: var(--color-neutral-900);
-  --color-fg-secondary-inverse: var(--alpha-dark-4);
-  --color-fg-onInteractive: var(--color-neutral-100);
+  --color-fg-secondary-inverse: var(--color-neutral-800);
+  --color-fg-onInteractive: var(--color-neutral-200);
   --color-fg-onInteractive-inverse: var(--color-neutral-900);
-  --color-fg-onInteractive-hover: var(--color-neutral-900);
+  --color-fg-onInteractive-hover: var(--color-blue-100);
   --color-fg-onInteractive-inverse-hover: var(--color-neutral-100);
   --color-fg-interactive: var(--color-neutral-100);
   --color-fg-interactive-hover: var(--alpha-light-4);
@@ -37,7 +37,7 @@
 }
 
 /* Inverse — light surface variant */
-[data-theme='inverse'] {
+[data-theme="inverse"] {
   --color-bg-primary: var(--color-neutral-200);
   --color-bg-secondary: var(--color-neutral-100);
   --color-bg-tertiary: var(--color-neutral-300);
@@ -74,6 +74,6 @@
 }
 
 /* Brand-tinted background */
-[data-theme='brand-yellow'] {
+[data-theme="brand-yellow"] {
   --color-bg-primary: var(--color-bg-brand);
 }

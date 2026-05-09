@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [{protocol: 'https', hostname: 'cdn.sanity.io'}],
     qualities: [75, 85],
   },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: [{loader: '@svgr/webpack', options: {icon: true}}],
+        as: '*.js',
+      },
+    },
+  },
 };
 
 export default nextConfig;
