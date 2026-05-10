@@ -1,4 +1,4 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 .header {
   position: fixed;
@@ -7,13 +7,25 @@
   width: 100%;
   padding-top: var(--space-6);
   padding-bottom: var(--space-6);
-  background-color: transparent;
-  transition: background-color var(--animation-speed-medium)
-    var(--animation-easing-1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      var(--color-bg-primary) 0%,
+      transparent 100%
+    );
+    opacity: 0;
+    transition: opacity var(--animation-speed-medium)
+      var(--animation-easing-1);
+    pointer-events: none;
+  }
 }
 
-.header.scrolled {
-  background-color: var(--color-bg-primary);
+.header.scrolled::before {
+  opacity: 1;
 }
 
 .desktop {
@@ -22,6 +34,9 @@
 
   @include breakpoint(s) {
     display: grid;
+    width: 100%;
+    max-width: var(--layout-content-max);
+    margin: 0 auto;
   }
 }
 
@@ -163,12 +178,12 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    &[data-state='open'] {
+    &[data-state="open"] {
       animation: header-slide-down var(--animation-speed-slow)
         var(--animation-easing-5) both;
     }
 
-    &[data-state='closed'] {
+    &[data-state="closed"] {
       animation: header-slide-up var(--animation-speed-medium)
         var(--animation-easing-2) both;
     }

@@ -316,13 +316,43 @@ interface Hand3DProps {
   className?: string
 }
 
+const PARALLAX_FACTOR = 0.5
+
 export const Hand3D = ({className}: Hand3DProps): React.ReactElement => {
   const smoothBalloonMaterial = useMemo(() => createSmoothBalloonMaterial(), [])
   const {pose, setPose} = useHandPose()
   const poseIndex = Math.max(0, HAND_POSES.indexOf(pose))
+  const wrapperRef = useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    const wrapper = wrapperRef.current
+    if (!wrapper) return
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduced) return
+
+    let rafId: number | null = null
+    const update = () => {
+      const offset = window.scrollY * (1 - PARALLAX_FACTOR)
+      wrapper.style.transform = `translate3d(0, ${offset}px, 0)`
+      rafId = null
+    }
+
+    const handleScroll = () => {
+      if (rafId !== null) return
+      rafId = requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener('scroll', handleScroll, {passive: true})
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId !== null) cancelAnimationFrame(rafId)
+    }
+  }, [])
 
   return (
-    <div className={cx('wrapper', className)}>
+    <div ref={wrapperRef} className={cx('wrapper', className)}>
       <div className={cx('canvasContainer')}>
         <Canvas camera={{position: [0, 0, 12], fov: 45}}>
           <ambientLight intensity={0.08} color="#fff4e6" />

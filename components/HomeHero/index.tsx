@@ -18,7 +18,7 @@ export const HomeHero = ({ title, description, className }: HomeHeroProps) => (
     <Hand3D className={cx("hand")} />
     <div className={cx("wrapper")}>
       <h1 className={cx("title", "u-h2", "u-strong")}>{title}</h1>
-      <p className={cx("u-h4")}>{description}</p>
+      <p className={cx("description", "u-h5")}>{description}</p>
     </div>
   </Grid>
 );

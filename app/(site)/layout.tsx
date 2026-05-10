@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { CursorProvider } from "@/context/Cursor";
 import { HandPoseProvider } from "@/context/HandPose";
 import { InViewAnimationProvider } from "@/context/InViewAnimation";
@@ -10,13 +11,15 @@ export default function SiteLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <InViewAnimationProvider>
-      <CursorProvider>
-        <HandPoseProvider>
-          <Header />
-          {children}
-        </HandPoseProvider>
-      </CursorProvider>
-    </InViewAnimationProvider>
+    <SmoothScroll>
+      <InViewAnimationProvider>
+        <CursorProvider>
+          <HandPoseProvider>
+            <Header />
+            {children}
+          </HandPoseProvider>
+        </CursorProvider>
+      </InViewAnimationProvider>
+    </SmoothScroll>
   );
 }
