@@ -1,0 +1,34 @@
+{
+  "version": "0.2",
+  "language": "en,en-GB",
+  "words": [
+    "clampy",
+    "hotspot",
+    "Lenis",
+    "gsap",
+    "svgr",
+    "Sanity",
+    "groq",
+    "Geist",
+    "signpost",
+    "Turbopack",
+    "dataset",
+    "dvh",
+    "lerp",
+    "lerped",
+    "rect",
+    "noopener",
+    "noreferrer",
+    "subpath",
+    "clampy",
+    "currentcolor",
+    "viewBox"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    ".next/**",
+    "storybook-static/**",
+    "*.lock",
+    "package-lock.json"
+  ]
+}
