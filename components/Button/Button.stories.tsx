@@ -33,10 +33,10 @@ export const Disabled: Story = {args: {type: ButtonType.PRIMARY, isDisabled: tru
 export const FullWidth: Story = {args: {type: ButtonType.PRIMARY, fullWidth: true}}
 
 export const WithLeadingIcon: Story = {
-  args: {type: ButtonType.PRIMARY, leadingIcon: IconName.ARROW_UP},
+  args: {type: ButtonType.PRIMARY, leadingIcon: IconName.ARROW_OUT},
 }
 export const WithTrailingIcon: Story = {
-  args: {type: ButtonType.PRIMARY, trailingIcon: IconName.ARROW_UP},
+  args: {type: ButtonType.PRIMARY, trailingIcon: IconName.ARROW_OUT},
 }
 
 export const AsLink: Story = {

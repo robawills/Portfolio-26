@@ -19,7 +19,7 @@ const setup = () =>
   render(
     <CursorProvider>
       <Probe />
-      <CustomCursor icon={IconName.ARROW_UP}>
+      <CustomCursor icon={IconName.ARROW_OUT}>
         <button type="button">target</button>
       </CustomCursor>
     </CursorProvider>,
@@ -35,7 +35,7 @@ describe('CustomCursor', () => {
     const user = userEvent.setup()
     setup()
     await user.hover(screen.getByRole('button', {name: /target/i}))
-    expect(screen.getByTestId('probe')).toHaveTextContent('entered-ArrowUp')
+    expect(screen.getByTestId('probe')).toHaveTextContent('entered-ArrowOut')
   })
 
   it('clears state on mouse leave', async () => {
