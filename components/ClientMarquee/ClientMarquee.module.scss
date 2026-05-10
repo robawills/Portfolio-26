@@ -1,0 +1,58 @@
+@use "../../styles/mixins" as *;
+
+.clientMarquee {
+  width: 100%;
+  padding: clampy(var(--space-10), var(--space-14)) 0;
+  overflow: hidden;
+}
+
+.viewport {
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+.track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clampy(4rem, 10rem);
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-fg-primary);
+  white-space: nowrap;
+  animation: marquee 60s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.item {
+  flex: 0 0 auto;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

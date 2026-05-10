@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import Link from "next/link";
 import classNames from "classnames/bind";
 
@@ -12,6 +15,13 @@ import { Image } from "@/components/Image";
 import breakpoints from "@/constants/breakpoints";
 import type { ResponsiveFocalPoint } from "@/utils/focal-point";
 import styles from "./ProjectCard.module.scss";
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
+
+// useLayoutEffect on the client so GSAP can hide the text before paint;
+// useEffect during SSR so React doesn't log the layout-effect warning.
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const cx = classNames.bind(styles);
 
@@ -51,6 +61,7 @@ export const ProjectCard = ({
   const [open, setOpen] = useState(false);
   const [container, setContainer] = useState<HTMLElement | null>(null);
   const cardRef = useRef<HTMLElement>(null);
+  const triggerLabelRef = useRef<HTMLSpanElement>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -62,6 +73,46 @@ export const ProjectCard = ({
       if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
     };
   }, []);
+
+  // Reveal the trigger label word-by-word from behind a mask the first time
+  // the LABEL itself scrolls into view. Triggering on the card top fired the
+  // tween before the label was actually visible (the label sits at the bottom
+  // of an 85vh-tall card), so the user only saw frames that had already played.
+  useIsomorphicLayoutEffect(() => {
+    const labelEl = triggerLabelRef.current;
+    if (!labelEl) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+
+    const split = new SplitText(labelEl, {
+      type: "words",
+      mask: "words",
+    });
+    gsap.set(split.words, { yPercent: 100 });
+
+    const tween = gsap.to(split.words, {
+      yPercent: 0,
+      duration: 0.7,
+      stagger: 0.05,
+      ease: "power3.out",
+      paused: true,
+      scrollTrigger: {
+        trigger: labelEl,
+        // Fire when the label's top is 20% of the way up from the viewport
+        // bottom — gives the user a beat to register the label before the
+        // words start rising.
+        start: "top bottom-=20%",
+        once: true,
+      },
+    });
+
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+      split.revert();
+    };
+  }, [title]);
 
   const cancelClose = () => {
     if (closeTimerRef.current) {
@@ -128,7 +179,9 @@ export const ProjectCard = ({
             type="button"
             className={cx("trigger", "u-signpost", { hidden: open })}
           >
-            <span className={cx("triggerLabel")}>{title}</span>
+            <span ref={triggerLabelRef} className={cx("triggerLabel")}>
+              {title}
+            </span>
             <span className={cx("triggerIndicator")} aria-hidden="true">
               <Icon name={IconName.PLUS} className={cx("triggerIcon")} />
             </span>

@@ -1,6 +1,9 @@
+'use client'
+
 import classNames from 'classnames/bind'
 
 import {Grid} from '@/components/Grid'
+import {useInViewAnimation} from '@/hooks/useInViewAnimation'
 
 import styles from './AboutBuild.module.scss'
 
@@ -20,11 +23,17 @@ export const AboutBuild = ({
   signpost = DEFAULT_SIGNPOST,
   description = DEFAULT_DESCRIPTION,
   className,
-}: AboutBuildProps) => (
-  <Grid as="section" className={cx('aboutBuild', className)}>
-    <span className={cx('signpost', 'u-signpost')}>{signpost}</span>
-    <p className={cx('description', 'u-body')}>{description}</p>
-  </Grid>
-)
+}: AboutBuildProps) => {
+  const animationRef = useInViewAnimation<HTMLElement>()
+
+  return (
+    <section className={cx('aboutBuild', className)} ref={animationRef}>
+      <Grid>
+        <span className={cx('signpost', 'u-signpost')}>{signpost}</span>
+        <p className={cx('description', 'u-body')}>{description}</p>
+      </Grid>
+    </section>
+  )
+}
 
 export default AboutBuild

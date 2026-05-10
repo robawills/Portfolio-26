@@ -16,20 +16,26 @@ export const ProjectGrid = ({projects}: ProjectGridProps) => {
   const animationRef = useInViewAnimation<HTMLDivElement>()
 
   return (
-    <div className={cx('projectGridWrap')}>
-      <div ref={animationRef}>
-        <div className={cx('projectGrid')} data-testid="project-grid">
-          {projects.map((project, index) => (
-            <div
-              className={cx('gridItem')}
-              key={index}
-              data-testid="grid-item"
-              style={{'--animation-index': index + 4} as React.CSSProperties}
-            >
-              <ProjectCard {...project} />
-            </div>
-          ))}
-        </div>
+    <div className={cx('projectGridWrap')} ref={animationRef}>
+      <header className={cx('intro')}>
+        <span className={cx('introLine', 'introLine--lead', 'u-signpost')}>
+          Selected Work
+        </span>
+        <span className={cx('introLine', 'introLine--muted', 'u-signpost')}>
+          Old &amp; New
+        </span>
+      </header>
+      <div className={cx('projectGrid')} data-testid="project-grid">
+        {projects.map((project, index) => (
+          <div
+            className={cx('gridItem')}
+            key={index}
+            data-testid="grid-item"
+            style={{'--animation-index': index + 2} as React.CSSProperties}
+          >
+            <ProjectCard {...project} />
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 .aboutBuild {
   padding: clampy(var(--space-10), var(--space-14)) 0;
@@ -8,6 +8,8 @@
   grid-column: 1 / -1;
   margin-bottom: var(--space-5);
   color: var(--color-fg-secondary);
+
+  @include inview-animate(fade-slide-up, 0);
 
   @include breakpoint(s) {
     grid-column: 1 / span 3;
@@ -19,8 +21,11 @@
   grid-column: 1 / -1;
   max-width: 60ch;
   color: var(--color-fg-primary);
+  text-wrap: pretty;
+
+  @include inview-animate(fade-slide-up, 1);
 
   @include breakpoint(s) {
-    grid-column: 5 / -1;
+    grid-column: 6 / -1;
   }
 }
