@@ -30,12 +30,12 @@ const WAVE_SPEED = 3.5
 
 // Subtle, always-on idle motion so the hand never feels frozen.
 // Each axis uses a different frequency so the motion never repeats.
-const IDLE_AMP_X = 0.025
-const IDLE_AMP_Y = 0.03
-const IDLE_AMP_Z = 0.015
-const IDLE_FREQ_X = 0.7
-const IDLE_FREQ_Y = 0.5
-const IDLE_FREQ_Z = 0.9
+const IDLE_AMP_X = 0.012
+const IDLE_AMP_Y = 0.015
+const IDLE_AMP_Z = 0.008
+const IDLE_FREQ_X = 0.55
+const IDLE_FREQ_Y = 0.4
+const IDLE_FREQ_Z = 0.7
 
 const POSES: Pose[] = [
   {label: 'Pose 1', frame: 1, yaw: Math.PI, wave: true},
