@@ -48,7 +48,7 @@
   transition: color var(--animation-speed-fast) var(--animation-easing-1);
 
   &:hover {
-    color: var(--color-fg-secondary);
+    color: var(--color-fg-onInteractive-hover);
   }
 }
 
@@ -225,6 +225,10 @@
 .taglineTitle,
 .taglineDescription {
   color: var(--color-fg-primary-inverse);
+
+  @include breakpoint(s) {
+    color: inherit;
+  }
 }
 
 .srOnly {

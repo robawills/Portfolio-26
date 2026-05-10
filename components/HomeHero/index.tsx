@@ -17,7 +17,7 @@ export const HomeHero = ({ title, description, className }: HomeHeroProps) => (
   <Grid as="section" className={cx("homeHero", className)}>
     <Hand3D className={cx("hand")} />
     <div className={cx("wrapper")}>
-      <h1 className={cx("title", "u-h2", "u-strong")}>{title}</h1>
+      <h1 className={cx("title", "u-h3", "u-strong")}>{title}</h1>
       <p className={cx("description", "u-h5")}>{description}</p>
     </div>
   </Grid>

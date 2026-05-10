@@ -1,3 +1,4 @@
+import { AboutBuild } from "@/components/AboutBuild";
 import { HomeHero } from "@/components/HomeHero";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { client } from "@/sanity/lib/client";
@@ -7,7 +8,9 @@ const HOME_QUERY = `{
   "home": *[_type == "home"][0]{
     heroTitle,
     description,
-    heroImage{..., asset->{_id, metadata{dimensions}}}
+    heroImage{..., asset->{_id, metadata{dimensions}}},
+    aboutBuildSignpost,
+    aboutBuildDescription
   },
   "projects": *[_type == "project"] | order(orderRank){
     _id,
@@ -33,6 +36,8 @@ type Home = {
   heroTitle?: string;
   description?: string;
   heroImage?: SanityImage;
+  aboutBuildSignpost?: string;
+  aboutBuildDescription?: string;
 };
 
 type Project = {
@@ -91,6 +96,11 @@ export default async function HomePage() {
       ) : (
         <p>No projects yet — add one in the Studio.</p>
       )}
+
+      <AboutBuild
+        signpost={home?.aboutBuildSignpost ?? undefined}
+        description={home?.aboutBuildDescription ?? undefined}
+      />
     </main>
   );
 }
