@@ -2,7 +2,7 @@
 
 .homeHero {
   position: relative;
-  padding: 0 0 var(--space-15);
+  padding: 0 0 clampy(var(--space-10), var(--space-15));
 }
 
 .hand {
