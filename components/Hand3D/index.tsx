@@ -28,6 +28,15 @@ interface Pose {
 const WAVE_AMPLITUDE = 0.15
 const WAVE_SPEED = 3.5
 
+// Subtle, always-on idle motion so the hand never feels frozen.
+// Each axis uses a different frequency so the motion never repeats.
+const IDLE_AMP_X = 0.025
+const IDLE_AMP_Y = 0.03
+const IDLE_AMP_Z = 0.015
+const IDLE_FREQ_X = 0.7
+const IDLE_FREQ_Y = 0.5
+const IDLE_FREQ_Z = 0.9
+
 const POSES: Pose[] = [
   {label: 'Pose 1', frame: 1, yaw: Math.PI, wave: true},
   {label: 'Peace', frame: 135, yaw: Math.PI},
@@ -176,24 +185,33 @@ const AnimatedHand = ({
       dragOffset.current.y = THREE.MathUtils.lerp(dragOffset.current.y, 0, RETURN_SPEED)
     }
 
+    const time = clock.elapsedTime
+    const idleX = Math.sin(time * IDLE_FREQ_X) * IDLE_AMP_X
+    const idleY = Math.sin(time * IDLE_FREQ_Y + 0.6) * IDLE_AMP_Y
+    const idleZ = Math.sin(time * IDLE_FREQ_Z + 1.2) * IDLE_AMP_Z
+
     const poseYaw = POSES[poseIndex].yaw ?? 0
     groupRef.current.rotation.y = THREE.MathUtils.lerp(
       groupRef.current.rotation.y,
-      initialRotation[1] + mouseTarget.current.x + dragOffset.current.x + poseYaw,
+      initialRotation[1] +
+        mouseTarget.current.x +
+        dragOffset.current.x +
+        poseYaw +
+        idleY,
       LERP_SPEED,
     )
     groupRef.current.rotation.x = THREE.MathUtils.lerp(
       groupRef.current.rotation.x,
-      initialRotation[0] + mouseTarget.current.y + dragOffset.current.y,
+      initialRotation[0] + mouseTarget.current.y + dragOffset.current.y + idleX,
       LERP_SPEED,
     )
 
     const waveTarget = POSES[poseIndex].wave
-      ? Math.sin(clock.elapsedTime * WAVE_SPEED) * WAVE_AMPLITUDE
+      ? Math.sin(time * WAVE_SPEED) * WAVE_AMPLITUDE
       : 0
     groupRef.current.rotation.z = THREE.MathUtils.lerp(
       groupRef.current.rotation.z,
-      waveTarget,
+      waveTarget + idleZ,
       LERP_SPEED,
     )
   })
@@ -320,7 +338,7 @@ const PARALLAX_FACTOR = 0.5
 
 export const Hand3D = ({className}: Hand3DProps): React.ReactElement => {
   const smoothBalloonMaterial = useMemo(() => createSmoothBalloonMaterial(), [])
-  const {pose, setPose} = useHandPose()
+  const {pose} = useHandPose()
   const poseIndex = Math.max(0, HAND_POSES.indexOf(pose))
   const wrapperRef = useRef<HTMLDivElement>(null)
 
@@ -367,22 +385,6 @@ export const Hand3D = ({className}: Hand3DProps): React.ReactElement => {
             <Environment preset="studio" />
           </Suspense>
         </Canvas>
-        <div className={cx('poseControls')}>
-          {POSES.map((p, index) => (
-            <button
-              key={p.label}
-              type="button"
-              className={cx('poseButton', {
-                poseButtonActive: index === poseIndex,
-              })}
-              onClick={() => setPose(HAND_POSES[index])}
-              onMouseEnter={() => setPose(HAND_POSES[index])}
-              onFocus={() => setPose(HAND_POSES[index])}
-            >
-              {p.label}
-            </button>
-          ))}
-        </div>
       </div>
     </div>
   )

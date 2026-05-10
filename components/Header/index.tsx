@@ -14,7 +14,7 @@ import styles from './Header.module.scss'
 
 const cx = classNames.bind(styles)
 
-const POSE_REVERT_MS = 1000
+const POSE_REVERT_MS = 3000
 
 export const Header = () => {
   const [open, setOpen] = useState(false)

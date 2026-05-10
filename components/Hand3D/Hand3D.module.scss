@@ -28,35 +28,35 @@
   }
 }
 
-.poseControls {
-  display: none;
-}
+// .poseControls {
+//   display: none;
+// }
 
-.poseButton {
-  padding: 8px 16px;
-  font: inherit;
-  color: var(--color-fg-interactive-inverse);
-  background: var(--color-bg-interactive-inverse);
-  border: 1px solid var(--color-border-interactive-inverse);
-  border-radius: 999px;
-  cursor: pointer;
-  transition:
-    background 0.15s,
-    color 0.15s;
+// .poseButton {
+//   padding: 8px 16px;
+//   font: inherit;
+//   color: var(--color-fg-interactive-inverse);
+//   background: var(--color-bg-interactive-inverse);
+//   border: 1px solid var(--color-border-interactive-inverse);
+//   border-radius: 999px;
+//   cursor: pointer;
+//   transition:
+//     background 0.15s,
+//     color 0.15s;
 
-  &:hover {
-    color: var(--color-fg-interactive-inverse-hover);
-    background: var(--color-bg-interactive-inverse-hover);
-  }
+//   &:hover {
+//     color: var(--color-fg-interactive-inverse-hover);
+//     background: var(--color-bg-interactive-inverse-hover);
+//   }
 
-  &:focus-visible {
-    outline: none;
+//   &:focus-visible {
+//     outline: none;
 
-    @include a11y-focus-box-shadow($inverse: true);
-  }
-}
+//     @include a11y-focus-box-shadow($inverse: true);
+//   }
+// }
 
-.poseButtonActive {
-  color: var(--color-fg-onInteractive-inverse-hover);
-  background: var(--color-bg-interactive-inverse-hover);
-}
+// .poseButtonActive {
+//   color: var(--color-fg-onInteractive-inverse-hover);
+//   background: var(--color-bg-interactive-inverse-hover);
+// }
