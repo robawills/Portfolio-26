@@ -7,6 +7,9 @@
   width: 100%;
   height: var(--layout-viewport-height);
   overflow: visible;
+  /* Match the page background so any pre-WebGL-clear instant of the canvas
+     shows our dark surface rather than a browser-default white flash. */
+  background-color: var(--color-bg-primary);
 }
 
 .canvasContainer {
@@ -16,12 +19,19 @@
   overflow: visible;
 
   /* Enlarge the canvas drawable surface so the hand can spill past the
-     wrapper bounds without being clipped at the WebGL frustum edge. */
+     wrapper bounds without being clipped at the WebGL frustum edge.
+     Bottom is extended further so a rotated/upside-down hand has more room
+     before clipping; the wrapper's layout height stays the same so this
+     doesn't push the content below it down. */
   > canvas {
     position: absolute !important;
-    inset: -15% !important;
+    top: -15% !important;
+    right: -15% !important;
+    bottom: -40% !important;
+    left: -15% !important;
     width: 130% !important;
-    height: 130% !important;
+    height: 155% !important;
+    background-color: transparent !important;
 
     /* Don't intercept clicks on adjacent layout where the canvas overflows. */
     pointer-events: none;

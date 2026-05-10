@@ -32,6 +32,23 @@ export const homeType = defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'aboutBuildSignpost',
+      title: 'About build — signpost',
+      description:
+        'Small label above the build description (e.g. "About", "Stack"). Defaults to "About" if empty.',
+      type: 'string',
+      validation: (rule) => rule.max(40),
+    }),
+    defineField({
+      name: 'aboutBuildDescription',
+      title: 'About build — description',
+      description:
+        'Paragraph describing how the site is built. Shown below the project grid.',
+      type: 'text',
+      rows: 6,
+      validation: (rule) => rule.max(800),
+    }),
   ],
   preview: {
     select: {title: 'heroTitle', media: 'heroImage'},

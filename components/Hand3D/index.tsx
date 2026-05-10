@@ -372,7 +372,13 @@ export const Hand3D = ({className}: Hand3DProps): React.ReactElement => {
   return (
     <div ref={wrapperRef} className={cx('wrapper', className)}>
       <div className={cx('canvasContainer')}>
-        <Canvas camera={{position: [0, 0, 12], fov: 45}}>
+        <Canvas
+          camera={{position: [0, 0, 12], fov: 45}}
+          gl={{alpha: true, antialias: true}}
+          onCreated={({gl}) => {
+            gl.setClearColor(0x000000, 0)
+          }}
+        >
           <ambientLight intensity={0.08} color="#fff4e6" />
           <directionalLight position={[8, 2, 3]} intensity={0.35} color="#fff1d6" />
           <directionalLight position={[-6, 1, -2]} intensity={0.1} color="#d8e6f0" />

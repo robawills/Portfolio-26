@@ -1,3 +1,5 @@
+import { AboutBuild } from "@/components/AboutBuild";
+import { ClientMarquee } from "@/components/ClientMarquee";
 import { HomeHero } from "@/components/HomeHero";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { client } from "@/sanity/lib/client";
@@ -7,7 +9,9 @@ const HOME_QUERY = `{
   "home": *[_type == "home"][0]{
     heroTitle,
     description,
-    heroImage{..., asset->{_id, metadata{dimensions}}}
+    heroImage{..., asset->{_id, metadata{dimensions}}},
+    aboutBuildSignpost,
+    aboutBuildDescription
   },
   "projects": *[_type == "project"] | order(orderRank){
     _id,
@@ -18,7 +22,8 @@ const HOME_QUERY = `{
     "coverMobile": cardImageMobile{..., asset->{_id, metadata{dimensions}}},
     "skillNames": skills[]->name,
     links[]{_key, title, url}
-  }
+  },
+  "clients": *[_type == "client"] | order(name asc){name}
 }`;
 
 type SanityImage = {
@@ -33,6 +38,8 @@ type Home = {
   heroTitle?: string;
   description?: string;
   heroImage?: SanityImage;
+  aboutBuildSignpost?: string;
+  aboutBuildDescription?: string;
 };
 
 type Project = {
@@ -46,11 +53,20 @@ type Project = {
   links?: { _key: string; title: string; url: string }[];
 };
 
+type Client = {
+  name?: string;
+};
+
 export default async function HomePage() {
-  const { home, projects } = await client.fetch<{
+  const { home, projects, clients } = await client.fetch<{
     home: Home | null;
     projects: Project[];
+    clients: Client[];
   }>(HOME_QUERY);
+
+  const clientNames = clients
+    .map((c) => c.name)
+    .filter((name): name is string => Boolean(name));
 
   const projectCards = projects
     .filter((project) => project.cover?.asset)
@@ -91,6 +107,13 @@ export default async function HomePage() {
       ) : (
         <p>No projects yet — add one in the Studio.</p>
       )}
+
+      <AboutBuild
+        signpost={home?.aboutBuildSignpost ?? undefined}
+        description={home?.aboutBuildDescription ?? undefined}
+      />
+
+      <ClientMarquee clients={clientNames} />
     </main>
   );
 }

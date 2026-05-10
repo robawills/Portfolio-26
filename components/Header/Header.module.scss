@@ -41,14 +41,12 @@
 }
 
 .link {
-  font-size: 0.9375rem;
-  font-weight: 600;
   color: var(--color-fg-primary);
   text-decoration: none;
   transition: color var(--animation-speed-fast) var(--animation-easing-1);
 
   &:hover {
-    color: var(--color-fg-secondary);
+    color: var(--color-fg-onInteractive-hover);
   }
 }
 
@@ -61,7 +59,7 @@
 }
 
 .tagline {
-  grid-column: 8 / span 3;
+  grid-column: 8 / span 4;
   display: flex;
   flex-direction: column;
 }
@@ -72,6 +70,7 @@
 
 .taglineDescriptionWrapper {
   overflow: hidden;
+  max-width: 30ch;
 }
 
 .contact {
@@ -80,13 +79,11 @@
 }
 
 .taglineTitle {
-  font-size: 0.9375rem;
-  font-weight: 600;
   color: var(--color-fg-primary);
+  text-wrap: pretty;
 }
 
 .taglineDescription {
-  font-size: 0.9375rem;
   line-height: 1.4;
   color: var(--color-fg-primary);
 }
@@ -225,6 +222,10 @@
 .taglineTitle,
 .taglineDescription {
   color: var(--color-fg-primary-inverse);
+
+  @include breakpoint(s) {
+    color: inherit;
+  }
 }
 
 .srOnly {
