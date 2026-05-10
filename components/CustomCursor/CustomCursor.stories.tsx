@@ -17,7 +17,7 @@ export default meta
 type Story = StoryObj<typeof CustomCursor>
 
 export const Default: Story = {
-  args: {icon: IconName.ARROW_UP},
+  args: {icon: IconName.ARROW_OUT},
   render: (args) => (
     <div style={{padding: 48}}>
       <CustomCursor {...args}>

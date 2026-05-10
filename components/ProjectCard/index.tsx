@@ -141,7 +141,7 @@ export const ProjectCard = ({
   return (
     <Dialog.Root open={open} onOpenChange={setOpen} modal={false}>
       <article ref={cardRef} className={cx("card")}>
-        <CustomCursor icon={IconName.ARROW_UP}>
+        <CustomCursor icon={IconName.ARROW_OUT}>
           <Link
             href={href}
             className={cx("imageLink")}

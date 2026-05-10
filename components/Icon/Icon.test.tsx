@@ -15,8 +15,8 @@ describe('Icon', () => {
   })
 
   it('falls back to a generated aria-label of `<name> icon`', () => {
-    render(<Icon name={IconName.ARROW_UP} />)
-    expect(screen.getByTestId('svg-mock')).toHaveAttribute('aria-label', 'ArrowUp icon')
+    render(<Icon name={IconName.ARROW_OUT} />)
+    expect(screen.getByTestId('svg-mock')).toHaveAttribute('aria-label', 'ArrowOut icon')
   })
 
   it('applies the inverse color class', () => {

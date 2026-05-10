@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CursorProvider } from "@/context/Cursor";
@@ -17,6 +18,7 @@ export default function SiteLayout({
           <HandPoseProvider>
             <Header />
             {children}
+            <Footer />
           </HandPoseProvider>
         </CursorProvider>
       </InViewAnimationProvider>

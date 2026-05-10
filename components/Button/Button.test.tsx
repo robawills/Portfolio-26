@@ -46,7 +46,7 @@ describe('Button', () => {
       <Button
         label="Both"
         leadingIcon={IconName.PLUS}
-        trailingIcon={IconName.ARROW_UP}
+        trailingIcon={IconName.ARROW_OUT}
         onClick={() => {}}
       />,
     )

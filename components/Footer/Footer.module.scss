@@ -1,0 +1,83 @@
+@use "../../styles/mixins" as *;
+
+.footer {
+  padding: clampy(var(--space-8), var(--space-12)) 0
+    clampy(var(--space-6), var(--space-8));
+  color: var(--color-fg-secondary);
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.grid {
+  align-items: center;
+  row-gap: var(--space-4);
+}
+
+.copyright {
+  grid-column: 1 / -1;
+
+  @include breakpoint(s) {
+    grid-column: 1 / span 4;
+  }
+}
+
+.linkedin {
+  grid-column: 1 / -1;
+  justify-self: start;
+
+  @include breakpoint(s) {
+    grid-column: 5 / span 4;
+    justify-self: center;
+  }
+}
+
+.backToTop {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 0;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-fg-primary);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    @include a11y-focus-box-shadow;
+  }
+
+  @include breakpoint(s) {
+    grid-column: 9 / -1;
+    justify-self: end;
+  }
+}
+
+.backToTopIcon {
+  width: 1em;
+  height: 1em;
+
+  .backToTop:hover &,
+  .backToTop:focus-visible & {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: backToTopBounce 0.6s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes backToTopBounce {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -25%, 0);
+  }
+}

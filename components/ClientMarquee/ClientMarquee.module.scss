@@ -2,7 +2,7 @@
 
 .clientMarquee {
   width: 100%;
-  padding: clampy(var(--space-10), var(--space-14)) 0;
+  padding: 0 0 clampy(var(--space-10), var(--space-14));
   overflow: hidden;
 }
 

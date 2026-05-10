@@ -20,7 +20,7 @@ export default meta
 type Story = StoryObj<typeof Icon>
 
 export const Plus: Story = {args: {name: IconName.PLUS}}
-export const ArrowUp: Story = {args: {name: IconName.ARROW_UP}}
+export const ArrowOut: Story = {args: {name: IconName.ARROW_OUT}}
 
 export const AllIcons: Story = {
   render: () => (

@@ -46,7 +46,7 @@ export const HoverableHotspot: Story = {
       <p style={{color: 'var(--color-fg-secondary)'}}>
         Hover the panel below — the custom cursor follows your pointer with a lerped trail.
       </p>
-      <Hotspot icon={IconName.ARROW_UP} label="Hover me" />
+      <Hotspot icon={IconName.ARROW_OUT} label="Hover me" />
     </div>
   ),
 }
@@ -54,7 +54,7 @@ export const HoverableHotspot: Story = {
 export const MultipleHotspots: Story = {
   render: () => (
     <div style={{display: 'flex', flexDirection: 'column', gap: 24, padding: 48}}>
-      <Hotspot icon={IconName.ARROW_UP} label="Arrow up" />
+      <Hotspot icon={IconName.ARROW_OUT} label="Arrow out" />
       <Hotspot icon={IconName.PLUS} label="Plus" />
     </div>
   ),
