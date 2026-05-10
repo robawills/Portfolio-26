@@ -5,11 +5,12 @@
   top: 0;
   z-index: var(--zindex-top);
   width: 100%;
+  min-height: var(--layout-header-height);
   padding-top: var(--space-6);
   padding-bottom: var(--space-6);
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -18,8 +19,7 @@
       transparent 100%
     );
     opacity: 0;
-    transition: opacity var(--animation-speed-medium)
-      var(--animation-easing-1);
+    transition: opacity var(--animation-speed-medium) var(--animation-easing-1);
     pointer-events: none;
   }
 }
@@ -141,6 +141,8 @@
 }
 
 .menuToggle.open {
+  color: var(--color-fg-primary-inverse);
+
   .lineTop {
     transform: translate(-50%, -50%) rotate(45deg);
   }
@@ -171,7 +173,7 @@
   width: 100vw;
   height: 100dvh;
   padding: var(--space-6) var(--layout-container-gutter);
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-primary-inverse);
 
   &:focus {
     outline: none;
@@ -202,14 +204,14 @@
 .drawerList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-2);
   width: 100%;
 }
 
 .drawerLink {
   font-size: 2rem;
   font-weight: 600;
-  color: var(--color-fg-primary);
+  color: var(--color-fg-primary-inverse);
   text-decoration: none;
 }
 
@@ -217,7 +219,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  max-width: 22rem;
+  max-width: 20rem;
+}
+
+.taglineTitle,
+.taglineDescription {
+  color: var(--color-fg-primary-inverse);
 }
 
 .srOnly {

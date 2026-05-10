@@ -83,7 +83,10 @@ export const Header = () => {
       if (open || y <= 0) {
         headerOffset = 0
       } else {
-        headerOffset = Math.max(0, Math.min(headerHeight, headerOffset + delta))
+        // Cap is monotonic so the offset can't shrink mid-scroll just because
+        // the header itself shrank (e.g. tagline description fading out).
+        const cap = Math.max(headerHeight, headerOffset)
+        headerOffset = Math.max(0, Math.min(cap, headerOffset + delta))
       }
 
       gsap.set(headerEl, {y: -headerOffset})
