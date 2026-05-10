@@ -98,23 +98,27 @@ export const ProjectCard = ({
           >
             <div className={cx("imageWrap")}>
               {mobileImage && (
-                <Image
-                  className={cx("image", "imageMobile")}
-                  src={mobileImage.src}
-                  alt={mobileImage.alt}
-                  fill
-                  sizes={`(max-width: ${breakpoints.s}px) 100vw, 1px`}
-                  focalPoint={mobileImage.focalPoint}
-                />
+                <div className={cx("imageSlot", "imageMobile")}>
+                  <Image
+                    className={cx("image")}
+                    src={mobileImage.src}
+                    alt={mobileImage.alt}
+                    fill
+                    sizes={`(max-width: ${breakpoints.s}px) 100vw, 1px`}
+                    focalPoint={mobileImage.focalPoint}
+                  />
+                </div>
               )}
-              <Image
-                className={cx("image", { imageDesktop: !!mobileImage })}
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes={`(max-width: ${breakpoints.s}px) 1px, (max-width: ${breakpoints.m}px) 90vw, (max-width: ${breakpoints.oversize}px) 80vw, 1540px`}
-                focalPoint={image.focalPoint}
-              />
+              <div className={cx("imageSlot", { imageDesktop: !!mobileImage })}>
+                <Image
+                  className={cx("image")}
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes={`(max-width: ${breakpoints.s}px) 1px, (max-width: ${breakpoints.m}px) 90vw, (max-width: ${breakpoints.oversize}px) 80vw, 1540px`}
+                  focalPoint={image.focalPoint}
+                />
+              </div>
             </div>
           </Link>
         </CustomCursor>

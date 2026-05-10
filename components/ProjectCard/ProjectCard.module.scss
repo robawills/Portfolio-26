@@ -42,6 +42,11 @@
     overflow: hidden;
   }
 
+  .imageSlot {
+    position: absolute;
+    inset: 0;
+  }
+
   .imageMobile {
     @include breakpoint(s) {
       display: none;
