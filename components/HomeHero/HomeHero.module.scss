@@ -10,10 +10,14 @@
 }
 
 .wrapper {
-  grid-column: 8 / span 5;
+  grid-column: 1 / span 5;
   display: grid;
   gap: clampy(var(--space-4), var(--space-8));
   padding-right: clampy(var(--space-2), var(--space-6));
+
+  @include breakpoint(s) {
+    grid-column: 8 / span 5;
+  }
 }
 
 .description {
