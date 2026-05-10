@@ -6,12 +6,26 @@
   z-index: var(--zindex-layer-0);
   width: 100%;
   height: var(--layout-viewport-height);
+  overflow: visible;
 }
 
 .canvasContainer {
   position: relative;
   width: 100%;
   height: var(--layout-viewport-height);
+  overflow: visible;
+
+  /* Enlarge the canvas drawable surface so the hand can spill past the
+     wrapper bounds without being clipped at the WebGL frustum edge. */
+  > canvas {
+    position: absolute !important;
+    inset: -15% !important;
+    width: 130% !important;
+    height: 130% !important;
+
+    /* Don't intercept clicks on adjacent layout where the canvas overflows. */
+    pointer-events: none;
+  }
 }
 
 .poseControls {

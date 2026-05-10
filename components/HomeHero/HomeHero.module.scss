@@ -1,0 +1,16 @@
+@use "../../styles/mixins" as *;
+
+.homeHero {
+  position: relative;
+  padding: 0 0 var(--space-15);
+}
+
+.hand {
+  grid-column: 1 / -1;
+}
+
+.wrapper {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: clampy(var(--space-4), var(--space-8));
+}

@@ -155,7 +155,7 @@
     left: 50%;
     z-index: 2;
     width: 100%;
-    max-width: 70rem;
+    max-width: 50rem;
     width: calc(100% - var(--spacing) - var(--spacing));
     padding: clampy(var(--space-6), var(--space-8));
     background-color: var(--color-bg-secondary);
@@ -178,6 +178,8 @@
 
     @include breakpoint(s) {
       --spacing: var(--space-6);
+
+      width: 70%;
     }
   }
 

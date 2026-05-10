@@ -1,4 +1,4 @@
-import { Hand3D } from "@/components/Hand3D";
+import { HomeHero } from "@/components/HomeHero";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -52,10 +52,6 @@ export default async function HomePage() {
     projects: Project[];
   }>(HOME_QUERY);
 
-  const heroSrc = home?.heroImage?.asset
-    ? urlFor(home.heroImage).width(1920).fit("max").auto("format").url()
-    : null;
-
   const projectCards = projects
     .filter((project) => project.cover?.asset)
     .map((project) => ({
@@ -85,7 +81,10 @@ export default async function HomePage() {
 
   return (
     <main>
-      <Hand3D />
+      <HomeHero
+        title={home?.heroTitle ?? "Add a hero title in the Studio"}
+        description={home?.description ?? "Add a description in the Studio"}
+      />
 
       {projectCards.length > 0 ? (
         <ProjectGrid projects={projectCards} />

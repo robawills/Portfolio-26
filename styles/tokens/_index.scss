@@ -105,7 +105,7 @@
   /* Layout */
   --layout-content-min: 375px;
   --layout-content-max: 1920px;
-  --layout-viewport-height: 100dvh;
+  --layout-viewport-height: 90dvh;
   --layout-header-height: 4.5rem;
   --layout-container-gutter: #{clampy(var(--space-4), var(--space-8))};
   --layout-grid-gutter: #{clampy(var(--space-4), var(--space-8))};
