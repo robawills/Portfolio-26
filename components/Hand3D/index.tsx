@@ -1,64 +1,65 @@
-'use client'
+"use client";
 
-import React, {Suspense, useMemo, useRef} from 'react'
+import React, { Suspense, useMemo, useRef } from "react";
 
-import {Center, Environment, useGLTF} from '@react-three/drei'
-import {Canvas, useFrame} from '@react-three/fiber'
-import classNames from 'classnames/bind'
-import * as THREE from 'three'
+import { Center, Environment, useGLTF } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import classNames from "classnames/bind";
+import * as THREE from "three";
 
-import {HAND_POSES, useHandPose} from '@/context/HandPose'
+import breakpoints from "@/constants/breakpoints";
+import { HAND_POSES, useHandPose } from "@/context/HandPose";
 
-import styles from './Hand3D.module.scss'
+import styles from "./Hand3D.module.scss";
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
-const MAX_ROTATION = 0.4
-const LERP_SPEED = 0.05
+const MAX_ROTATION = 0.4;
+const LERP_SPEED = 0.05;
 
-const ANI_HAND_PATH = '/blend/three-finger-hand.glb'
+const ANI_HAND_PATH = "/blend/three-finger-hand.glb";
 
 interface Pose {
-  label: string
-  frame: number
-  yaw?: number
-  wave?: boolean
+  label: string;
+  frame: number;
+  yaw?: number;
+  wave?: boolean;
 }
 
-const WAVE_AMPLITUDE = 0.15
-const WAVE_SPEED = 3.5
+const WAVE_AMPLITUDE = 0.15;
+const WAVE_SPEED = 3.5;
 
 // Subtle, always-on idle motion so the hand never feels frozen.
 // Each axis uses a different frequency so the motion never repeats.
-const IDLE_AMP_X = 0.012
-const IDLE_AMP_Y = 0.015
-const IDLE_AMP_Z = 0.008
-const IDLE_FREQ_X = 0.55
-const IDLE_FREQ_Y = 0.4
-const IDLE_FREQ_Z = 0.7
+const IDLE_AMP_X = 0.012;
+const IDLE_AMP_Y = 0.015;
+const IDLE_AMP_Z = 0.008;
+const IDLE_FREQ_X = 0.55;
+const IDLE_FREQ_Y = 0.4;
+const IDLE_FREQ_Z = 0.7;
 
 const POSES: Pose[] = [
-  {label: 'Pose 1', frame: 1, yaw: Math.PI, wave: true},
-  {label: 'Peace', frame: 135, yaw: Math.PI},
-  {label: 'Phone', frame: 170, yaw: (Math.PI * -20) / 180},
-  {label: 'Horns', frame: 200, yaw: Math.PI},
-  {label: 'Middle', frame: 230, yaw: (Math.PI * -20) / 180},
-]
+  { label: "Pose 1", frame: 1, yaw: Math.PI, wave: true },
+  { label: "Peace", frame: 135, yaw: Math.PI },
+  { label: "Phone", frame: 170, yaw: (Math.PI * -20) / 180 },
+  { label: "Horns", frame: 200, yaw: Math.PI },
+  { label: "Middle", frame: 230, yaw: (Math.PI * -20) / 180 },
+];
 
-const ANIMATION_FPS = 24
-const POSE_LERP = 0.12
+const ANIMATION_FPS = 24;
+const POSE_LERP = 0.12;
 
 interface BoneSnapshot {
-  bone: THREE.Bone
-  position: THREE.Vector3
-  quaternion: THREE.Quaternion
-  scale: THREE.Vector3
+  bone: THREE.Bone;
+  position: THREE.Vector3;
+  quaternion: THREE.Quaternion;
+  scale: THREE.Vector3;
 }
 
 interface AnimatedHandProps {
-  material: THREE.Material
-  initialRotation?: [number, number, number]
-  poseIndex: number
+  material: THREE.Material;
+  initialRotation?: [number, number, number];
+  poseIndex: number;
 }
 
 const AnimatedHand = ({
@@ -66,131 +67,157 @@ const AnimatedHand = ({
   initialRotation = [0, 0, 0],
   poseIndex,
 }: AnimatedHandProps): React.ReactElement => {
-  const {scene, animations} = useGLTF(ANI_HAND_PATH)
-  const groupRef = useRef<THREE.Group>(null)
-  const poseSnapshotsRef = useRef<BoneSnapshot[][]>([])
-  const mouseTarget = useRef({x: 0, y: 0})
-  const dragOffset = useRef({x: 0, y: 0})
-  const isDragging = useRef(false)
-  const dragStart = useRef({x: 0, y: 0})
-  const lastDragTime = useRef(0)
+  const { scene, animations } = useGLTF(ANI_HAND_PATH);
+  const groupRef = useRef<THREE.Group>(null);
+  const poseSnapshotsRef = useRef<BoneSnapshot[][]>([]);
+  const mouseTarget = useRef({ x: 0, y: 0 });
+  const dragOffset = useRef({ x: 0, y: 0 });
+  const isDragging = useRef(false);
+  const dragStart = useRef({ x: 0, y: 0 });
+  const lastDragTime = useRef(0);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  // On mobile we ignore the pose system and pointer-driven rotation —
+  // the hand just sits in the wave pose (index 0) and does its idle drift.
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia(`(max-width: ${breakpoints.s - 1}px)`);
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  const effectivePoseIndex = isMobile ? 0 : poseIndex;
 
   React.useEffect(() => {
     scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
-        child.material = material
+        child.material = material;
       }
-    })
-  }, [scene, material])
+    });
+  }, [scene, material]);
 
   React.useEffect(() => {
-    if (animations.length === 0) return
+    if (animations.length === 0) return;
 
-    const mixer = new THREE.AnimationMixer(scene)
-    const action = mixer.clipAction(animations[0])
-    action.play()
-    action.paused = true
+    const mixer = new THREE.AnimationMixer(scene);
+    const action = mixer.clipAction(animations[0]);
+    action.play();
+    action.paused = true;
 
     const snapshots: BoneSnapshot[][] = POSES.map((pose) => {
-      action.time = pose.frame / ANIMATION_FPS
-      mixer.update(0)
+      action.time = pose.frame / ANIMATION_FPS;
+      mixer.update(0);
 
-      const snapshot: BoneSnapshot[] = []
+      const snapshot: BoneSnapshot[] = [];
       scene.traverse((node) => {
-        const bone = node as THREE.Bone
+        const bone = node as THREE.Bone;
         if (bone.isBone) {
           snapshot.push({
             bone,
             position: bone.position.clone(),
             quaternion: bone.quaternion.clone(),
             scale: bone.scale.clone(),
-          })
+          });
         }
-      })
-      return snapshot
-    })
+      });
+      return snapshot;
+    });
 
-    poseSnapshotsRef.current = snapshots
+    poseSnapshotsRef.current = snapshots;
 
-    action.time = POSES[0].frame / ANIMATION_FPS
-    mixer.update(0)
+    action.time = POSES[0].frame / ANIMATION_FPS;
+    mixer.update(0);
 
     return () => {
-      mixer.stopAllAction()
-    }
-  }, [scene, animations])
+      mixer.stopAllAction();
+    };
+  }, [scene, animations]);
 
   React.useEffect(() => {
-    const handleMouseMove = (e: MouseEvent): void => {
-      const isBelowModelMidpoint = e.clientY > window.innerHeight / 2
+    if (isMobile) return;
 
-      mouseTarget.current.x = ((e.clientX / window.innerWidth) * 2 - 1) * MAX_ROTATION
+    const handleMouseMove = (e: MouseEvent): void => {
+      const isBelowModelMidpoint = e.clientY > window.innerHeight / 2;
+
+      mouseTarget.current.x =
+        ((e.clientX / window.innerWidth) * 2 - 1) * MAX_ROTATION;
 
       if (isBelowModelMidpoint) {
-        mouseTarget.current.y = ((e.clientY / window.innerHeight) * 2 - 1) * MAX_ROTATION
+        mouseTarget.current.y =
+          ((e.clientY / window.innerHeight) * 2 - 1) * MAX_ROTATION;
       } else {
-        mouseTarget.current.y = 0
+        mouseTarget.current.y = 0;
       }
 
       if (isDragging.current) {
-        dragOffset.current.x += (e.clientX - dragStart.current.x) * 0.01
-        dragOffset.current.y += (e.clientY - dragStart.current.y) * 0.01
-        dragStart.current.x = e.clientX
-        dragStart.current.y = e.clientY
-        lastDragTime.current = Date.now()
+        dragOffset.current.x += (e.clientX - dragStart.current.x) * 0.01;
+        dragOffset.current.y += (e.clientY - dragStart.current.y) * 0.01;
+        dragStart.current.x = e.clientX;
+        dragStart.current.y = e.clientY;
+        lastDragTime.current = Date.now();
       }
-    }
+    };
 
     const handleMouseDown = (e: MouseEvent): void => {
-      isDragging.current = true
-      dragStart.current.x = e.clientX
-      dragStart.current.y = e.clientY
-    }
+      isDragging.current = true;
+      dragStart.current.x = e.clientX;
+      dragStart.current.y = e.clientY;
+    };
 
     const handleMouseUp = (): void => {
-      isDragging.current = false
-      lastDragTime.current = Date.now()
-    }
+      isDragging.current = false;
+      lastDragTime.current = Date.now();
+    };
 
-    window.addEventListener('mousemove', handleMouseMove)
-    window.addEventListener('mousedown', handleMouseDown)
-    window.addEventListener('mouseup', handleMouseUp)
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('mousedown', handleMouseDown)
-      window.removeEventListener('mouseup', handleMouseUp)
-    }
-  }, [])
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isMobile]);
 
-  const RETURN_DELAY = 1500
-  const RETURN_SPEED = 0.02
+  const RETURN_DELAY = 1500;
+  const RETURN_SPEED = 0.02;
 
-  useFrame(({clock}) => {
-    const target = poseSnapshotsRef.current[poseIndex]
+  useFrame(({ clock }) => {
+    const target = poseSnapshotsRef.current[effectivePoseIndex];
     if (target) {
       for (let i = 0; i < target.length; i++) {
-        const snap = target[i]
-        snap.bone.position.lerp(snap.position, POSE_LERP)
-        snap.bone.quaternion.slerp(snap.quaternion, POSE_LERP)
-        snap.bone.scale.lerp(snap.scale, POSE_LERP)
+        const snap = target[i];
+        snap.bone.position.lerp(snap.position, POSE_LERP);
+        snap.bone.quaternion.slerp(snap.quaternion, POSE_LERP);
+        snap.bone.scale.lerp(snap.scale, POSE_LERP);
       }
     }
 
-    if (!groupRef.current) return
+    if (!groupRef.current) return;
 
-    const timeSinceDrag = Date.now() - lastDragTime.current
+    const timeSinceDrag = Date.now() - lastDragTime.current;
     if (!isDragging.current && timeSinceDrag > RETURN_DELAY) {
-      dragOffset.current.x = THREE.MathUtils.lerp(dragOffset.current.x, 0, RETURN_SPEED)
-      dragOffset.current.y = THREE.MathUtils.lerp(dragOffset.current.y, 0, RETURN_SPEED)
+      dragOffset.current.x = THREE.MathUtils.lerp(
+        dragOffset.current.x,
+        0,
+        RETURN_SPEED,
+      );
+      dragOffset.current.y = THREE.MathUtils.lerp(
+        dragOffset.current.y,
+        0,
+        RETURN_SPEED,
+      );
     }
 
-    const time = clock.elapsedTime
-    const idleX = Math.sin(time * IDLE_FREQ_X) * IDLE_AMP_X
-    const idleY = Math.sin(time * IDLE_FREQ_Y + 0.6) * IDLE_AMP_Y
-    const idleZ = Math.sin(time * IDLE_FREQ_Z + 1.2) * IDLE_AMP_Z
+    const time = clock.elapsedTime;
+    const idleX = Math.sin(time * IDLE_FREQ_X) * IDLE_AMP_X;
+    const idleY = Math.sin(time * IDLE_FREQ_Y + 0.6) * IDLE_AMP_Y;
+    const idleZ = Math.sin(time * IDLE_FREQ_Z + 1.2) * IDLE_AMP_Z;
 
-    const poseYaw = POSES[poseIndex].yaw ?? 0
+    const poseYaw = POSES[effectivePoseIndex].yaw ?? 0;
     groupRef.current.rotation.y = THREE.MathUtils.lerp(
       groupRef.current.rotation.y,
       initialRotation[1] +
@@ -199,35 +226,35 @@ const AnimatedHand = ({
         poseYaw +
         idleY,
       LERP_SPEED,
-    )
+    );
     groupRef.current.rotation.x = THREE.MathUtils.lerp(
       groupRef.current.rotation.x,
       initialRotation[0] + mouseTarget.current.y + dragOffset.current.y + idleX,
       LERP_SPEED,
-    )
+    );
 
-    const waveTarget = POSES[poseIndex].wave
+    const waveTarget = POSES[effectivePoseIndex].wave
       ? Math.sin(time * WAVE_SPEED) * WAVE_AMPLITUDE
-      : 0
+      : 0;
     groupRef.current.rotation.z = THREE.MathUtils.lerp(
       groupRef.current.rotation.z,
       waveTarget + idleZ,
       LERP_SPEED,
-    )
-  })
+    );
+  });
 
   return (
-    <group ref={groupRef} scale={2.5} position={[0, -1.6, 0]}>
+    <group ref={groupRef} scale={2.1} position={[0, -0.5, 0]}>
       <Center>
         <primitive object={scene} />
       </Center>
     </group>
-  )
-}
+  );
+};
 
 const createSmoothBalloonMaterial = (): THREE.MeshPhysicalMaterial => {
   const material = new THREE.MeshPhysicalMaterial({
-    color: '#1e1e1e',
+    color: "#1e1e1e",
     roughness: 0.15,
     metalness: 0,
     clearcoat: 1,
@@ -236,26 +263,26 @@ const createSmoothBalloonMaterial = (): THREE.MeshPhysicalMaterial => {
     envMapIntensity: 0.5,
     sheen: 0,
     sheenRoughness: 0.4,
-    sheenColor: new THREE.Color('#1e1e1e'),
+    sheenColor: new THREE.Color("#1e1e1e"),
     flatShading: false,
-  })
+  });
 
   material.onBeforeCompile = (shader) => {
     shader.vertexShader = shader.vertexShader.replace(
-      '#include <common>',
+      "#include <common>",
       `#include <common>
       varying vec3 vLocalNormal;
       varying vec3 vLocalPos;`,
-    )
+    );
     shader.vertexShader = shader.vertexShader.replace(
-      '#include <worldpos_vertex>',
+      "#include <worldpos_vertex>",
       `#include <worldpos_vertex>
       vLocalNormal = normal;
       vLocalPos = position;`,
-    )
+    );
 
     shader.fragmentShader = shader.fragmentShader.replace(
-      '#include <common>',
+      "#include <common>",
       `#include <common>
       varying vec3 vLocalNormal;
       varying vec3 vLocalPos;
@@ -297,10 +324,10 @@ const createSmoothBalloonMaterial = (): THREE.MeshPhysicalMaterial => {
         }
         return v;
       }`,
-    )
+    );
 
     shader.fragmentShader = shader.fragmentShader.replace(
-      'vec4 diffuseColor = vec4( diffuse, opacity );',
+      "vec4 diffuseColor = vec4( diffuse, opacity );",
       `vec3 baseColor = diffuse;
 
       float wrinkleLarge = fbm(vLocalPos * 14.0);
@@ -315,73 +342,86 @@ const createSmoothBalloonMaterial = (): THREE.MeshPhysicalMaterial => {
       finalColor *= (0.9 + wrinkleLarge * 0.2);
 
       vec4 diffuseColor = vec4(finalColor, opacity);`,
-    )
+    );
 
     shader.fragmentShader = shader.fragmentShader.replace(
-      'float roughnessFactor = roughness;',
+      "float roughnessFactor = roughness;",
       `float wrinkleLargeR = fbm(vLocalPos * 14.0);
       float wrinkleSmallR = fbm(vLocalPos * 42.0 + 13.7);
       float wrinkleR = mix(wrinkleLargeR, wrinkleSmallR, 0.35);
       float creaseR = smoothstep(0.38, 0.46, wrinkleR) - smoothstep(0.46, 0.54, wrinkleR);
       float roughnessFactor = roughness + creaseR * 0.2;`,
-    )
-  }
+    );
+  };
 
-  return material
-}
+  return material;
+};
 
 interface Hand3DProps {
-  className?: string
+  className?: string;
 }
 
-const PARALLAX_FACTOR = 0.5
+const PARALLAX_FACTOR = 0.5;
 
-export const Hand3D = ({className}: Hand3DProps): React.ReactElement => {
-  const smoothBalloonMaterial = useMemo(() => createSmoothBalloonMaterial(), [])
-  const {pose} = useHandPose()
-  const poseIndex = Math.max(0, HAND_POSES.indexOf(pose))
-  const wrapperRef = useRef<HTMLDivElement>(null)
+export const Hand3D = ({ className }: Hand3DProps): React.ReactElement => {
+  const smoothBalloonMaterial = useMemo(
+    () => createSmoothBalloonMaterial(),
+    [],
+  );
+  const { pose } = useHandPose();
+  const poseIndex = Math.max(0, HAND_POSES.indexOf(pose));
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const wrapper = wrapperRef.current
-    if (!wrapper) return
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
 
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduced) return
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduced) return;
 
-    let rafId: number | null = null
+    let rafId: number | null = null;
     const update = () => {
-      const offset = window.scrollY * (1 - PARALLAX_FACTOR)
-      wrapper.style.transform = `translate3d(0, ${offset}px, 0)`
-      rafId = null
-    }
+      const offset = window.scrollY * (1 - PARALLAX_FACTOR);
+      wrapper.style.transform = `translate3d(0, ${offset}px, 0)`;
+      rafId = null;
+    };
 
     const handleScroll = () => {
-      if (rafId !== null) return
-      rafId = requestAnimationFrame(update)
-    }
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(update);
+    };
 
-    update()
-    window.addEventListener('scroll', handleScroll, {passive: true})
+    update();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-      if (rafId !== null) cancelAnimationFrame(rafId)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   return (
-    <div ref={wrapperRef} className={cx('wrapper', className)}>
-      <div className={cx('canvasContainer')}>
+    <div ref={wrapperRef} className={cx("wrapper", className)}>
+      <div className={cx("canvasContainer")}>
         <Canvas
-          camera={{position: [0, 0, 12], fov: 45}}
-          gl={{alpha: true, antialias: true}}
-          onCreated={({gl}) => {
-            gl.setClearColor(0x000000, 0)
+          camera={{ position: [0, 0, 12], fov: 45 }}
+          gl={{ alpha: true, antialias: true }}
+          onCreated={({ gl }) => {
+            gl.setClearColor(0x000000, 0);
           }}
         >
           <ambientLight intensity={0.08} color="#fff4e6" />
-          <directionalLight position={[8, 2, 3]} intensity={0.35} color="#fff1d6" />
-          <directionalLight position={[-6, 1, -2]} intensity={0.1} color="#d8e6f0" />
+          <directionalLight
+            position={[8, 2, 3]}
+            intensity={0.35}
+            color="#fff1d6"
+          />
+          <directionalLight
+            position={[-6, 1, -2]}
+            intensity={0.1}
+            color="#d8e6f0"
+          />
           <Suspense fallback={null}>
             <AnimatedHand
               material={smoothBalloonMaterial}
@@ -393,9 +433,9 @@ export const Hand3D = ({className}: Hand3DProps): React.ReactElement => {
         </Canvas>
       </div>
     </div>
-  )
-}
+  );
+};
 
-useGLTF.preload(ANI_HAND_PATH)
+useGLTF.preload(ANI_HAND_PATH);
 
-export default Hand3D
+export default Hand3D;
