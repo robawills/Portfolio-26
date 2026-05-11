@@ -244,7 +244,7 @@ const AnimatedHand = ({
   });
 
   return (
-    <group ref={groupRef} scale={2.2} position={[0, -0.5, 0]}>
+    <group ref={groupRef} scale={2.1} position={[0, -0.5, 0]}>
       <Center>
         <primitive object={scene} />
       </Center>
