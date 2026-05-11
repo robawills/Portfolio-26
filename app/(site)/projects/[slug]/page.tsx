@@ -1,11 +1,15 @@
-import Image from 'next/image'
 import {notFound} from 'next/navigation'
+
+import {AboutBuild} from '@/components/AboutBuild'
+import {MediaGroup, MediaGroupImage} from '@/components/MediaGroup'
+import {ProjectHero} from '@/components/ProjectHero'
 import {client} from '@/sanity/lib/client'
 import {urlFor} from '@/sanity/lib/image'
 
 const PROJECT_QUERY = `*[_type == "project" && slug.current == $slug][0]{
   title,
   description,
+  build,
   images[]{..., asset->{_id, metadata{dimensions}}},
   skills[]->{_id, name},
   expertise[]->{_id, name},
@@ -29,6 +33,7 @@ type ProjectLink = {_key: string; title: string; url: string}
 type Project = {
   title: string
   description: string
+  build?: string
   images?: SanityImage[]
   skills?: Tag[]
   expertise?: Tag[]
@@ -48,61 +53,41 @@ export default async function ProjectPage({params}: {params: Promise<{slug: stri
 
   return (
     <main>
-      <h1>{project.title}</h1>
-        <p>{project.description}</p>
+      <ProjectHero
+        title={project.title}
+        description={project.description}
+        links={(project.links ?? []).map((link) => ({
+          key: link._key,
+          title: link.title,
+          url: link.url,
+        }))}
+      />
 
-        {project.expertise && project.expertise.length > 0 && (
-          <section>
-            <h2>Expertise</h2>
-            <ul>
-              {project.expertise.map((item) => (
-                <li key={item._id}>{item.name}</li>
-              ))}
-            </ul>
-          </section>
-        )}
+      <AboutBuild
+        signpost="Build"
+        description={project.build}
+        skills={project.skills?.map((s) => s.name)}
+        expertise={project.expertise?.map((e) => e.name)}
+      />
 
-        {project.skills && project.skills.length > 0 && (
-          <section>
-            <h2>Skills</h2>
-            <ul>
-              {project.skills.map((item) => (
-                <li key={item._id}>{item.name}</li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {project.links && project.links.length > 0 && (
-          <section>
-            <h2>Links</h2>
-            <ul>
-              {project.links.map((link) => (
-                <li key={link._key}>
-                  <a href={link.url} target="_blank" rel="noopener noreferrer">
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-      {project.images?.map((image, i) => {
-        const dims = image.asset?.metadata?.dimensions
-        if (!image.asset || !dims) return null
-        return (
-          <Image
-            key={image._key}
-            src={urlFor(image).width(1600).fit('max').auto('format').url()}
-            alt={image.alt ?? ''}
-            width={dims.width}
-            height={dims.height}
-            sizes="(max-width: 768px) 100vw, 1200px"
-            priority={i === 0}
-          />
-        )
-      })}
+      {project.images && project.images.length > 0 && (
+        <MediaGroup>
+          {project.images
+            .filter((image) => image.asset)
+            .map((image) => (
+              <MediaGroupImage
+                key={image._key}
+                src={urlFor(image)
+                  .width(1600)
+                  .fit('max')
+                  .auto('format')
+                  .url()}
+                metaTitle={image.alt ?? ''}
+                size="full"
+              />
+            ))}
+        </MediaGroup>
+      )}
     </main>
   )
 }
