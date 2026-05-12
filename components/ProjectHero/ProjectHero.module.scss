@@ -1,0 +1,62 @@
+@use "../../styles/mixins" as *;
+
+.projectHero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  // min-height: 85dvh;
+  padding: 50vh 0 clampy(var(--space-10), var(--space-14));
+}
+
+.grid {
+  row-gap: clampy(var(--space-6), var(--space-10));
+}
+
+.title {
+  grid-column: 1 / -1;
+  color: var(--color-fg-primary);
+
+  @include breakpoint(s) {
+    grid-column: 1 / span 6;
+  }
+}
+
+.meta {
+  margin-top: 0.25rem;
+  grid-column: 1 / -1;
+  display: grid;
+  gap: clampy(var(--space-6), var(--space-9));
+  align-self: end;
+
+  @include breakpoint(s) {
+    grid-column: 7 / span 6;
+  }
+}
+
+.description {
+  max-width: 53ch;
+  color: var(--color-fg-primary);
+  text-wrap: pretty;
+}
+
+.links {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.linksLabel {
+  color: var(--color-fg-secondary);
+}
+
+.linksList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clampy(var(--space-4), var(--space-6));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linksItem {
+  display: inline-flex;
+}

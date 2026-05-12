@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { RouteScrollReset } from "@/components/RouteScrollReset";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CursorProvider } from "@/context/Cursor";
 import { HandPoseProvider } from "@/context/HandPose";
@@ -13,6 +14,7 @@ export default function SiteLayout({
 }>) {
   return (
     <SmoothScroll>
+      <RouteScrollReset />
       <InViewAnimationProvider>
         <CursorProvider>
           <HandPoseProvider>
