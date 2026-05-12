@@ -3,7 +3,7 @@
 .mediaGroup {
   margin: 0 auto;
   max-width: var(--layout-content-max);
-  padding: clampy(var(--space-10), var(--space-14))
+  padding: calc(clampy(var(--space-3), var(--space-9)) / 2)
     var(--layout-container-gutter);
 }
 

@@ -2,8 +2,10 @@
 
 .gridWrap {
   width: 100%;
+  max-width: var(--layout-content-max);
   padding-right: var(--layout-container-gutter);
   padding-left: var(--layout-container-gutter);
+  margin: 0 auto;
 }
 
 .grid {

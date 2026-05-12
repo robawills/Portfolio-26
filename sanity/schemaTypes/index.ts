@@ -1,5 +1,7 @@
 import {type SchemaTypeDefinition} from 'sanity'
 
+import {aboutBuildBlockType} from './blocks/aboutBuildBlock'
+import {mediaGroupBlockType} from './blocks/mediaGroupBlock'
 import {clientType} from './clientType'
 import {expertiseType} from './expertiseType'
 import {homeType} from './homeType'
@@ -7,5 +9,13 @@ import {projectType} from './projectType'
 import {skillType} from './skillType'
 
 export const schema: {types: SchemaTypeDefinition[]} = {
-  types: [homeType, projectType, skillType, expertiseType, clientType],
+  types: [
+    homeType,
+    projectType,
+    skillType,
+    expertiseType,
+    clientType,
+    mediaGroupBlockType,
+    aboutBuildBlockType,
+  ],
 }

@@ -35,8 +35,6 @@
   @include breakpoint(s) {
     display: grid;
     width: 100%;
-    max-width: var(--layout-content-max);
-    margin: 0 auto;
   }
 }
 

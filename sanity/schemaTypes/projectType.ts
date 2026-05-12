@@ -54,13 +54,6 @@ export const projectType = defineType({
       validation: (rule) => rule.required().max(2000),
     }),
     defineField({
-      name: "build",
-      title: "Build",
-      type: "text",
-      rows: 4,
-      validation: (rule) => rule.required().max(2000),
-    }),
-    defineField({
       name: "cardImage",
       title: "Card image",
       description: "Shown only on the home page project cards.",
@@ -92,8 +85,31 @@ export const projectType = defineType({
       ],
     }),
     defineField({
+      name: "body",
+      title: "Body",
+      description:
+        "Ordered page builder. Add Media groups and About / Build sections in any order; reorder by dragging.",
+      type: "array",
+      of: [
+        defineArrayMember({ type: "mediaGroupBlock" }),
+        defineArrayMember({ type: "aboutBuildBlock" }),
+      ],
+    }),
+    // Legacy fields kept on the schema so the Studio recognises pre-existing
+    // data on older project documents. Copy any content into the Body field
+    // above, then clear these. They're no longer used by the rendered page.
+    defineField({
+      name: "build",
+      title: "Build (legacy)",
+      type: "text",
+      rows: 4,
+      deprecated: {
+        reason: "Moved into Body → About / Build section. Clear once migrated.",
+      },
+    }),
+    defineField({
       name: "images",
-      title: "Images",
+      title: "Images (legacy)",
       type: "array",
       of: [
         defineArrayMember({
@@ -104,12 +120,13 @@ export const projectType = defineType({
               name: "alt",
               title: "Alt text",
               type: "string",
-              validation: (rule) => rule.required(),
             }),
           ],
         }),
       ],
-      validation: (rule) => rule.min(1),
+      deprecated: {
+        reason: "Moved into Body → Media group. Clear once migrated.",
+      },
     }),
     defineField({
       name: "skills",
@@ -166,6 +183,6 @@ export const projectType = defineType({
     }),
   ],
   preview: {
-    select: { title: "title", media: "images.0" },
+    select: { title: "title", media: "cardImage" },
   },
 });
