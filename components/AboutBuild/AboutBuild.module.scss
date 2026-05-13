@@ -45,7 +45,16 @@
 }
 
 .tagListItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clampy(var(--space-2), var(--space-3))
+    clampy(var(--space-5), var(--space-7));
   max-width: 60ch;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tagListItem {
   color: var(--color-fg-primary);
-  text-wrap: pretty;
 }

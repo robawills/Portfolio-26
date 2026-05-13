@@ -14,7 +14,6 @@
 
   @include breakpoint(s) {
     height: 85dvh;
-    border-radius: var(--radius-3);
   }
 
   &:hover {

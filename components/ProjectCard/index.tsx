@@ -99,10 +99,7 @@ export const ProjectCard = ({
       paused: true,
       scrollTrigger: {
         trigger: labelEl,
-        // Fire when the label's top is 20% of the way up from the viewport
-        // bottom — gives the user a beat to register the label before the
-        // words start rising.
-        start: "top bottom-=20%",
+        start: "top bottom-=10%",
         once: true,
       },
     });

@@ -20,7 +20,7 @@ const HOME_QUERY = `{
     descriptionCard,
     "cover": cardImage{..., asset->{_id, metadata{dimensions}}},
     "coverMobile": cardImageMobile{..., asset->{_id, metadata{dimensions}}},
-    "skillNames": skills[]->name,
+    "skillNames": body[_type == "aboutBuildBlock"][0].skills[]->name,
     links[]{_key, title, url}
   },
   "clients": *[_type == "client"] | order(name asc){name}

@@ -4,6 +4,8 @@ import {ProjectBody, type ProjectBodyBlock} from '@/components/ProjectBody'
 import {ProjectHero} from '@/components/ProjectHero'
 import {client} from '@/sanity/lib/client'
 
+import styles from './page.module.scss'
+
 const PROJECT_QUERY = `*[_type == "project" && slug.current == $slug][0]{
   title,
   description,
@@ -50,7 +52,7 @@ export default async function ProjectPage({params}: {params: Promise<{slug: stri
   if (!project) notFound()
 
   return (
-    <main>
+    <main className={styles.main}>
       <ProjectHero
         title={project.title}
         description={project.description}
