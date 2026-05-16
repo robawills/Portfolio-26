@@ -259,6 +259,7 @@ export const ProjectCard = ({
                     href={href}
                     type={ButtonType.PRIMARY}
                     label="View project"
+                    ariaLabel={`View ${title}`}
                     fullWidth
                     small
                   />
