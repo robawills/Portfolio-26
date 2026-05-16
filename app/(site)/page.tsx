@@ -96,7 +96,7 @@ export default async function HomePage() {
     }));
 
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <HomeHero
         title={home?.heroTitle ?? "Add a hero title in the Studio"}
         description={home?.description ?? "Add a description in the Studio"}

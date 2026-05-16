@@ -7,6 +7,7 @@ import classNames from "classnames/bind";
 import gsap from "gsap";
 
 import { Grid } from "@/components/Grid";
+import { SkipLink } from "@/components/SkipLink";
 import { useHandPose, type HandPose } from "@/context/HandPose";
 import headerData from "@/data/header.json";
 
@@ -119,6 +120,7 @@ export const Header = () => {
 
   return (
     <header ref={headerRef} className={cx("header", { scrolled })}>
+      <SkipLink />
       <Grid as="div" className={cx("desktop")}>
         <Link
           href={links[0].href}

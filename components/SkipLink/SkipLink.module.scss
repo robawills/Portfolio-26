@@ -1,0 +1,24 @@
+@use "../../styles/mixins" as *;
+
+.skipLink {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: var(--zindex-top);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-bg-primary-inverse);
+  color: var(--color-fg-primary-inverse);
+  border-radius: var(--radius-2);
+  text-decoration: none;
+  transform: translateY(calc(-100% - var(--space-4)));
+  transition: transform var(--animation-speed-fast) var(--animation-easing-1);
+
+  &:focus,
+  &:focus-visible {
+    transform: translateY(0);
+    outline: none;
+    color: var(--color-fg-primary-inverse);
+
+    @include a11y-focus-box-shadow;
+  }
+}

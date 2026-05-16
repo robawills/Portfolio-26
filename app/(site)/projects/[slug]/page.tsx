@@ -52,7 +52,7 @@ export default async function ProjectPage({params}: {params: Promise<{slug: stri
   if (!project) notFound()
 
   return (
-    <main className={styles.main}>
+    <main id="main-content" tabIndex={-1} className={styles.main}>
       <ProjectHero
         title={project.title}
         description={project.description}
