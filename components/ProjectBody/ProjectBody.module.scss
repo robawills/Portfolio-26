@@ -1,5 +1,5 @@
-@use "../../../../styles/mixins" as *;
+@use "../../styles/mixins" as *;
 
-.main {
+.body {
   padding-bottom: clampy(var(--space-10), var(--space-14));
 }

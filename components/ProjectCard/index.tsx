@@ -64,7 +64,10 @@ export const ProjectCard = ({
   const triggerLabelRef = useRef<HTMLSpanElement>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
+  // useLayoutEffect so the portal's Dialog.Content lands in the DOM before
+  // first paint — otherwise Dialog.Trigger's auto-generated aria-controls
+  // points to ids that don't exist yet (a11y audit: duplicate-id-aria).
+  useIsomorphicLayoutEffect(() => {
     setContainer(cardRef.current);
   }, []);
 

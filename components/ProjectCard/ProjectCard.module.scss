@@ -29,9 +29,19 @@
     display: block;
 
     &:focus-visible {
-      @include a11y-focus-box-shadow($inset: true);
-
       outline: none;
+
+      // Rendered above the image so the focus ring isn't covered by it.
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        border-radius: inherit;
+
+        @include a11y-focus-box-shadow($inset: true);
+      }
     }
   }
 
