@@ -59,17 +59,9 @@ export const ProjectCard = ({
   const safeLinks = links ?? [];
 
   const [open, setOpen] = useState(false);
-  const [container, setContainer] = useState<HTMLElement | null>(null);
   const cardRef = useRef<HTMLElement>(null);
   const triggerLabelRef = useRef<HTMLSpanElement>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // useLayoutEffect so the portal's Dialog.Content lands in the DOM before
-  // first paint — otherwise Dialog.Trigger's auto-generated aria-controls
-  // points to ids that don't exist yet (a11y audit: duplicate-id-aria).
-  useIsomorphicLayoutEffect(() => {
-    setContainer(cardRef.current);
-  }, []);
 
   useEffect(() => {
     return () => {
@@ -188,16 +180,14 @@ export const ProjectCard = ({
           </button>
         </Dialog.Trigger>
 
-        {container && (
-          <Dialog.Portal container={container} forceMount>
-            <Dialog.Content
-              forceMount
-              asChild
-              onOpenAutoFocus={(e) => e.preventDefault()}
-              onCloseAutoFocus={(e) => e.preventDefault()}
-              onPointerDownOutside={(e) => e.preventDefault()}
-              onInteractOutside={(e) => e.preventDefault()}
-            >
+        <Dialog.Content
+          forceMount
+          asChild
+          onOpenAutoFocus={(e) => e.preventDefault()}
+          onCloseAutoFocus={(e) => e.preventDefault()}
+          onPointerDownOutside={(e) => e.preventDefault()}
+          onInteractOutside={(e) => e.preventDefault()}
+        >
               <div
                 className={cx("panel")}
                 inert={!open}
@@ -275,8 +265,6 @@ export const ProjectCard = ({
                 </div>
               </div>
             </Dialog.Content>
-          </Dialog.Portal>
-        )}
       </article>
     </Dialog.Root>
   );
