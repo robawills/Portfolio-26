@@ -49,6 +49,11 @@ export const homeType = defineType({
       rows: 6,
       validation: (rule) => rule.max(800),
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    }),
   ],
   preview: {
     select: {title: 'heroTitle', media: 'heroImage'},
