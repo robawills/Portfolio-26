@@ -58,6 +58,7 @@ export async function generateMetadata({
   return buildMetadata({
     seo: project.seo,
     fallback: {title: project.title, description: project.description},
+    path: `/projects/${slug}`,
   })
 }
 

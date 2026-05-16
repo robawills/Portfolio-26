@@ -70,6 +70,7 @@ export async function generateMetadata(): Promise<Metadata> {
     seo: home?.seo,
     fallback: { title: home?.heroTitle, description: home?.description },
     absoluteTitle: true,
+    path: "/",
   });
 }
 
