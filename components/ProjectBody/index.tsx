@@ -1,6 +1,12 @@
+import classNames from 'classnames/bind'
+
 import {AboutBuild} from '@/components/AboutBuild'
 import {MediaGroup, MediaGroupImage} from '@/components/MediaGroup'
 import {urlFor} from '@/sanity/lib/image'
+
+import styles from './ProjectBody.module.scss'
+
+const cx = classNames.bind(styles)
 
 export type MediaSize = 'full' | 'half' | 'max' | 'mega'
 
@@ -38,7 +44,7 @@ export const ProjectBody = ({body}: ProjectBodyProps) => {
   if (!body || body.length === 0) return null
 
   return (
-    <>
+    <div className={cx('body')}>
       {body.map((block) => {
         if (block._type === 'mediaGroupBlock') {
           const items = (block.items ?? []).filter((item) => item.image?.asset)
@@ -75,7 +81,7 @@ export const ProjectBody = ({body}: ProjectBodyProps) => {
 
         return null
       })}
-    </>
+    </div>
   )
 }
 
