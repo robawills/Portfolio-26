@@ -2,7 +2,7 @@
 
 import React, { Suspense, useMemo, useRef } from "react";
 
-import { Center, Environment, useGLTF } from "@react-three/drei";
+import { Environment, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import classNames from "classnames/bind";
 import * as THREE from "three";
@@ -68,6 +68,27 @@ const AnimatedHand = ({
   poseIndex,
 }: AnimatedHandProps): React.ReactElement => {
   const { scene, animations } = useGLTF(ANI_HAND_PATH);
+
+  // useGLTF caches the scene globally, so a remount can land with bones in any
+  // pose. Reset to the rest pose during render and measure the centering
+  // offset once — applied below as a static position so we never re-measure a
+  // skinned bbox at a wrong moment.
+  const restCenteringOffset = useMemo(() => {
+    const offset = new THREE.Vector3(0, 0, 0);
+    if (animations.length === 0) return offset;
+    const mixer = new THREE.AnimationMixer(scene);
+    const action = mixer.clipAction(animations[0]);
+    action.play();
+    action.paused = true;
+    action.time = POSES[0].frame / ANIMATION_FPS;
+    mixer.update(0);
+    mixer.stopAllAction();
+    scene.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(scene, true);
+    box.getCenter(offset);
+    return offset.negate();
+  }, [scene, animations]);
+
   const groupRef = useRef<THREE.Group>(null);
   const poseSnapshotsRef = useRef<BoneSnapshot[][]>([]);
   const mouseTarget = useRef({ x: 0, y: 0 });
@@ -245,9 +266,9 @@ const AnimatedHand = ({
 
   return (
     <group ref={groupRef} scale={2.1} position={[0, -0.5, 0]}>
-      <Center>
+      <group position={restCenteringOffset}>
         <primitive object={scene} />
-      </Center>
+      </group>
     </group>
   );
 };
@@ -368,9 +389,16 @@ export const Hand3D = ({ className }: Hand3DProps): React.ReactElement => {
     () => createSmoothBalloonMaterial(),
     [],
   );
-  const { pose } = useHandPose();
+  const { pose, setPose } = useHandPose();
   const poseIndex = Math.max(0, HAND_POSES.indexOf(pose));
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  // Pose state lives above the page in HandPoseProvider, so a hover-driven
+  // pose can survive navigation. Snap back to default on mount so the rendered
+  // pose matches the bone state <Center> just measured.
+  React.useEffect(() => {
+    setPose("default");
+  }, [setPose]);
 
   React.useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -393,7 +421,8 @@ export const Hand3D = ({ className }: Hand3DProps): React.ReactElement => {
       rafId = requestAnimationFrame(update);
     };
 
-    update();
+    wrapper.style.transform = "translate3d(0, 0, 0)";
+    rafId = requestAnimationFrame(update);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
