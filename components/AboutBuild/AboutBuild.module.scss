@@ -37,7 +37,7 @@
 
 .tagList {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .tagListLabel {
@@ -47,8 +47,7 @@
 .tagListItems {
   display: flex;
   flex-wrap: wrap;
-  gap: clampy(var(--space-2), var(--space-3))
-    clampy(var(--space-5), var(--space-7));
+  gap: var(--space-2) clampy(var(--space-5), var(--space-7));
   max-width: 60ch;
   list-style: none;
   padding: 0;
