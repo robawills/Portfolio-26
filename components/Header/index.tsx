@@ -164,7 +164,7 @@ export const Header = () => {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          aria-controls="header-mobile-menu"
+          aria-controls={open ? "header-mobile-menu" : undefined}
           onClick={() => setOpen((prev) => !prev)}
           className={cx("menuToggle", { open })}
         >
