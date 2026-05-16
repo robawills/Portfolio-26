@@ -1,9 +1,12 @@
+import type { Metadata } from "next";
+
 import { AboutBuild } from "@/components/AboutBuild";
 import { ClientMarquee } from "@/components/ClientMarquee";
 import { HomeHero } from "@/components/HomeHero";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import { buildMetadata, type SeoFields } from "@/sanity/lib/metadata";
 
 const HOME_QUERY = `{
   "home": *[_type == "home"][0]{
@@ -11,7 +14,8 @@ const HOME_QUERY = `{
     description,
     heroImage{..., asset->{_id, metadata{dimensions}}},
     aboutBuildSignpost,
-    aboutBuildDescription
+    aboutBuildDescription,
+    seo{title, description, image{..., asset->{_id}}}
   },
   "projects": *[_type == "project"] | order(orderRank){
     _id,
@@ -40,6 +44,7 @@ type Home = {
   heroImage?: SanityImage;
   aboutBuildSignpost?: string;
   aboutBuildDescription?: string;
+  seo?: SeoFields;
 };
 
 type Project = {
@@ -56,6 +61,17 @@ type Project = {
 type Client = {
   name?: string;
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const home = await client.fetch<Home | null>(
+    `*[_type == "home"][0]{heroTitle, description, seo{title, description, image{..., asset->{_id}}}}`,
+  );
+  return buildMetadata({
+    seo: home?.seo,
+    fallback: { title: home?.heroTitle, description: home?.description },
+    absoluteTitle: true,
+  });
+}
 
 export default async function HomePage() {
   const { home, projects, clients } = await client.fetch<{

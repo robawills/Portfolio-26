@@ -6,10 +6,13 @@ import {clientType} from './clientType'
 import {expertiseType} from './expertiseType'
 import {homeType} from './homeType'
 import {projectType} from './projectType'
+import {seoType} from './seoType'
+import {siteSettingsType} from './siteSettingsType'
 import {skillType} from './skillType'
 
 export const schema: {types: SchemaTypeDefinition[]} = {
   types: [
+    siteSettingsType,
     homeType,
     projectType,
     skillType,
@@ -17,5 +20,6 @@ export const schema: {types: SchemaTypeDefinition[]} = {
     clientType,
     mediaGroupBlockType,
     aboutBuildBlockType,
+    seoType,
   ],
 }

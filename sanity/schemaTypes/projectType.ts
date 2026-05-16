@@ -81,6 +81,11 @@ export const projectType = defineType({
       ],
     }),
     defineField({
+      name: "seo",
+      title: "SEO",
+      type: "seo",
+    }),
+    defineField({
       name: "links",
       title: "Links",
       type: "array",
