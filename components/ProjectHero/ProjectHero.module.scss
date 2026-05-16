@@ -4,7 +4,6 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  // min-height: 85dvh;
   padding: 50vh 0 clampy(var(--space-10), var(--space-14));
 }
 
@@ -22,7 +21,7 @@
 }
 
 .meta {
-  margin-top: 0.25rem;
+  margin-top: 0.45rem;
   grid-column: 1 / -1;
   display: grid;
   gap: clampy(var(--space-6), var(--space-9));

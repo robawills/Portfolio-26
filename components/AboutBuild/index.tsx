@@ -29,7 +29,13 @@ interface TagListProps {
 const TagList = ({ label, items }: TagListProps) => (
   <div className={cx("tagList")}>
     <span className={cx("tagListLabel", "u-signpostSmall")}>{label}</span>
-    <p className={cx("tagListItems", "u-bodySmall")}>{items.join(", ")}</p>
+    <ul className={cx("tagListItems", "u-bodySmall")}>
+      {items.map((item) => (
+        <li key={item} className={cx("tagListItem")}>
+          {item}
+        </li>
+      ))}
+    </ul>
   </div>
 );
 

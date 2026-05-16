@@ -1,23 +1,8 @@
-import {
-  defineArrayMember,
-  defineField,
-  defineType,
-  type ReferenceFilterResolver,
-} from "sanity";
+import { defineArrayMember, defineField, defineType } from "sanity";
 import {
   orderRankField,
   orderRankOrdering,
 } from "@sanity/orderable-document-list";
-
-const excludeSelectedRefs: ReferenceFilterResolver = ({ parent }) => {
-  const refs = Array.isArray(parent)
-    ? parent.flatMap((item) => {
-        const ref = (item as { _ref?: string })._ref;
-        return ref ? [ref] : [];
-      })
-    : [];
-  return refs.length ? { filter: "!(_id in $refs)", params: { refs } } : {};
-};
 
 export const projectType = defineType({
   name: "project",
@@ -94,65 +79,6 @@ export const projectType = defineType({
         defineArrayMember({ type: "mediaGroupBlock" }),
         defineArrayMember({ type: "aboutBuildBlock" }),
       ],
-    }),
-    // Legacy fields kept on the schema so the Studio recognises pre-existing
-    // data on older project documents. Copy any content into the Body field
-    // above, then clear these. They're no longer used by the rendered page.
-    defineField({
-      name: "build",
-      title: "Build (legacy)",
-      type: "text",
-      rows: 4,
-      deprecated: {
-        reason: "Moved into Body → About / Build section. Clear once migrated.",
-      },
-    }),
-    defineField({
-      name: "images",
-      title: "Images (legacy)",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "image",
-          options: { hotspot: true },
-          fields: [
-            defineField({
-              name: "alt",
-              title: "Alt text",
-              type: "string",
-            }),
-          ],
-        }),
-      ],
-      deprecated: {
-        reason: "Moved into Body → Media group. Clear once migrated.",
-      },
-    }),
-    defineField({
-      name: "skills",
-      title: "Skills",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "reference",
-          to: [{ type: "skill" }],
-          options: { filter: excludeSelectedRefs },
-        }),
-      ],
-      options: { layout: "tags" },
-    }),
-    defineField({
-      name: "expertise",
-      title: "Expertise",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "reference",
-          to: [{ type: "Expertise" }],
-          options: { filter: excludeSelectedRefs },
-        }),
-      ],
-      options: { layout: "tags" },
     }),
     defineField({
       name: "links",
