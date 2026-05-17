@@ -14,6 +14,30 @@ import styles from "./Hand3D.module.scss";
 
 const cx = classNames.bind(styles);
 
+// THREE r183 deprecated `Clock` in favour of `Timer`. @react-three/fiber 9.x
+// still constructs a `new THREE.Clock()` in its store on every Canvas mount,
+// which prints a one-shot console.warn we can't intercept any other way.
+// Silence just that string; everything else passes through unchanged.
+// Remove once R3F adopts THREE.Timer.
+if (
+  typeof window !== "undefined" &&
+  !(window as unknown as {__clockWarnSilenced?: boolean}).__clockWarnSilenced
+) {
+  (window as unknown as {__clockWarnSilenced: boolean}).__clockWarnSilenced =
+    true;
+  const original = console.warn;
+  console.warn = (...args: unknown[]) => {
+    const message = args[0];
+    if (
+      typeof message === "string" &&
+      message.includes("THREE.Clock: This module has been deprecated")
+    ) {
+      return;
+    }
+    original.apply(console, args as Parameters<typeof console.warn>);
+  };
+}
+
 const MAX_ROTATION = 0.4;
 const LERP_SPEED = 0.05;
 
@@ -92,6 +116,8 @@ const AnimatedHand = ({
   const groupRef = useRef<THREE.Group>(null);
   const poseSnapshotsRef = useRef<BoneSnapshot[][]>([]);
   const mouseTarget = useRef({ x: 0, y: 0 });
+  const timerRef = useRef<THREE.Timer | null>(null);
+  if (timerRef.current === null) timerRef.current = new THREE.Timer();
   const dragOffset = useRef({ x: 0, y: 0 });
   const isDragging = useRef(false);
   const dragStart = useRef({ x: 0, y: 0 });
@@ -206,7 +232,9 @@ const AnimatedHand = ({
   const RETURN_DELAY = 1500;
   const RETURN_SPEED = 0.02;
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
+    const timer = timerRef.current!;
+    timer.update();
     const target = poseSnapshotsRef.current[effectivePoseIndex];
     if (target) {
       for (let i = 0; i < target.length; i++) {
@@ -233,7 +261,7 @@ const AnimatedHand = ({
       );
     }
 
-    const time = clock.elapsedTime;
+    const time = timer.getElapsed();
     const idleX = Math.sin(time * IDLE_FREQ_X) * IDLE_AMP_X;
     const idleY = Math.sin(time * IDLE_FREQ_Y + 0.6) * IDLE_AMP_Y;
     const idleZ = Math.sin(time * IDLE_FREQ_Z + 1.2) * IDLE_AMP_Z;
