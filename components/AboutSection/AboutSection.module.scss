@@ -1,0 +1,40 @@
+@use "../../styles/mixins" as *;
+
+.section {
+  padding: clampy(var(--space-8), var(--space-10)) 0;
+  border-top: 1px solid var(--color-border-primary);
+
+  /* The final section in a stack closes the bottom edge too. */
+  &:last-of-type {
+    border-bottom: 1px solid var(--color-border-primary);
+  }
+}
+
+.signpost {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-5);
+  color: var(--color-fg-secondary);
+
+  @include inview-animate(fade-slide-up, 0);
+
+  @include breakpoint(s) {
+    grid-column: 1 / span 3;
+    margin-bottom: 0;
+  }
+}
+
+.content {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: clampy(var(--space-4), var(--space-5));
+
+  @include inview-animate(fade-slide-up, 1);
+
+  @include breakpoint(s) {
+    grid-column: 4 / 13;
+  }
+
+  @include breakpoint(m) {
+    grid-column: 7 / 13;
+  }
+}

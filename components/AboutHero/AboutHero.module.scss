@@ -1,0 +1,15 @@
+@use "../../styles/mixins" as *;
+
+.aboutHero {
+  padding: clampy(var(--space-10), var(--space-14)) 0
+    clampy(var(--space-8), var(--space-12));
+}
+
+.title {
+  grid-column: 1 / -1;
+  color: var(--color-fg-primary);
+  text-wrap: balance;
+  max-width: 22ch;
+
+  @include inview-animate(fade-slide-up, 0);
+}
