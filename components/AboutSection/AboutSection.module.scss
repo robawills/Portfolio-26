@@ -1,12 +1,24 @@
 @use "../../styles/mixins" as *;
 
 .section {
-  padding: clampy(var(--space-8), var(--space-10)) 0;
-  border-top: 1px solid var(--color-border-primary);
+  position: relative;
+  padding: clampy(var(--space-10), var(--space-14)) 0;
 
-  /* The final section in a stack closes the bottom edge too. */
-  &:last-of-type {
-    border-bottom: 1px solid var(--color-border-primary);
+  /* Top rule, width-constrained to match the Grid's content area (so it
+     respects the page gutters and content max-width). */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 2 * var(--layout-container-gutter));
+    max-width: calc(
+      var(--layout-content-max) - 2 * var(--layout-container-gutter)
+    );
+    height: 1px;
+    margin-inline: auto;
+    background-color: var(--color-border-primary);
   }
 }
 
