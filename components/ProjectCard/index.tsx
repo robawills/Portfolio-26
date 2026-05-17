@@ -139,7 +139,7 @@ export const ProjectCard = ({
             className={cx("imageLink")}
             aria-label={`View ${title}`}
           >
-            <div className={cx("imageWrap")}>
+            <div className={cx("imageWrap")} data-card-fade-target>
               {mobileImage && (
                 <div className={cx("imageSlot", "imageMobile")}>
                   <Image
