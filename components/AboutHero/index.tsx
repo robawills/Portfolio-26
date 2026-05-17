@@ -20,7 +20,7 @@ export const AboutHero = ({ title, className }: AboutHeroProps) => {
   return (
     <section className={cx("aboutHero", className)} ref={animationRef}>
       <Grid>
-        <h1 className={cx("title", "u-h2")}>{title}</h1>
+        <h1 className={cx("title", "u-h1")}>{title}</h1>
       </Grid>
     </section>
   );
