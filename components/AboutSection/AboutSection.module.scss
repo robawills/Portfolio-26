@@ -1,0 +1,52 @@
+@use "../../styles/mixins" as *;
+
+.section {
+  position: relative;
+  padding: clampy(var(--space-10), var(--space-14)) 0;
+
+  /* Top rule, width-constrained to match the Grid's content area (so it
+     respects the page gutters and content max-width). */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 2 * var(--layout-container-gutter));
+    max-width: calc(
+      var(--layout-content-max) - 2 * var(--layout-container-gutter)
+    );
+    height: 1px;
+    margin-inline: auto;
+    background-color: var(--color-border-primary);
+  }
+}
+
+.signpost {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-5);
+  color: var(--color-fg-secondary);
+
+  @include inview-animate(fade-slide-up, 0);
+
+  @include breakpoint(s) {
+    grid-column: 1 / span 3;
+    margin-bottom: 0;
+  }
+}
+
+.content {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: clampy(var(--space-4), var(--space-5));
+
+  @include inview-animate(fade-slide-up, 1);
+
+  @include breakpoint(s) {
+    grid-column: 4 / 13;
+  }
+
+  @include breakpoint(m) {
+    grid-column: 7 / 13;
+  }
+}

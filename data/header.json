@@ -2,7 +2,7 @@
   "links": [
     { "label": "Work", "href": "/" },
     { "label": "About", "href": "/about" },
-    { "label": "Contact", "href": "/contact" }
+    { "label": "Contact", "href": "mailto:robawills@me.com" }
   ],
   "tagline": {
     "title": "Design Engineer & front-end craft",

@@ -77,3 +77,15 @@
 [data-theme="brand-yellow"] {
   --color-bg-primary: var(--color-bg-brand);
 }
+
+/* Full-bleed brand-blue surface — applied to a route's <main> and floodfilled
+   onto <body> via :has() so the body's background-color matches. */
+[data-theme="brand-blue"],
+body:has([data-theme="brand-blue"]) {
+  --color-bg-primary: var(--color-blue-700);
+  --color-bg-secondary: var(--color-blue-700);
+  --color-bg-tertiary: var(--color-blue-700);
+  --color-fg-primary: var(--color-neutral-100);
+  --color-fg-secondary: var(--alpha-light-4);
+  --color-border-primary: var(--alpha-light-2);
+}

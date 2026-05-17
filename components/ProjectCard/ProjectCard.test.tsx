@@ -20,8 +20,11 @@ describe('ProjectCard', () => {
 
   it('renders the cover image link to the project page', () => {
     render(<ProjectCard {...baseProps} />)
-    const link = screen.getByRole('link', {name: /view mountain atlas/i})
-    expect(link).toHaveAttribute('href', '/projects/atlas')
+    const links = screen.getAllByRole('link', {name: /view mountain atlas/i})
+    expect(links.length).toBeGreaterThan(0)
+    for (const link of links) {
+      expect(link).toHaveAttribute('href', '/projects/atlas')
+    }
   })
 
   it('opens the panel when the trigger is clicked', async () => {
