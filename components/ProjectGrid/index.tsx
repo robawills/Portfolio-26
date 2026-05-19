@@ -38,6 +38,7 @@ function readHeaderOffsetPx(): number {
 }
 
 export interface ProjectGridProps {
+  /** Ordered list of project card props — rendered top-down as sticky stacked cards. */
   projects: ProjectCardProps[]
 }
 

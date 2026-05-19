@@ -5,7 +5,9 @@ import styles from "./ClientMarquee.module.scss";
 const cx = classNames.bind(styles);
 
 export interface ClientMarqueeProps {
+  /** Client / brand names rendered in the scrolling marquee. Duplicated internally for a seamless loop. */
   clients: string[];
+  /** Extra class merged onto the outer `<section>`. */
   className?: string;
 }
 

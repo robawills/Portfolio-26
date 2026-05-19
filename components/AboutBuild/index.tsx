@@ -14,10 +14,15 @@ const DEFAULT_DESCRIPTION =
   "Built with Next.js 16 + React 19 (React Compiler enabled), TypeScript end to end. Content lives in Sanity, queried with GROQ; smooth scrolling via Lenis, page motion via GSAP, 3D balloon hand via Three.js + React Three Fiber. Styling is SCSS modules layered on a single design-token system designed in Figma. The component library is documented in Storybook and covered by Jest + React Testing Library — every component ships with stories and tests, so the design system stays trustworthy as it grows.";
 
 export interface AboutBuildProps {
+  /** Small uppercase label above the description (e.g. "About", "Stack"). Defaults to "About". */
   signpost?: string;
+  /** Paragraph describing the project / tech stack. Falls back to a default site-build blurb when omitted. */
   description?: string;
+  /** Optional list of skill chips rendered after the description. */
   skills?: string[];
+  /** Optional list of expertise chips rendered after the skills list. */
   expertise?: string[];
+  /** Extra class merged onto the outer `<section>`. */
   className?: string;
 }
 

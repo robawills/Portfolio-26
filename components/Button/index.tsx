@@ -18,43 +18,64 @@ export enum ButtonType {
 }
 
 export interface BaseButtonProps {
+  /** Visual variant — primary, secondary, tertiary, outline or text. Defaults to PRIMARY. */
   type?: ButtonType
+  /** Render the larger size variant. */
   large?: boolean
+  /** Render the smaller size variant. */
   small?: boolean
+  /** Disable the button. For `<a>` variants this adds `aria-disabled` and blocks navigation. */
   isDisabled?: boolean
+  /** Stretch the button to fill its container's width. */
   fullWidth?: boolean
+  /** Accessible label, used when the visible text isn't sufficient (e.g. icon-only). */
   ariaLabel?: string
+  /** Toggle-style `aria-pressed` value for buttons that act like toggles. */
   ariaPressed?: boolean
+  /** For href buttons: open the link in a new tab (adds `target="_blank"` and safe `rel`). */
   newWindow?: boolean
+  /** Extra `data-*` attributes applied to the rendered element. */
   dataAttributes?: Record<string, string>
 }
 
 export interface ButtonWithHref extends BaseButtonProps {
+  /** Destination URL — renders as an `<a>` instead of `<button>`. */
   href: string
   onClick?: never
+  /** Override the auto-generated `rel` attribute (merged with safe defaults). */
   rel?: string
 }
 
 export interface ButtonWithOnClick extends BaseButtonProps {
   href?: never
+  /** Click handler — renders as a `<button type="button">`. */
   onClick: ButtonHTMLAttributes<HTMLButtonElement>['onClick']
 }
 
 interface ButtonPropsWithLabel extends BaseButtonProps {
+  /** Visible text. Required when no leading or trailing icon is provided. */
   label: string
+  /** Optional icon rendered before the label. */
   leadingIcon?: IconName
+  /** Optional icon rendered after the label. */
   trailingIcon?: IconName
 }
 
 interface ButtonPropsWithLeadingIcon extends BaseButtonProps {
+  /** Visible text. Optional when an icon is present. */
   label?: string
+  /** Icon rendered before the label. */
   leadingIcon: IconName
+  /** Optional icon rendered after the label. */
   trailingIcon?: IconName
 }
 
 interface ButtonPropsWithTrailingIcon extends BaseButtonProps {
+  /** Visible text. Optional when an icon is present. */
   label?: string
+  /** Optional icon rendered before the label. */
   leadingIcon?: IconName
+  /** Icon rendered after the label. */
   trailingIcon: IconName
 }
 

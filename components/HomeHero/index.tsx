@@ -20,8 +20,11 @@ const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export interface HomeHeroProps {
+  /** Headline shown above the description. Animated in line-by-line on first view. */
   title: string;
+  /** Supporting paragraph under the headline. Animated in line-by-line. */
   description: string;
+  /** Extra class merged onto the outer `<section>`. */
   className?: string;
 }
 

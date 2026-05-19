@@ -6,8 +6,11 @@ import {type IconName} from '@/components/Icon'
 import {useCursor} from '@/context/Cursor'
 
 interface CustomCursorProps {
+  /** Region the custom cursor activates over — wraps your interactive content. */
   children: ReactNode
+  /** Optional icon shown inside the custom cursor while hovered. */
   icon?: IconName
+  /** Hide the cursor on mousedown (so it doesn't sit over a click feedback). Defaults to true. */
   hideOnClick?: boolean
 }
 

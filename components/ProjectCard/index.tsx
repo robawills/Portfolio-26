@@ -26,23 +26,35 @@ const useIsomorphicLayoutEffect =
 const cx = classNames.bind(styles);
 
 export interface ProjectCardLink {
+  /** Visible link text. */
   label: string;
+  /** Destination URL. Omit to render as plain text (e.g. "Coming soon"). */
   href?: string;
 }
 
 export interface ProjectCardImage {
+  /** Image source URL. */
   src: string;
+  /** Alt text describing the image for assistive tech. */
   alt: string;
+  /** Where to anchor the image when cropped. Single value or per-breakpoint object. */
   focalPoint?: ResponsiveFocalPoint;
 }
 
 export interface ProjectCardProps {
+  /** Primary (desktop / fallback) cover image. */
   image: ProjectCardImage;
+  /** Optional portrait variant shown below the small breakpoint. */
   mobileImage?: ProjectCardImage;
+  /** Internal route this card links to (e.g. `/projects/kyan`). */
   href: string;
+  /** Project title — shown in the trigger pill and modal panel heading. */
   title: string;
+  /** Short project description shown inside the panel. */
   description: string;
+  /** Skill / category chips rendered in the panel's tags column. */
   tags?: string[];
+  /** External links (site, repo, etc.) shown in the panel's links column. */
   links?: ProjectCardLink[];
 }
 

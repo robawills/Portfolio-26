@@ -6,9 +6,13 @@ import styles from './Grid.module.scss'
 const cx = classNames.bind(styles)
 
 export interface GridProps {
+  /** Tag the inner grid element renders as (e.g. `"section"`). Defaults to `"div"`. */
   as?: ElementType
+  /** Grid items. Position via `grid-column` on each child's own class. */
   children: ReactNode
+  /** Extra class merged onto the inner grid element. */
   className?: string
+  /** Inline styles applied to the inner grid element. */
   style?: CSSProperties
 }
 

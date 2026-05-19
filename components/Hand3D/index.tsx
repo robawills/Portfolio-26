@@ -81,8 +81,11 @@ interface BoneSnapshot {
 }
 
 interface AnimatedHandProps {
+  /** Material applied to every mesh in the imported GLTF scene. */
   material: THREE.Material;
+  /** Starting Euler rotation `[x, y, z]` (radians) for the hand group. Defaults to `[0, 0, 0]`. */
   initialRotation?: [number, number, number];
+  /** Index into the internal `POSES` table — which keyframe the bones lerp toward. */
   poseIndex: number;
 }
 
@@ -407,6 +410,7 @@ const createSmoothBalloonMaterial = (): THREE.MeshPhysicalMaterial => {
 };
 
 interface Hand3DProps {
+  /** Extra class merged onto the wrapper element that hosts the R3F Canvas. */
   className?: string;
 }
 

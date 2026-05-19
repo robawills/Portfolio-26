@@ -13,6 +13,7 @@ const cx = classNames.bind(styles)
 const LINKEDIN_URL = 'https://www.linkedin.com/in/rob-wills-000839169/'
 
 export interface FooterProps {
+  /** Extra class merged onto the outer `<footer>` element. */
   className?: string
 }
 

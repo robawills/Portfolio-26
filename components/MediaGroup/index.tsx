@@ -80,7 +80,9 @@ export const MediaGroupImage = ({
 )
 
 export interface MediaGroupProps {
+  /** One or more `<MediaGroupImage>` instances. */
   children: React.ReactNode
+  /** Extra class merged onto the outer wrapper. */
   className?: string
 }
 

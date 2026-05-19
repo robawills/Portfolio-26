@@ -10,7 +10,9 @@ import styles from "./AboutHero.module.scss";
 const cx = classNames.bind(styles);
 
 export interface AboutHeroProps {
+  /** Large intro headline shown at the top of the About page. */
   title: string;
+  /** Extra class merged onto the outer `<section>`. */
   className?: string;
 }
 

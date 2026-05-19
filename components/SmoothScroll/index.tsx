@@ -6,6 +6,7 @@ import type {ReactNode} from 'react'
 import 'lenis/dist/lenis.css'
 
 interface SmoothScrollProps {
+  /** App tree to enable Lenis smooth scrolling on. Mount this once near the root. */
   children: ReactNode
 }
 

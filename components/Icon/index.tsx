@@ -20,9 +20,13 @@ const ICONS_MAP = {
 }
 
 export interface IconProps {
+  /** Icon identifier — picks which SVG to render from the registered set. */
   name: IconName
+  /** Extra class merged onto the icon wrapper. */
   className?: string
+  /** Foreground colour mode — `default` uses primary fg, `inverse` flips for dark-on-light surfaces. */
   color?: 'default' | 'inverse'
+  /** Accessible label for the SVG. Defaults to `"<name> icon"`. */
   ariaLabel?: string
 }
 

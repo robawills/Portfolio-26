@@ -11,8 +11,11 @@ import styles from "./AboutSection.module.scss";
 const cx = classNames.bind(styles);
 
 export interface AboutSectionProps {
+  /** Small uppercase label rendered in the left grid column (e.g. "Bio", "Skills"). */
   signpost: string;
+  /** Content rendered in the right grid column — paragraphs, lists, or any custom markup. */
   children: ReactNode;
+  /** Extra class merged onto the outer `<section>`. */
   className?: string;
 }
 

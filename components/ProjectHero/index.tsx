@@ -19,15 +19,22 @@ const useIsomorphicLayoutEffect =
   typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 export interface ProjectHeroLink {
+  /** Stable React key (usually the Sanity `_key`). */
   key?: string
+  /** Visible link text. */
   title: string
+  /** Destination URL — typically an external project / repo link. */
   url: string
 }
 
 export interface ProjectHeroProps {
+  /** Project title — the large headline at the top of the project page. */
   title: string
+  /** Short project description shown under the headline. */
   description: string
+  /** Optional links (live site, repo, etc.) rendered alongside the meta. */
   links?: ProjectHeroLink[]
+  /** Extra class merged onto the outer `<section>`. */
   className?: string
 }
 

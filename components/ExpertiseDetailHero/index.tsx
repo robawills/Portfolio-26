@@ -9,11 +9,17 @@ import styles from './ExpertiseDetailHero.module.scss'
 const cx = classNames.bind(styles)
 
 export interface ExpertiseDetailHeroProps {
+  /** Small uppercase label above the title (e.g. the expertise name). */
   signpost: string
+  /** Main headline. */
   title: string
+  /** Intro paragraph rendered beneath the title. */
   intro: string
+  /** Hero image data — URL plus alt text. */
   image: {
+    /** Image source URL. */
     src: string
+    /** Alt text describing the image. */
     alt: string
   }
 }

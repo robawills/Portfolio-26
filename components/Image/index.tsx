@@ -11,9 +11,19 @@ import styles from './Image.module.scss'
 const cx = classNames.bind(styles)
 
 export interface ImageProps extends NextImageProps {
+  /** Extra class merged onto the rendered `<img>` element. */
   className?: string
+  /** Colour of the placeholder shown until the image loads. `none` skips the placeholder entirely. */
   placeholderColor?: 'default' | 'none' | 'dark'
+  /**
+   * Force the Sanity image loader (auto-detected when the src is on `cdn.sanity.io`).
+   * Adds `auto=format`, `fit=max`, and width/quality params to the asset URL.
+   */
   sanity?: boolean
+  /**
+   * Where to anchor the image when it's cropped via `object-fit: cover`.
+   * A single string applies across breakpoints, or pass `{mobile, tablet, desktop}` for responsive overrides.
+   */
   focalPoint?: ResponsiveFocalPoint
 }
 
