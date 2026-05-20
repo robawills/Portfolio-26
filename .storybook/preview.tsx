@@ -1,5 +1,5 @@
 import type {Preview} from '@storybook/nextjs'
-import {Geist, Geist_Mono} from 'next/font/google'
+import {Geist_Mono, Inter} from 'next/font/google'
 import React from 'react'
 
 import {CursorProvider} from '../context/Cursor'
@@ -8,16 +8,16 @@ import {InViewAnimationProvider} from '../context/InViewAnimation'
 
 import '../app/globals.scss'
 
-const geistSans = Geist({variable: '--font-geist-sans', subsets: ['latin']})
+const inter = Inter({variable: '--font-inter', subsets: ['latin']})
 const geistMono = Geist_Mono({variable: '--font-geist-mono', subsets: ['latin']})
 
 // Hoist next/font's variable classes onto <html> so the `--font-stack` token
-// (which expands to `var(--font-geist-sans), Arial, ...`) resolves at :root
-// — matching the real app where `app/layout.tsx` puts these classes on <html>.
+// (which expands to `var(--font-inter), Arial, ...`) resolves at :root —
+// matching the real app where `app/layout.tsx` puts these classes on <html>.
 // Without this, `body { font-family: var(--font-stack) }` resolves to invalid
 // at computed-value time and everything falls back to the browser default.
 if (typeof document !== 'undefined') {
-  document.documentElement.classList.add(geistSans.variable, geistMono.variable)
+  document.documentElement.classList.add(inter.variable, geistMono.variable)
 }
 
 const preview: Preview = {

@@ -21,7 +21,7 @@ const Filler = ({label, color}: {label: string; color: string}) => (
       justifyContent: 'center',
       background: color,
       color: 'var(--color-fg-primary)',
-      fontFamily: 'var(--font-geist-sans)',
+      fontFamily: 'var(--font-inter)',
       fontSize: '2rem',
     }}
   >
