@@ -95,6 +95,7 @@ export const ProjectCard = ({
     const split = new SplitText(labelEl, {
       type: "words",
       mask: "words",
+      aria: "none",
     });
     gsap.set(split.words, { yPercent: 100 });
 

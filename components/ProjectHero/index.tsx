@@ -60,6 +60,7 @@ export const ProjectHero = ({
       type: 'lines',
       mask: 'lines',
       linesClass: 'projectHeroLine',
+      aria: 'none',
     })
 
     // Hide synchronously so nothing flashes at the natural position.

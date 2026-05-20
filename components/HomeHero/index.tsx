@@ -41,15 +41,20 @@ export const HomeHero = ({ title, description, className }: HomeHeroProps) => {
     if (reduced) return;
 
     // Split each block into lines and wrap each line in an overflow-hidden mask.
+    // `aria: "none"` stops SplitText putting `aria-label` on the source element.
+    // It's prohibited on <p> (paragraph role) and the line wrappers carry the
+    // original text in the DOM, so screen readers still read it.
     const splitTitle = new SplitText(titleEl, {
       type: "lines",
       mask: "lines",
       linesClass: "homeHeroLine",
+      aria: "none",
     });
     const splitDesc = new SplitText(descEl, {
       type: "lines",
       mask: "lines",
       linesClass: "homeHeroLine",
+      aria: "none",
     });
 
     // Hide all lines synchronously so they don't paint at their natural
