@@ -53,5 +53,20 @@
     "jest-environment-jsdom": "^30.4.1",
     "storybook": "^10.3.6",
     "typescript": "^5"
+  },
+  "overrides": {
+    "uuid": "^11",
+    "@jest/core": {
+      "glob": "^13"
+    },
+    "@jest/reporters": {
+      "glob": "^13"
+    },
+    "jest-config": {
+      "glob": "^13"
+    },
+    "jest-runtime": {
+      "glob": "^13"
+    }
   }
 }

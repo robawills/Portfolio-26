@@ -32,3 +32,10 @@ global.ResizeObserver = class ResizeObserver {
   unobserve() {}
   disconnect() {}
 }
+
+// window.scrollTo — GSAP ScrollTrigger calls this during refresh; jsdom prints
+// a "not implemented" error otherwise.
+Object.defineProperty(window, 'scrollTo', {
+  writable: true,
+  value: jest.fn(),
+})

@@ -1,9 +1,9 @@
 @use "../../styles/mixins" as *;
 
 .button {
-  --icon-and-label-size: clampy(1.25rem, 1.75rem);
+  --icon-and-label-size: #{clampy(1.25rem, 1.75rem)};
   --icon-padding: calc(
-    clampy(var(--space-6), var(--space-8)) - var(--space-2)
+    #{clampy(var(--space-6), var(--space-8))} - var(--space-2)
   );
 
   box-sizing: border-box;
@@ -28,9 +28,9 @@
   }
 
   &.small {
-    --icon-and-label-size: clampy(0.75rem, 1rem);
+    --icon-and-label-size: #{clampy(0.75rem, 1rem)};
     --icon-padding: calc(
-      clampy(var(--space-3), var(--space-4)) - var(--space-1)
+      #{clampy(var(--space-3), var(--space-4))} - var(--space-1)
     );
 
     padding: var(--space-4) clampy(var(--space-4), var(--space-5));

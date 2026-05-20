@@ -1,7 +1,7 @@
 @use "../../styles/mixins" as *;
 
 .cursor {
-  --size: clampy(5rem, 7.5rem);
+  --size: #{clampy(5rem, 7.5rem)};
   --initial-scale: 0.05;
 
   color: var(--color-fg-primary);
