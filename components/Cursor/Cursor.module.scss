@@ -1,5 +1,7 @@
+@use "../../styles/mixins" as *;
+
 .cursor {
-  --size: clamp(5rem, 4rem + 4vw, 7.5rem);
+  --size: clampy(5rem, 7.5rem);
   --initial-scale: 0.05;
 
   color: var(--color-fg-primary);
@@ -15,7 +17,7 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     background-color: var(--color-bg-brand);
     border-radius: 50%;

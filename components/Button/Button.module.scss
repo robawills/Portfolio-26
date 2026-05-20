@@ -1,9 +1,9 @@
 @use "../../styles/mixins" as *;
 
 .button {
-  --icon-and-label-size: clamp(1.25rem, 1.129rem + 0.518vw, 1.75rem);
+  --icon-and-label-size: clampy(1.25rem, 1.75rem);
   --icon-padding: calc(
-    clamp(var(--space-6), 1.379rem + 0.518vw, var(--space-8)) - var(--space-2)
+    clampy(var(--space-6), var(--space-8)) - var(--space-2)
   );
 
   box-sizing: border-box;
@@ -11,9 +11,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: clamp(var(--space-2), 0.439rem + 0.259vw, var(--space-3));
-  padding: 0.8125rem clamp(var(--space-6), 1.379rem + 0.518vw, var(--space-8))
-    clamp(0.813rem, 0.843rem + -0.129vw, 0.688rem);
+  gap: clampy(var(--space-2), var(--space-3));
+  padding: 0.8125rem clampy(var(--space-6), var(--space-8))
+    clampy(0.813rem, 0.688rem);
   max-width: 100%;
   border-radius: var(--radius-full);
   transition:
@@ -23,8 +23,8 @@
   cursor: pointer;
 
   &.large {
-    padding-top: clamp(0.813rem, 0.737rem + 0.324vw, 1.125rem);
-    padding-bottom: clamp(0.813rem, 0.737rem + 0.324vw, 1.125rem);
+    padding-top: clampy(0.813rem, 1.125rem);
+    padding-bottom: clampy(0.813rem, 1.125rem);
   }
 
   &.small {
