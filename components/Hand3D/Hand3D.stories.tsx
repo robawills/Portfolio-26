@@ -35,6 +35,7 @@ const PoseSwitcher = () => {
           key={p}
           type="button"
           onClick={() => setPose(p)}
+          className="u-button"
           style={{
             padding: '0.5rem 1rem',
             border: 'none',

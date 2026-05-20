@@ -11,6 +11,15 @@ import '../app/globals.scss'
 const geistSans = Geist({variable: '--font-geist-sans', subsets: ['latin']})
 const geistMono = Geist_Mono({variable: '--font-geist-mono', subsets: ['latin']})
 
+// Hoist next/font's variable classes onto <html> so the `--font-stack` token
+// (which expands to `var(--font-geist-sans), Arial, ...`) resolves at :root
+// — matching the real app where `app/layout.tsx` puts these classes on <html>.
+// Without this, `body { font-family: var(--font-stack) }` resolves to invalid
+// at computed-value time and everything falls back to the browser default.
+if (typeof document !== 'undefined') {
+  document.documentElement.classList.add(geistSans.variable, geistMono.variable)
+}
+
 const preview: Preview = {
   parameters: {
     backgrounds: {
@@ -23,10 +32,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div
-        className={`${geistSans.variable} ${geistMono.variable}`}
-        style={{minHeight: '100dvh', fontFamily: 'var(--font-geist-sans)'}}
-      >
+      <div style={{minHeight: '100dvh'}}>
         <InViewAnimationProvider>
           <CursorProvider>
             <HandPoseProvider>

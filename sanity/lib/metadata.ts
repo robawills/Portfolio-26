@@ -1,36 +1,11 @@
 import type {SanityImageSource} from '@sanity/image-url'
 import type {Metadata} from 'next'
 
-import {client} from './client'
 import {urlFor} from './image'
+import {getSiteSettings} from './queries'
+import type {SeoFields} from './types'
 
-export interface SeoFields {
-  title?: string
-  description?: string
-  image?: SanityImageSource & {alt?: string}
-}
-
-interface SiteSettings {
-  siteTitle?: string
-  defaultMetaTitle?: string
-  defaultMetaDescription?: string
-  defaultShareImage?: SanityImageSource & {alt?: string}
-}
-
-const SETTINGS_QUERY = `*[_type == "siteSettings"][0]{
-  siteTitle,
-  defaultMetaTitle,
-  defaultMetaDescription,
-  defaultShareImage{..., asset->{_id}}
-}`
-
-let cachedSettings: SiteSettings | null | undefined
-
-async function getSiteSettings(): Promise<SiteSettings | null> {
-  if (cachedSettings !== undefined) return cachedSettings
-  cachedSettings = (await client.fetch<SiteSettings | null>(SETTINGS_QUERY)) ?? null
-  return cachedSettings
-}
+export type {SeoFields} from './types'
 
 const FALLBACK_SITE_TITLE = 'Folio'
 const FALLBACK_META_DESCRIPTION =

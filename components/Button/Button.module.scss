@@ -60,7 +60,8 @@
 
 .leadingIcon,
 .trailingIcon {
-  --size-icon: var(--icon-and-label-size);
+  --size-icon: 0.75rem;
+  padding-bottom: 0.1rem;
 }
 
 .hasTrailingIcon {
@@ -124,7 +125,7 @@
 
 .tertiary {
   background-color: var(--color-bg-brand);
-  color: var(--color-fg-onBrand);
+  color: var(--color-fg-primary);
   border: 0.5px solid var(--color-border-interactive-inverse);
   width: 100%;
 

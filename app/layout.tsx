@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { client } from "@/sanity/lib/client";
+import { getSiteSettings } from "@/sanity/lib/queries";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +17,7 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await client.fetch<{
-    siteTitle?: string;
-    defaultMetaDescription?: string;
-  } | null>(
-    `*[_type == "siteSettings"][0]{siteTitle, defaultMetaDescription}`,
-  );
+  const settings = await getSiteSettings();
   const siteTitle = settings?.siteTitle ?? "Folio";
   return {
     metadataBase: new URL(SITE_URL),

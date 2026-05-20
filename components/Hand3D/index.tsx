@@ -41,6 +41,9 @@ if (
 const MAX_ROTATION = 0.4;
 const LERP_SPEED = 0.05;
 
+const BASE_HAND_SCALE = 2.1;
+const MOBILE_HAND_SCALE_FACTOR = 0.8;
+
 const ANI_HAND_PATH = "/blend/three-finger-hand.glb";
 
 interface Pose {
@@ -296,7 +299,11 @@ const AnimatedHand = ({
   });
 
   return (
-    <group ref={groupRef} scale={2.1} position={[0, -0.5, 0]}>
+    <group
+      ref={groupRef}
+      scale={BASE_HAND_SCALE * (isMobile ? MOBILE_HAND_SCALE_FACTOR : 1)}
+      position={[0, -0.5, 0]}
+    >
       <group position={restCenteringOffset}>
         <primitive object={scene} />
       </group>
