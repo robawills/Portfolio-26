@@ -1,12 +1,11 @@
 import type {Preview} from '@storybook/nextjs'
 import {Geist_Mono, Inter} from 'next/font/google'
-import React from 'react'
 
 import {CursorProvider} from '../context/Cursor'
 import {HandPoseProvider} from '../context/HandPose'
 import {InViewAnimationProvider} from '../context/InViewAnimation'
 
-import '../app/globals.scss'
+import '@/styles/global.scss'
 
 const inter = Inter({variable: '--font-inter', subsets: ['latin']})
 const geistMono = Geist_Mono({variable: '--font-geist-mono', subsets: ['latin']})

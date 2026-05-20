@@ -5,7 +5,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { CursorProvider } from "@/context/Cursor";
 import { HandPoseProvider } from "@/context/HandPose";
 import { InViewAnimationProvider } from "@/context/InViewAnimation";
-import "../globals.scss";
+import "@/styles/global.scss";
 
 export default function SiteLayout({
   children,
