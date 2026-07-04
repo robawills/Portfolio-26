@@ -37,6 +37,13 @@ describe('ProjectCard', () => {
     )
   })
 
+  it('renders a View project button that names the project for assistive tech', () => {
+    render(<ProjectCard {...baseProps} />)
+    expect(
+      screen.getByRole('link', {name: 'View project: Mountain Atlas'}),
+    ).toHaveAttribute('href', '/projects/atlas')
+  })
+
   it('renders tags and external links inside the panel', () => {
     render(<ProjectCard {...baseProps} />)
     expect(screen.getByText('Maps')).toBeInTheDocument()

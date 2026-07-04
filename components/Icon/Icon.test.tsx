@@ -9,14 +9,19 @@ describe('Icon', () => {
     expect(screen.getByTestId('svg-mock')).toBeInTheDocument()
   })
 
-  it('forwards a custom aria-label', () => {
+  it('forwards a custom aria-label and exposes the svg as an image', () => {
     render(<Icon name={IconName.PLUS} ariaLabel="Add item" />)
-    expect(screen.getByTestId('svg-mock')).toHaveAttribute('aria-label', 'Add item')
+    const svg = screen.getByTestId('svg-mock')
+    expect(svg).toHaveAttribute('aria-label', 'Add item')
+    expect(svg).toHaveAttribute('role', 'img')
+    expect(svg).not.toHaveAttribute('aria-hidden')
   })
 
-  it('falls back to a generated aria-label of `<name> icon`', () => {
+  it('is decorative by default (hidden from assistive tech, no label)', () => {
     render(<Icon name={IconName.ARROW_OUT} />)
-    expect(screen.getByTestId('svg-mock')).toHaveAttribute('aria-label', 'ArrowOut icon')
+    const svg = screen.getByTestId('svg-mock')
+    expect(svg).toHaveAttribute('aria-hidden', 'true')
+    expect(svg).not.toHaveAttribute('aria-label')
   })
 
   it('applies the inverse color class', () => {

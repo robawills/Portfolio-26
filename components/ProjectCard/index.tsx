@@ -270,10 +270,9 @@ export const ProjectCard = ({
                 <div className={cx("viewProject")}>
                   <Button
                     href={href}
-                    type={ButtonType.PRIMARY}
+                    type={ButtonType.SECONDARY}
                     label="View project"
-                    ariaLabel={`View ${title}`}
-                    fullWidth
+                    ariaLabel={`View project: ${title}`}
                     small
                   />
                 </div>

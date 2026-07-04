@@ -38,21 +38,16 @@ const sizesHalf = `(max-width: ${breakpoints.xs}px) 90vw, (max-width: ${breakpoi
 interface ItemWrapperProps {
   size: MediaGroupItemProps['size']
   children: React.ReactNode
-  ariaLabel?: string
 }
 
-const ItemWrapper = ({size, children, ariaLabel}: ItemWrapperProps) => {
+const ItemWrapper = ({size, children}: ItemWrapperProps) => {
   const animationRef = useInViewAnimation<HTMLDivElement>({
     threshold: 0.2,
     rootMargin: '0px 0px -100px 0px',
   })
 
   return (
-    <div
-      className={cx('item', `item--${size}`)}
-      ref={animationRef}
-      aria-label={ariaLabel}
-    >
+    <div className={cx('item', `item--${size}`)} ref={animationRef}>
       <div className={cx('itemInner')}>{children}</div>
     </div>
   )

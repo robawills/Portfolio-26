@@ -312,9 +312,5 @@
 
   .viewProject {
     margin-top: clampy(var(--space-6), var(--space-8));
-
-    @include breakpoint(s) {
-      display: none;
-    }
   }
 }

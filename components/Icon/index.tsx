@@ -26,16 +26,25 @@ export interface IconProps {
   className?: string
   /** Foreground colour mode — `default` uses primary fg, `inverse` flips for dark-on-light surfaces. */
   color?: 'default' | 'inverse'
-  /** Accessible label for the SVG. Defaults to `"<name> icon"`. */
+  /**
+   * Accessible label for the SVG. Omit for decorative icons (the default):
+   * the SVG is then hidden from assistive tech so it doesn't leak into the
+   * accessible name of a parent control.
+   */
   ariaLabel?: string
 }
 
-export const Icon = ({color, name, className, ariaLabel = `${name} icon`}: IconProps) => {
+export const Icon = ({color, name, className, ariaLabel}: IconProps) => {
   const Svg = ICONS_MAP[name]
 
   return (
     <span className={cx('icon', className, color)} data-testid="icon-wrap">
-      <Svg aria-label={ariaLabel} data-testid={name} />
+      <Svg
+        {...(ariaLabel
+          ? {'aria-label': ariaLabel, role: 'img'}
+          : {'aria-hidden': true})}
+        data-testid={name}
+      />
     </span>
   )
 }
