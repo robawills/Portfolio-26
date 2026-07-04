@@ -18,7 +18,7 @@ const SITE_URL =
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
-  const siteTitle = settings?.siteTitle ?? "Folio";
+  const siteTitle = settings?.siteTitle ?? "Rob Wills Portfolio";
   return {
     metadataBase: new URL(SITE_URL),
     title: { default: siteTitle, template: `%s · ${siteTitle}` },

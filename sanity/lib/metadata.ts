@@ -7,9 +7,9 @@ import type {SeoFields} from './types'
 
 export type {SeoFields} from './types'
 
-const FALLBACK_SITE_TITLE = 'Folio'
+const FALLBACK_SITE_TITLE = 'Rob Wills Portfolio'
 const FALLBACK_META_DESCRIPTION =
-  'Design and engineering work from a UK-based studio.'
+  'The portfolio of Rob Wills, a Senior Frontend Engineer building React, Next.js and TypeScript in production.'
 const SHARE_IMAGE_WIDTH = 1200
 const SHARE_IMAGE_HEIGHT = 630
 const FALLBACK_DESCRIPTION_MAX = 155
